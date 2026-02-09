@@ -1,0 +1,1501 @@
+<!--
+  ============================================================
+  THERION PEPTIDES — WEBSITE DESIGN REFERENCE
+  ============================================================
+  
+  Developer Notes:
+  - This is a complete, pixel-ready HTML/CSS reference for therionpeptides.com
+  - Target platform: WordPress + WooCommerce
+  - All CSS is inline in <style> — extract to stylesheet for production
+  - All product pricing is FINAL — do not change
+  - Logo: see .logo-svg section — client will provide actual PNG/SVG logo file
+  - Fonts: Google Fonts — Playfair Display (serif headings), DM Sans (body), IBM Plex Mono (prices/code)
+  - Color palette defined in :root CSS variables
+  - Fully responsive (breakpoints at 900px and 640px)
+  - WooCommerce: product cards, cart, and checkout should match this styling
+  
+  PRODUCTS & PRICING (final):
+  ┌─────────────────────────────┬─────────┬──────────────┐
+  │ Product                     │ Price   │ Size         │
+  ├─────────────────────────────┼─────────┼──────────────┤
+  │ Semaglutide                 │ $72.00  │ 5mg / vial   │
+  │ Tirzepatide                 │ $105.00 │ 10mg / vial  │
+  │ Retatrutide                 │ $170.00 │ 20mg / vial  │
+  │ CJC-1295 + Ipamorelin      │ $60.00  │ blend / vial │
+  │ GHK-Cu                     │ $40.00  │ 50mg / vial  │
+  │ Glow Blend                 │ $100.00 │ ~70mg / vial │
+  │ NAD+                       │ $150.00 │ 1000mg / vial│
+  └─────────────────────────────┴─────────┴──────────────┘
+  
+  BRAND COLORS:
+  - Primary (deep blue):  #1b4d7a
+  - Accent (sky blue):    #3a8fd4
+  - Gold accent:          #c9a84c
+  - Background:           #f5f7fa
+  - Text:                 #1a1f28
+  
+  ============================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Therion Peptides — Research Peptides, Proteins & Amino Acids</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #ffffff;
+    --bg: #f5f7fa;
+    --bg-alt: #edf0f5;
+    --card: #ffffff;
+    --primary: #1b4d7a;
+    --primary-dark: #133958;
+    --primary-deeper: #0d2940;
+    --primary-light: #e4edf5;
+    --accent: #3a8fd4;
+    --accent-bright: #4da3e8;
+    --accent-light: #e8f2fc;
+    --gold: #c9a84c;
+    --gold-light: #faf5e8;
+    --text: #1a1f28;
+    --text-secondary: #4f5d6e;
+    --text-muted: #8a95a3;
+    --border: #dfe4eb;
+    --border-light: #eaeff4;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.07);
+    --shadow-lg: 0 10px 40px rgba(0,0,0,0.09);
+    --radius: 10px;
+    --radius-lg: 14px;
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font: 'DM Sans', -apple-system, sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ===== TOP BAR ===== */
+  .top-bar {
+    background: var(--primary-deeper);
+    color: white;
+    font-size: 0.78rem;
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .top-bar a { color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s; }
+  .top-bar a:hover { color: white; }
+  .top-bar-links { display: flex; gap: 1.5rem; }
+
+  .top-bar .promo {
+    font-weight: 500;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+
+  .top-bar .promo .badge {
+    background: var(--gold);
+    color: var(--primary-deeper);
+    padding: 0.15rem 0.55rem;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+  }
+
+  /* ===== HEADER ===== */
+  header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .header-main {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0.75rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  /* Logo */
+  .logo {
+    display: flex; align-items: center; gap: 0.6rem;
+    text-decoration: none; color: var(--text);
+    flex-shrink: 0;
+  }
+
+  .logo img {
+    height: 48px;
+    width: auto;
+  }
+
+  /* SVG Logo Fallback */
+  .logo-svg {
+    display: flex; align-items: center; gap: 0.1rem;
+  }
+
+  .logo-helix {
+    display: flex; align-items: center; gap: 2px;
+  }
+
+  .logo-helix .strand {
+    display: flex; flex-direction: column; gap: 3px;
+  }
+
+  .logo-helix .strand .node {
+    width: 7px; height: 7px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+
+  .logo-helix .strand .node:nth-child(even) {
+    background: var(--primary);
+  }
+
+  .logo-center {
+    width: 24px; height: 24px;
+    border: 2px solid var(--primary);
+    border-radius: 5px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-serif);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0 2px;
+  }
+
+  .logo-wordmark {
+    display: flex; flex-direction: column;
+    margin-left: 0.5rem;
+  }
+
+  .logo-wordmark .brand {
+    font-family: var(--font-serif);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.06em;
+    line-height: 1;
+  }
+
+  .logo-wordmark .sub {
+    font-family: var(--font);
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  /* Search */
+  .search-bar {
+    flex: 1; max-width: 460px;
+    position: relative;
+  }
+
+  .search-bar input {
+    width: 100%;
+    padding: 0.7rem 1rem 0.7rem 2.6rem;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    font-family: var(--font);
+    font-size: 0.88rem;
+    color: var(--text);
+    background: var(--bg);
+    outline: none;
+    transition: all 0.2s;
+  }
+
+  .search-bar input:focus {
+    border-color: var(--primary);
+    background: white;
+    box-shadow: 0 0 0 3px var(--primary-light);
+  }
+
+  .search-bar input::placeholder { color: var(--text-muted); }
+
+  .search-bar .search-icon {
+    position: absolute; left: 0.85rem; top: 50%; transform: translateY(-50%);
+    color: var(--text-muted); font-size: 0.9rem; pointer-events: none;
+  }
+
+  /* Header Actions */
+  .header-actions {
+    display: flex; align-items: center; gap: 0.6rem;
+    flex-shrink: 0;
+  }
+
+  .header-actions .action-btn {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 0.1rem; text-decoration: none; color: var(--text-secondary);
+    font-size: 0.68rem; transition: color 0.2s; padding: 0.3rem 0.5rem;
+  }
+
+  .header-actions .action-btn:hover { color: var(--primary); }
+  .header-actions .action-btn .icon { font-size: 1.2rem; }
+
+  .cart-btn {
+    background: var(--primary) !important;
+    color: white !important;
+    padding: 0.5rem 1.1rem !important;
+    border-radius: 8px;
+    flex-direction: row !important;
+    gap: 0.4rem !important;
+    font-weight: 600;
+    font-size: 0.82rem !important;
+    transition: background 0.2s !important;
+  }
+
+  .cart-btn:hover { background: var(--primary-dark) !important; }
+
+  .cart-count {
+    background: var(--gold);
+    color: var(--primary-deeper);
+    font-size: 0.62rem;
+    padding: 0.1rem 0.38rem;
+    border-radius: 10px;
+    font-weight: 700;
+  }
+
+  /* ===== NAV BAR ===== */
+  .nav-bar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .nav-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-inner::-webkit-scrollbar { display: none; }
+
+  .nav-inner a {
+    text-decoration: none; color: var(--text-secondary);
+    font-size: 0.86rem; font-weight: 500;
+    padding: 0.8rem 1rem;
+    position: relative; transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .nav-inner a:hover { color: var(--primary); }
+
+  .nav-inner a.active {
+    color: var(--primary); font-weight: 600;
+  }
+
+  .nav-inner a.active::after {
+    content: ''; position: absolute;
+    bottom: 0; left: 1rem; right: 1rem;
+    height: 2.5px;
+    background: var(--primary);
+    border-radius: 2px 2px 0 0;
+  }
+
+  .nav-inner a.sale { color: #d4513a; font-weight: 600; }
+
+  /* ===== HERO BANNER ===== */
+  .hero-banner {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 50%, var(--primary-deeper) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-banner::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 75% 20%, rgba(58,143,212,0.12) 0%, transparent 55%),
+      radial-gradient(ellipse at 25% 85%, rgba(201,168,76,0.06) 0%, transparent 50%);
+  }
+
+  /* Molecular dots */
+  .hero-banner::after {
+    content: '';
+    position: absolute; inset: 0;
+    opacity: 0.035;
+    background-image:
+      radial-gradient(circle, white 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
+  .hero-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 4.5rem 2rem;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-text { color: white; }
+
+  .hero-text .overline {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+
+  .hero-text .overline::before {
+    content: ''; width: 30px; height: 1.5px;
+    background: var(--gold);
+  }
+
+  .hero-text h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.5vw, 2.9rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.75;
+    max-width: 500px;
+    margin-bottom: 2rem;
+  }
+
+  .hero-buttons { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.78rem 1.6rem;
+    border-radius: 8px;
+    font-family: var(--font);
+    font-weight: 600;
+    font-size: 0.88rem;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+  }
+
+  .btn-gold {
+    background: var(--gold);
+    color: var(--primary-deeper);
+  }
+
+  .btn-gold:hover {
+    background: #d4b35a;
+    box-shadow: 0 4px 20px rgba(201,168,76,0.35);
+    transform: translateY(-1px);
+  }
+
+  .btn-outline-white {
+    background: transparent;
+    color: white;
+    border: 1.5px solid rgba(255,255,255,0.25);
+  }
+
+  .btn-outline-white:hover {
+    border-color: rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.06);
+  }
+
+  /* Hero badges */
+  .hero-badges {
+    display: flex; flex-wrap: wrap; gap: 1.75rem;
+    margin-top: 2.25rem;
+  }
+
+  .hero-badge-item {
+    display: flex; align-items: center; gap: 0.6rem;
+    color: rgba(255,255,255,0.65);
+    font-size: 0.8rem;
+  }
+
+  .hero-badge-item .icon {
+    width: 34px; height: 34px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem;
+  }
+
+  .hero-badge-item strong { color: white; }
+
+  /* Hero featured products */
+  .hero-featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem;
+  }
+
+  .hero-pcard {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-lg);
+    padding: 1.4rem;
+    color: white;
+    transition: all 0.3s;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .hero-pcard:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.18);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+  }
+
+  .hero-pcard .mol { font-size: 1.6rem; margin-bottom: 0.6rem; display: block; }
+  .hero-pcard h3 { font-size: 0.92rem; font-weight: 600; margin-bottom: 0.2rem; }
+  .hero-pcard .desc { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-bottom: 0.65rem; line-height: 1.45; }
+
+  .hero-pcard .price {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--gold);
+  }
+
+  .hero-pcard .size {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.4);
+    font-family: var(--font-mono);
+    margin-left: 0.25rem;
+  }
+
+  /* ===== TRUST BAR ===== */
+  .trust-bar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border-light);
+    padding: 1.35rem 2rem;
+  }
+
+  .trust-inner {
+    max-width: 1280px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+
+  .trust-item {
+    display: flex; align-items: center; gap: 0.7rem;
+    font-size: 0.85rem; color: var(--text-secondary);
+  }
+
+  .trust-item .ti-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .trust-item:nth-child(1) .ti-icon { background: var(--primary-light); }
+  .trust-item:nth-child(2) .ti-icon { background: var(--accent-light); }
+  .trust-item:nth-child(3) .ti-icon { background: var(--gold-light); }
+  .trust-item:nth-child(4) .ti-icon { background: #f0e8f5; }
+
+  .trust-item strong { display: block; color: var(--text); font-weight: 600; font-size: 0.86rem; }
+  .trust-item span { font-size: 0.75rem; color: var(--text-muted); }
+
+  /* ===== SECTIONS ===== */
+  .section {
+    max-width: 1280px; margin: 0 auto;
+    padding: 3.5rem 2rem;
+  }
+
+  .section-header {
+    display: flex; justify-content: space-between;
+    align-items: flex-end; margin-bottom: 2rem;
+  }
+
+  .section-header h2 {
+    font-family: var(--font-serif);
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: var(--primary);
+    position: relative;
+  }
+
+  .section-header h2::after {
+    content: ''; display: block;
+    width: 36px; height: 3px;
+    background: var(--gold);
+    border-radius: 2px;
+    margin-top: 0.5rem;
+  }
+
+  .section-header p {
+    font-size: 0.9rem; color: var(--text-muted); margin-top: 0.3rem;
+  }
+
+  .view-all {
+    text-decoration: none; color: var(--primary);
+    font-weight: 600; font-size: 0.86rem;
+    display: flex; align-items: center; gap: 0.35rem;
+    transition: gap 0.2s; white-space: nowrap;
+  }
+
+  .view-all:hover { gap: 0.65rem; }
+
+  /* ===== CATEGORIES ===== */
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 1rem;
+  }
+
+  .cat-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.6rem 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.25s;
+    cursor: pointer;
+  }
+
+  .cat-card:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+  }
+
+  .cat-card .cat-icon {
+    width: 50px; height: 50px;
+    background: var(--primary-light);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    margin: 0 auto 0.85rem;
+    transition: all 0.25s;
+  }
+
+  .cat-card:hover .cat-icon {
+    background: var(--primary);
+    box-shadow: 0 4px 16px rgba(27,77,122,0.25);
+  }
+
+  .cat-card:hover .cat-icon { font-size: 1.35rem; }
+
+  .cat-card h3 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.15rem; }
+  .cat-card .count { font-size: 0.76rem; color: var(--text-muted); }
+
+  /* ===== PRODUCT GRID ===== */
+  .products-section {
+    background: var(--white);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .product-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all 0.25s;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .product-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+    border-color: transparent;
+  }
+
+  .product-card .badge-row {
+    position: absolute; top: 0.7rem; left: 0.7rem;
+    display: flex; gap: 0.35rem; z-index: 2;
+  }
+
+  .product-badge {
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    font-size: 0.66rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .badge-purity { background: var(--accent-light); color: var(--accent); }
+  .badge-new { background: var(--gold-light); color: #9a7d2e; }
+
+  .product-card .product-img {
+    height: 170px;
+    background: linear-gradient(135deg, var(--bg) 0%, var(--bg-alt) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .product-card .product-img .vial-graphic {
+    width: 60px;
+    display: flex; flex-direction: column; align-items: center;
+    transition: transform 0.3s;
+  }
+
+  .product-card:hover .vial-graphic { transform: scale(1.06); }
+
+  .vial-cap {
+    width: 28px; height: 8px;
+    background: var(--primary);
+    border-radius: 3px 3px 0 0;
+  }
+
+  .vial-neck {
+    width: 16px; height: 10px;
+    background: rgba(27,77,122,0.15);
+    border-left: 2px solid rgba(27,77,122,0.2);
+    border-right: 2px solid rgba(27,77,122,0.2);
+  }
+
+  .vial-body {
+    width: 36px; height: 65px;
+    background: linear-gradient(135deg, rgba(58,143,212,0.1), rgba(27,77,122,0.08));
+    border: 2px solid rgba(27,77,122,0.15);
+    border-radius: 0 0 6px 6px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .vial-body::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 60%;
+    background: linear-gradient(to top, rgba(58,143,212,0.18), transparent);
+    border-radius: 0 0 4px 4px;
+  }
+
+  .vial-label {
+    margin-top: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .product-card .product-body { padding: 1.15rem 1.25rem; }
+
+  .product-card .product-cat {
+    font-size: 0.7rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--accent); margin-bottom: 0.3rem;
+  }
+
+  .product-card h3 { font-size: 1.02rem; font-weight: 700; margin-bottom: 0.2rem; }
+
+  .product-card .product-desc {
+    font-size: 0.8rem; color: var(--text-muted);
+    margin-bottom: 0.7rem; line-height: 1.5;
+  }
+
+  .product-card .product-meta {
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  .product-card .price {
+    font-family: var(--font-mono);
+    font-size: 1.2rem; font-weight: 700; color: var(--text);
+  }
+
+  .product-card .size-info {
+    font-size: 0.73rem; color: var(--text-muted); font-family: var(--font-mono);
+  }
+
+  .product-card .add-btn {
+    width: 36px; height: 36px;
+    background: var(--primary);
+    color: white; border: none; border-radius: 8px;
+    font-size: 1.2rem; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s; flex-shrink: 0;
+  }
+
+  .product-card .add-btn:hover {
+    background: var(--gold);
+    color: var(--primary-deeper);
+    transform: scale(1.05);
+  }
+
+  /* ===== WHY US ===== */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .info-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    transition: all 0.25s;
+  }
+
+  .info-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .info-card .info-icon {
+    width: 46px; height: 46px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .info-card:nth-child(1) .info-icon { background: var(--primary-light); }
+  .info-card:nth-child(2) .info-icon { background: var(--accent-light); }
+  .info-card:nth-child(3) .info-icon { background: var(--gold-light); }
+  .info-card:nth-child(4) .info-icon { background: #f0e8f5; }
+  .info-card:nth-child(5) .info-icon { background: #e8f5f0; }
+  .info-card:nth-child(6) .info-icon { background: var(--primary-light); }
+
+  .info-card h3 { font-size: 0.96rem; font-weight: 700; margin-bottom: 0.4rem; }
+  .info-card p { font-size: 0.86rem; color: var(--text-secondary); line-height: 1.6; }
+
+  /* ===== RESEARCH BANNER ===== */
+  .research-banner {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .research-banner::before {
+    content: '';
+    position: absolute;
+    right: -60px; top: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(201,168,76,0.07);
+  }
+
+  .research-banner h2 {
+    font-family: var(--font-serif);
+    font-size: 1.45rem; font-weight: 700; margin-bottom: 0.5rem;
+  }
+
+  .research-banner p {
+    color: rgba(255,255,255,0.65); font-size: 0.92rem;
+    line-height: 1.65; max-width: 520px;
+  }
+
+  .research-banner .btn-gold {
+    background: var(--gold); color: var(--primary-deeper);
+  }
+
+  /* ===== NEWSLETTER ===== */
+  .newsletter-section {
+    background: var(--white);
+    border-top: 1px solid var(--border-light);
+  }
+
+  .newsletter-inner {
+    text-align: center; max-width: 480px; margin: 0 auto;
+  }
+
+  .newsletter-inner h2 {
+    font-family: var(--font-serif);
+    font-size: 1.35rem; font-weight: 700; color: var(--primary);
+    margin-bottom: 0.4rem;
+  }
+
+  .newsletter-inner p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.25rem; }
+
+  .newsletter-form { display: flex; gap: 0.5rem; }
+
+  .newsletter-form input {
+    flex: 1; padding: 0.75rem 1rem;
+    border: 2px solid var(--border); border-radius: 8px;
+    font-family: var(--font); font-size: 0.88rem;
+    outline: none; transition: border-color 0.2s;
+  }
+
+  .newsletter-form input:focus { border-color: var(--primary); }
+
+  .newsletter-form button {
+    padding: 0.75rem 1.4rem;
+    background: var(--primary); color: white; border: none;
+    border-radius: 8px; font-family: var(--font);
+    font-weight: 600; font-size: 0.88rem;
+    cursor: pointer; transition: background 0.2s; white-space: nowrap;
+  }
+
+  .newsletter-form button:hover { background: var(--primary-dark); }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--primary-deeper);
+    color: rgba(255,255,255,0.7);
+    padding: 3.5rem 2rem 2rem;
+  }
+
+  .footer-grid {
+    max-width: 1280px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr repeat(3, 1fr);
+    gap: 3rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .footer-brand .ft-logo {
+    display: flex; align-items: center; gap: 0.4rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .ft-logo .ft-brand {
+    font-family: var(--font-serif);
+    font-size: 1.35rem; font-weight: 700; color: white;
+    letter-spacing: 0.04em;
+  }
+
+  .ft-logo .ft-sub {
+    font-size: 0.58rem; color: rgba(255,255,255,0.4);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-left: 0.5rem; margin-top: 4px; align-self: flex-end;
+  }
+
+  .footer-brand p {
+    font-size: 0.84rem; line-height: 1.7;
+    color: rgba(255,255,255,0.45); max-width: 300px;
+  }
+
+  .footer-col h4 {
+    color: white; font-size: 0.82rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+  }
+
+  .footer-col a {
+    display: block; color: rgba(255,255,255,0.45);
+    text-decoration: none; font-size: 0.86rem;
+    padding: 0.28rem 0; transition: color 0.2s;
+  }
+
+  .footer-col a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    max-width: 1280px; margin: 0 auto; padding-top: 1.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+
+  .footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+
+  .footer-bottom .disclaimer {
+    font-size: 0.72rem; color: rgba(255,255,255,0.22);
+    max-width: 680px; line-height: 1.6;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .hero-content { grid-template-columns: 1fr; }
+    .hero-featured { display: none; }
+    .info-grid { grid-template-columns: 1fr 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .research-banner { grid-template-columns: 1fr; text-align: center; }
+  }
+
+  @media (max-width: 640px) {
+    .top-bar { display: none; }
+    .header-main { padding: 0.6rem 1rem; gap: 0.6rem; }
+    .search-bar { max-width: none; }
+    .header-actions .action-btn:not(.cart-btn) { display: none; }
+    .section { padding: 2.5rem 1rem; }
+    .hero-content { padding: 3rem 1.25rem; }
+    .info-grid { grid-template-columns: 1fr; }
+    .newsletter-form { flex-direction: column; }
+    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .products-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+  }
+
+  /* ===== ANIMATIONS ===== */
+  .reveal {
+    opacity: 0; transform: translateY(22px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="promo">
+    <span class="badge">New</span>
+    Free shipping on orders over $200 · USA made · 99%+ purity guaranteed
+  </div>
+  <div class="top-bar-links">
+    <a href="#">Support</a>
+    <a href="#">Track Order</a>
+    <a href="#">FAQ</a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-main">
+    <a href="#" class="logo">
+      <!-- Recreated logo matching brand identity -->
+      <div class="logo-svg">
+        <div class="logo-helix">
+          <div class="strand">
+            <div class="node"></div><div class="node"></div>
+            <div class="node"></div><div class="node"></div>
+          </div>
+        </div>
+        <div class="logo-center">T</div>
+        <div class="logo-helix">
+          <div class="strand">
+            <div class="node"></div><div class="node"></div>
+            <div class="node"></div><div class="node"></div>
+          </div>
+        </div>
+        <div class="logo-wordmark">
+          <span class="brand">THERION</span>
+          <span class="sub">Peptides</span>
+        </div>
+      </div>
+    </a>
+
+    <div class="search-bar">
+      <span class="search-icon">🔍</span>
+      <input type="text" placeholder="Search peptides, proteins, amino acids...">
+    </div>
+
+    <div class="header-actions">
+      <a href="#" class="action-btn">
+        <span class="icon">👤</span>Account
+      </a>
+      <a href="#" class="action-btn">
+        <span class="icon">♡</span>Wishlist
+      </a>
+      <a href="#" class="action-btn cart-btn">
+        🛒 Cart <span class="cart-count">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<div class="nav-bar">
+  <nav class="nav-inner">
+    <a href="#" class="active">All Peptides</a>
+    <a href="#">GLP-1 Agonists</a>
+    <a href="#">Growth Hormone</a>
+    <a href="#">Recovery & Repair</a>
+    <a href="#">Blends</a>
+    <a href="#">NAD+</a>
+    <a href="#">Research Articles</a>
+    <a href="#" class="sale">🔥 New Arrivals</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<div class="hero-banner">
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="overline">Therion Peptides™</div>
+      <h1>Premium Research Peptides.<br>Unmatched Purity. Competitive Pricing.</h1>
+      <p>We specialize in highly purified peptides for scientific research and development. Every product exceeds 99% purity, verified through HPLC and Mass Spectrometry analysis.</p>
+      <div class="hero-buttons">
+        <a href="#products" class="btn btn-gold">Shop All Peptides →</a>
+        <a href="#" class="btn btn-outline-white">View COA Reports</a>
+      </div>
+      <div class="hero-badges">
+        <div class="hero-badge-item">
+          <div class="icon">🔬</div>
+          <div><strong>99%+ Purity</strong><br>HPLC Verified</div>
+        </div>
+        <div class="hero-badge-item">
+          <div class="icon">📋</div>
+          <div><strong>COA Included</strong><br>Every Order</div>
+        </div>
+        <div class="hero-badge-item">
+          <div class="icon">🇺🇸</div>
+          <div><strong>USA Made</strong><br>GMP Facilities</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-featured">
+      <div class="hero-pcard">
+        <span class="mol">🧪</span>
+        <h3>Semaglutide</h3>
+        <div class="desc">GLP-1 Receptor Agonist</div>
+        <div class="price">$72.00 <span class="size">/ 5mg</span></div>
+      </div>
+      <div class="hero-pcard">
+        <span class="mol">🧬</span>
+        <h3>Tirzepatide</h3>
+        <div class="desc">Dual GIP/GLP-1 Agonist</div>
+        <div class="price">$105.00 <span class="size">/ 10mg</span></div>
+      </div>
+      <div class="hero-pcard">
+        <span class="mol">⚗️</span>
+        <h3>Retatrutide</h3>
+        <div class="desc">Triple Agonist Peptide</div>
+        <div class="price">$170.00 <span class="size">/ 20mg</span></div>
+      </div>
+      <div class="hero-pcard">
+        <span class="mol">🔬</span>
+        <h3>CJC-1295 + Ipa</h3>
+        <div class="desc">GH Secretagogue Blend</div>
+        <div class="price">$60.00 <span class="size">/ blend</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <div class="ti-icon">🔬</div>
+      <div><strong>99%+ Purity</strong><span>HPLC & MS Verified</span></div>
+    </div>
+    <div class="trust-item">
+      <div class="ti-icon">🏭</div>
+      <div><strong>GMP Compliant</strong><span>ISO 9001:2015</span></div>
+    </div>
+    <div class="trust-item">
+      <div class="ti-icon">📦</div>
+      <div><strong>Fast Shipping</strong><span>24-48hr Dispatch</span></div>
+    </div>
+    <div class="trust-item">
+      <div class="ti-icon">💰</div>
+      <div><strong>Secure Checkout</strong><span>SSL Encrypted</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<div class="section reveal">
+  <div class="section-header">
+    <div>
+      <h2>Shop by Category</h2>
+      <p>Browse our research compound catalog</p>
+    </div>
+    <a href="#" class="view-all">View All →</a>
+  </div>
+
+  <div class="categories-grid">
+    <a href="#" class="cat-card">
+      <div class="cat-icon">🧬</div>
+      <h3>GLP-1 Agonists</h3>
+      <div class="count">Semaglutide, Tirzepatide</div>
+    </a>
+    <a href="#" class="cat-card">
+      <div class="cat-icon">⚗️</div>
+      <h3>Multi-Agonists</h3>
+      <div class="count">Retatrutide & more</div>
+    </a>
+    <a href="#" class="cat-card">
+      <div class="cat-icon">🔬</div>
+      <h3>Growth Hormone</h3>
+      <div class="count">CJC-1295, Ipamorelin</div>
+    </a>
+    <a href="#" class="cat-card">
+      <div class="cat-icon">🧪</div>
+      <h3>Recovery</h3>
+      <div class="count">GHK-Cu, BPC-157</div>
+    </a>
+    <a href="#" class="cat-card">
+      <div class="cat-icon">✨</div>
+      <h3>Skin & Glow</h3>
+      <div class="count">Glow Blend & more</div>
+    </a>
+    <a href="#" class="cat-card">
+      <div class="cat-icon">⚡</div>
+      <h3>NAD+</h3>
+      <div class="count">NAD+ 1000mg</div>
+    </a>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<div id="products" class="products-section">
+  <div class="section reveal">
+    <div class="section-header">
+      <div>
+        <h2>Our Peptides</h2>
+        <p>Research-grade compounds — all products for in-vitro use only</p>
+      </div>
+      <a href="#" class="view-all">View Full Catalog →</a>
+    </div>
+
+    <div class="products-grid">
+
+      <!-- Semaglutide -->
+      <div class="product-card">
+        <div class="badge-row">
+          <span class="product-badge badge-purity">99%+ Pure</span>
+          <span class="product-badge badge-new">Popular</span>
+        </div>
+        <div class="product-img">
+          <div class="vial-graphic">
+            <div class="vial-cap"></div>
+            <div class="vial-neck"></div>
+            <div class="vial-body"></div>
+            <div class="vial-label">5mg</div>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-cat">GLP-1 Agonist</div>
+          <h3>Semaglutide</h3>
+          <div class="product-desc">GLP-1 Receptor Agonist</div>
+          <div class="product-meta">
+            <div>
+              <div class="price">$72.00</div>
+              <div class="size-info">5mg / vial</div>
+            </div>
+            <button class="add-btn">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tirzepatide -->
+      <div class="product-card">
+        <div class="badge-row">
+          <span class="product-badge badge-purity">99%+ Pure</span>
+          <span class="product-badge badge-new">New</span>
+        </div>
+        <div class="product-img">
+          <div class="vial-graphic">
+            <div class="vial-cap"></div>
+            <div class="vial-neck"></div>
+            <div class="vial-body"></div>
+            <div class="vial-label">10mg</div>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Dual Agonist</div>
+          <h3>Tirzepatide</h3>
+          <div class="product-desc">Dual GIP/GLP-1 Receptor Agonist</div>
+          <div class="product-meta">
+            <div>
+              <div class="price">$105.00</div>
+              <div class="size-info">10mg / vial</div>
+            </div>
+            <button class="add-btn">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Retatrutide -->
+      <div class="product-card">
+        <div class="badge-row">
+          <span class="product-badge badge-purity">99%+ Pure</span>
+          <span class="product-badge badge-new">Premium</span>
+        </div>
+        <div class="product-img">
+          <div class="vial-graphic">
+            <div class="vial-cap"></div>
+            <div class="vial-neck"></div>
+            <div class="vial-body"></div>
+            <div class="vial-label">20mg</div>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Triple Agonist</div>
+          <h3>Retatrutide</h3>
+          <div class="product-desc">GLP-1/GIP/Glucagon Triple Agonist</div>
+          <div class="product-meta">
+            <div>
+              <div class="price">$170.00</div>
+              <div class="size-info">20mg / vial</div>
+            </div>
+            <button class="add-btn">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CJC-1295 + Ipamorelin -->
+      <div class="product-card">
+        <div class="badge-row">
+          <span class="product-badge badge-purity">99%+ Pure</span>
+        </div>
+        <div class="product-img">
+          <div class="vial-graphic">
+            <div class="vial-cap"></div>
+            <div class="vial-neck"></div>
+            <div class="vial-body"></div>
+            <div class="vial-label">BLEND</div>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-cat">GH Secretagogue</div>
+          <h3>CJC-1295 + Ipamorelin</h3>
+          <div class="product-desc">Growth Hormone Releasing Blend</div>
+          <div class="product-meta">
+            <div>
+              <div class="price">$60.00</div>
+              <div class="size-info">blend / vial</div>
+            </div>
+            <button class="add-btn">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- GHK-Cu -->
+      <div class="product-card">
+        <div class="badge-row">
+          <span class="product-badge badge-purity">99%+ Pure</span>
+        </div>
+        <div class="product-img">
+          <div class="vial-graphic">
+            <div class="vial-cap"></div>
+            <div class="vial-neck"></div>
+            <div class="vial-body"></div>
+            <div class="vial-label">50mg</div>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Copper Peptide</div>
+          <h3>GHK-Cu</h3>
+          <div class="product-desc">Copper Peptide Complex</div>
+          <div class="product-meta">
+            <div>
+              <div class="price">$40.00</div>
+              <div class="size-info">50mg / vial</div>
+            </div>
+            <button class="add-btn">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Glow Blend -->
+      <div class="product-card">
+        <div class="badge-row">
+          <span class="product-badge badge-new">Exclusive</span>
+        </div>
+        <div class="product-img">
+          <div class="vial-graphic">
+            <div class="vial-cap"></div>
+            <div class="vial-neck"></div>
+            <div class="vial-body"></div>
+            <div class="vial-label">~70mg</div>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Skin & Beauty</div>
+          <h3>Glow Blend</h3>
+          <div class="product-desc">Multi-Peptide Skin Complex</div>
+          <div class="product-meta">
+            <div>
+              <div class="price">$100.00</div>
+              <div class="size-info">~70mg / vial</div>
+            </div>
+            <button class="add-btn">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- NAD+ -->
+      <div class="product-card">
+        <div class="badge-row">
+          <span class="product-badge badge-purity">High Purity</span>
+        </div>
+        <div class="product-img">
+          <div class="vial-graphic">
+            <div class="vial-cap"></div>
+            <div class="vial-neck"></div>
+            <div class="vial-body"></div>
+            <div class="vial-label">1000mg</div>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Coenzyme</div>
+          <h3>NAD+</h3>
+          <div class="product-desc">Nicotinamide Adenine Dinucleotide</div>
+          <div class="product-meta">
+            <div>
+              <div class="price">$150.00</div>
+              <div class="size-info">1000mg / vial</div>
+            </div>
+            <button class="add-btn">+</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<div class="section reveal">
+  <div class="section-header">
+    <div>
+      <h2>Why Therion Peptides</h2>
+      <p>Quality, transparency, and value for researchers</p>
+    </div>
+  </div>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="info-icon">🔬</div>
+      <h3>HPLC & MS Verified</h3>
+      <p>Every batch undergoes High-Performance Liquid Chromatography and Mass Spectrometry analysis to confirm identity and purity exceeding 99%.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">📋</div>
+      <h3>Certificate of Analysis</h3>
+      <p>Each product ships with a detailed COA — full transparency into purity, molecular weight, and third-party testing results.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">💰</div>
+      <h3>Competitive Pricing</h3>
+      <p>Premium quality at fair prices. We partner directly with GMP manufacturers to deliver real value to researchers.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">🏭</div>
+      <h3>WHO/GMP & ISO Sourced</h3>
+      <p>All products synthesized in WHO/GMP and ISO 9001:2015 certified facilities for consistent, reproducible quality.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">❄️</div>
+      <h3>Cold-Chain Shipping</h3>
+      <p>Temperature-sensitive compounds stored and shipped under controlled conditions to preserve stability and bioactivity.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">⚡</div>
+      <h3>24-48hr Dispatch</h3>
+      <p>Most orders ship within 24-48 hours. Fast, reliable delivery because your research timelines matter.</p>
+    </div>
+  </div>
+</div>
+
+<!-- RESEARCH CTA -->
+<div class="section reveal">
+  <div class="research-banner">
+    <div>
+      <h2>Peptide Research & Resources</h2>
+      <p>Explore our library of scientific publications, reconstitution guides, storage protocols, and peptide information to support your research.</p>
+    </div>
+    <a href="#" class="btn btn-gold">Browse Articles →</a>
+  </div>
+</div>
+
+<!-- NEWSLETTER -->
+<div class="newsletter-section">
+  <div class="section reveal">
+    <div class="newsletter-inner">
+      <h2>Stay Updated</h2>
+      <p>New products, research publications, and exclusive offers.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Enter your email address">
+        <button>Subscribe</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="ft-logo">
+        <span class="ft-brand">THERION</span>
+        <span class="ft-sub">Peptides</span>
+      </div>
+      <p>Therion Peptides™ specializes in the synthesis of highly purified peptides, proteins, and amino acid derivatives for scientific research and development. USA made. GMP compliant.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <a href="#">Semaglutide</a>
+      <a href="#">Tirzepatide</a>
+      <a href="#">Retatrutide</a>
+      <a href="#">CJC-1295 + Ipamorelin</a>
+      <a href="#">GHK-Cu</a>
+      <a href="#">Glow Blend</a>
+      <a href="#">NAD+</a>
+    </div>
+    <div class="footer-col">
+      <h4>Information</h4>
+      <a href="#">What are Peptides?</a>
+      <a href="#">Peptide Purity</a>
+      <a href="#">Reconstitution Guide</a>
+      <a href="#">Storage & Handling</a>
+      <a href="#">Research Articles</a>
+      <a href="#">Certificate of Analysis</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+      <a href="#">FAQ</a>
+      <a href="#">Shipping & Returns</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms & Conditions</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Therion Peptides™. All rights reserved.</p>
+    <div class="disclaimer">
+      Products are intended for IN-VITRO LABORATORY RESEARCH USE ONLY — not for human consumption. You must be 21+ to use this website. All products handled by qualified research professionals only.
+    </div>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
