@@ -277,7 +277,7 @@
   /* ===== NAV BAR ===== */
   .nav-bar {
     background: var(--white);
-    border-bottom: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border);
   }
 
   .nav-inner {
@@ -294,28 +294,31 @@
   .nav-inner::-webkit-scrollbar { display: none; }
 
   .nav-inner a {
-    text-decoration: none; color: var(--text-secondary);
-    font-size: 0.86rem; font-weight: 500;
-    padding: 0.8rem 1rem;
-    position: relative; transition: all 0.2s;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.9rem 1.15rem;
+    position: relative;
+    transition: color 0.2s;
     white-space: nowrap;
   }
 
   .nav-inner a:hover { color: var(--primary); }
 
   .nav-inner a.active {
-    color: var(--primary); font-weight: 600;
+    color: var(--primary);
+    font-weight: 600;
   }
 
-  .nav-inner a.active::after {
-    content: ''; position: absolute;
-    bottom: 0; left: 1rem; right: 1rem;
-    height: 2.5px;
-    background: var(--primary);
-    border-radius: 2px 2px 0 0;
+  /* Push right-side links */
+  .nav-inner .nav-spacer { flex: 1; }
+
+  .nav-inner a.nav-right {
+    color: var(--text);
   }
 
-  .nav-inner a.sale { color: #d4513a; font-weight: 600; }
+  .nav-inner a.nav-right:hover { color: var(--primary); }
 
   /* ===== HERO BANNER ===== */
   .hero-banner {
@@ -352,6 +355,7 @@
     align-items: center;
     position: relative;
     z-index: 1;
+    background: url("./assets/hero.png") center center / cover no-repeat;
   }
 
   .hero-text { color: white; }
@@ -974,7 +978,7 @@
 <div class="top-bar">
   <div class="promo">
     <span class="badge">New</span>
-    Free shipping on orders over $200 · USA made · 99%+ purity guaranteed
+    Free shipping on orders over $200 · 99%+ purity guaranteed
   </div>
   <div class="top-bar-links">
     <a href="#">Support</a>
@@ -1032,14 +1036,13 @@
 <div class="nav-bar">
   <nav class="nav-inner">
     <a href="#" class="active">All Peptides</a>
-    <!-- <a href="#">GLP-1 Agonists</a> -->
     <a href="#">Popular Peptides</a>
     <a href="#">Bundle & Save</a>
     <a href="#">Peptide Information</a>
     <a href="#">Research Videos</a>
-    <a href="#">Our Company</a>
-    <a href="#">Contact Us</a>
-    <!-- <a href="#" class="sale">Contact Us</a> -->
+    <span class="nav-spacer"></span>
+    <a href="#" class="nav-right">Our Company</a>
+    <a href="#contact" class="nav-right">Contact Us</a>
   </nav>
 </div>
 
@@ -1064,8 +1067,8 @@
           <div><strong>COA Included</strong><br>Every Order</div>
         </div>
         <div class="hero-badge-item">
-          <div class="icon">🇺🇸</div>
-          <div><strong>USA Made</strong><br>GMP Facilities</div>
+          <div class="icon">📦</div>
+          <div><strong>Fast Shipping</strong><br>24-48hr Dispatch</div>
         </div>
       </div>
     </div>
@@ -1450,7 +1453,7 @@
         <span class="ft-brand">THERION</span>
         <span class="ft-sub">Peptides</span>
       </div>
-      <p>Therion Peptides™ specializes in the synthesis of highly purified peptides, proteins, and amino acid derivatives for scientific research and development. USA made. GMP compliant.</p>
+      <p>Therion Peptides™ specializes in the synthesis of highly purified peptides, proteins, and amino acid derivatives for scientific research and development. GMP compliant.</p>
     </div>
     <div class="footer-col">
       <h4>Products</h4>
