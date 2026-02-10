@@ -355,7 +355,7 @@
     align-items: center;
     position: relative;
     z-index: 1;
-    background: url("./assets/hero.png") center center / cover no-repeat;
+    background: url("./assets/image.jpg") center center / cover no-repeat;
   }
 
   .hero-text { color: white; }
@@ -940,6 +940,217 @@
     max-width: 680px; line-height: 1.6;
   }
 
+  /* ===== POPULAR PEPTIDES ===== */
+  .popular-section {
+    background: var(--white);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .popular-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .pop-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all 0.25s;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--text);
+    display: block;
+  }
+
+  .pop-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+    border-color: transparent;
+  }
+
+  .pop-img {
+    height: 200px;
+    background: linear-gradient(135deg, #f8f9fb, var(--bg-alt));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    position: relative;
+  }
+
+  .pop-vial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s;
+  }
+
+  .pop-card:hover .pop-vial { transform: scale(1.05); }
+
+  .pop-vial-cap {
+    width: 36px; height: 14px;
+    background: linear-gradient(to bottom, #8a8a8a, #666);
+    border-radius: 4px 4px 0 0;
+    border: 1px solid #999;
+  }
+
+  .pop-vial-neck {
+    width: 20px; height: 12px;
+    background: rgba(200,210,220,0.3);
+    border-left: 2px solid rgba(27,77,122,0.15);
+    border-right: 2px solid rgba(27,77,122,0.15);
+  }
+
+  .pop-vial-body {
+    width: 56px; height: 90px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(240,244,248,0.8));
+    border: 2px solid rgba(27,77,122,0.12);
+    border-radius: 0 0 8px 8px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 4px;
+  }
+
+  .pop-vial-body::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 45%;
+    background: linear-gradient(to top, rgba(58,143,212,0.1), transparent);
+    border-radius: 0 0 6px 6px;
+    pointer-events: none;
+  }
+
+  .pop-vial-stripe {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: var(--primary);
+  }
+
+  .pop-vial-brand {
+    font-family: var(--font-serif);
+    font-size: 0.32rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 6px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pop-vial-name {
+    font-family: var(--font);
+    font-size: 0.35rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-align: center;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pop-vial-mg {
+    font-family: var(--font-mono);
+    font-size: 0.32rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    padding: 0px 3px;
+    border-radius: 2px;
+    margin-top: 2px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pop-vial-purity {
+    font-size: 0.22rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pop-body {
+    padding: 1rem 1.15rem 1.15rem;
+  }
+
+  .pop-body h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.15rem;
+  }
+
+  .pop-body .pop-sub {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .pop-stars {
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+    margin-bottom: 0.55rem;
+  }
+
+  .pop-stars .star { color: #f5a623; font-size: 0.8rem; }
+  .pop-stars .star.empty { color: var(--border); }
+
+  .pop-stars .review-count {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-left: 0.3rem;
+  }
+
+  .pop-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .pop-bottom .pop-price {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .pop-bottom .pop-size {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+  }
+
+  .pop-bottom .pop-add {
+    width: 34px; height: 34px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.15rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+
+  .pop-bottom .pop-add:hover {
+    background: var(--gold);
+    color: var(--primary-deeper);
+    transform: scale(1.05);
+  }
+
   /* ===== RESPONSIVE ===== */
   @media (max-width: 900px) {
     .hero-content { grid-template-columns: 1fr; }
@@ -961,6 +1172,7 @@
     .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
     .footer-bottom { flex-direction: column; text-align: center; }
     .products-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+    .popular-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
   }
 
   /* ===== ANIMATIONS ===== */
@@ -1035,9 +1247,9 @@
 <!-- NAV -->
 <div class="nav-bar">
   <nav class="nav-inner">
-    <a href="#" class="active">All Peptides</a>
-    <a href="#">Popular Peptides</a>
-    <a href="./bundle-save.html">Bundle & Save</a>
+    <a href="therion-peptides-reference.html">All Peptides</a>
+    <a href="popular-peptides.html">Popular Peptides</a>
+    <a href="bundle-save.html" class="active">Bundle & Save</a>
     <a href="#">Peptide Information</a>
     <a href="#">Research Videos</a>
     <span class="nav-spacer"></span>
@@ -1046,388 +1258,229 @@
   </nav>
 </div>
 
-<!-- HERO -->
-<div class="hero-banner">
-  <div class="hero-content">
-    <div class="hero-text">
-      <div class="overline">Therion Peptides™</div>
-      <h1>Premium Research Peptides.<br>Unmatched Purity. Competitive Pricing.</h1>
-      <p>We specialize in highly purified peptides for scientific research and development. Every product exceeds 99% purity, verified through HPLC and Mass Spectrometry analysis.</p>
-      <div class="hero-buttons">
-        <a href="#products" class="btn btn-gold">Shop All Peptides →</a>
-        <a href="#" class="btn btn-outline-white">View COA Reports</a>
-      </div>
-      <div class="hero-badges">
-        <div class="hero-badge-item">
-          <div class="icon">🔬</div>
-          <div><strong>99%+ Purity</strong><br>HPLC Verified</div>
-        </div>
-        <div class="hero-badge-item">
-          <div class="icon">📋</div>
-          <div><strong>COA Included</strong><br>Every Order</div>
-        </div>
-        <div class="hero-badge-item">
-          <div class="icon">📦</div>
-          <div><strong>Fast Shipping</strong><br>24-48hr Dispatch</div>
-        </div>
-      </div>
-    </div>
 
-    <div class="hero-featured">
-      <div class="hero-pcard">
-        <span class="mol">🧪</span>
-        <h3>Semaglutide</h3>
-        <div class="desc">GLP-1 Receptor Agonist</div>
-        <div class="price">$72.00 <span class="size">/ 5mg</span></div>
-      </div>
-      <div class="hero-pcard">
-        <span class="mol">🧬</span>
-        <h3>Tirzepatide</h3>
-        <div class="desc">Dual GIP/GLP-1 Agonist</div>
-        <div class="price">$105.00 <span class="size">/ 10mg</span></div>
-      </div>
-      <div class="hero-pcard">
-        <span class="mol">⚗️</span>
-        <h3>Retatrutide</h3>
-        <div class="desc">Triple Agonist Peptide</div>
-        <div class="price">$170.00 <span class="size">/ 20mg</span></div>
-      </div>
-      <div class="hero-pcard">
-        <span class="mol">🔬</span>
-        <h3>CJC-1295 + Ipa</h3>
-        <div class="desc">GH Secretagogue Blend</div>
-        <div class="price">$60.00 <span class="size">/ blend</span></div>
-      </div>
+<!-- PAGE HEADER -->
+<div style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 50%, var(--primary-deeper) 100%); padding: 2.5rem 0; position: relative; overflow: hidden;">
+  <div style="position: absolute; inset: 0; opacity: 0.035; background-image: radial-gradient(circle, white 1px, transparent 1px); background-size: 30px 30px;"></div>
+  <div class="section" style="padding: 1rem 2rem; position: relative; z-index: 1;">
+    <div style="font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-bottom: 0.5rem;">
+      <a href="therion-peptides-reference.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Home</a>
+      <span style="margin: 0 0.4rem;">›</span>
+      <span>Bundle & Save</span>
+    </div>
+    <h1 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 700; color: white;">Bundle & Save</h1>
+    <p style="color: rgba(255,255,255,0.65); font-size: 0.95rem; margin-top: 0.5rem; max-width: 550px;">Stack your research compounds and save. Our curated bundles give you the best value on complementary peptides.</p>
+  </div>
+</div>
+
+<!-- SAVINGS BANNER -->
+<div style="background: var(--gold-light); border-bottom: 1px solid #e8dfc0; padding: 1rem 0;">
+  <div class="section" style="padding: 0.5rem 2rem; display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap; text-align: center;">
+    <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--text);">
+      <span style="font-size: 1.1rem;">💰</span>
+      <strong>Save up to 15%</strong> when you buy bundles
+    </div>
+    <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--text);">
+      <span style="font-size: 1.1rem;">📦</span>
+      <strong>Free shipping</strong> on all bundles
+    </div>
+    <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--text);">
+      <span style="font-size: 1.1rem;">📋</span>
+      <strong>COA included</strong> for every vial
     </div>
   </div>
 </div>
 
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="trust-inner">
-    <div class="trust-item">
-      <div class="ti-icon">🔬</div>
-      <div><strong>99%+ Purity</strong><span>HPLC & MS Verified</span></div>
-    </div>
-    <div class="trust-item">
-      <div class="ti-icon">🏭</div>
-      <div><strong>GMP Compliant</strong><span>ISO 9001:2015</span></div>
-    </div>
-    <div class="trust-item">
-      <div class="ti-icon">📦</div>
-      <div><strong>Fast Shipping</strong><span>24-48hr Dispatch</span></div>
-    </div>
-    <div class="trust-item">
-      <div class="ti-icon">💰</div>
-      <div><strong>Secure Checkout</strong><span>SSL Encrypted</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- CATEGORIES -->
+<!-- BUNDLES GRID -->
 <div class="section reveal">
-  <div class="section-header">
-    <div>
-      <h2>Shop by Category</h2>
-      <p>Browse our research compound catalog</p>
-    </div>
-    <a href="#" class="view-all">View All →</a>
-  </div>
 
-  <div class="categories-grid">
-    <a href="#" class="cat-card">
-      <div class="cat-icon">🧬</div>
-      <h3>GLP-1 Agonists</h3>
-      <div class="count">Semaglutide, Tirzepatide</div>
-    </a>
-    <a href="#" class="cat-card">
-      <div class="cat-icon">⚗️</div>
-      <h3>Multi-Agonists</h3>
-      <div class="count">Retatrutide & more</div>
-    </a>
-    <a href="#" class="cat-card">
-      <div class="cat-icon">🔬</div>
-      <h3>Growth Hormone</h3>
-      <div class="count">CJC-1295, Ipamorelin</div>
-    </a>
-    <a href="#" class="cat-card">
-      <div class="cat-icon">🧪</div>
-      <h3>Recovery</h3>
-      <div class="count">GHK-Cu, BPC-157</div>
-    </a>
-    <a href="#" class="cat-card">
-      <div class="cat-icon">✨</div>
-      <h3>Skin & Glow</h3>
-      <div class="count">Glow Blend & more</div>
-    </a>
-    <a href="#" class="cat-card">
-      <div class="cat-icon">⚡</div>
-      <h3>NAD+</h3>
-      <div class="count">NAD+ 1000mg</div>
-    </a>
-  </div>
-</div>
-
-<!-- PRODUCTS -->
-<div id="products" class="products-section">
-  <div class="section reveal">
-    <div class="section-header">
-      <div>
-        <h2>Our Peptides</h2>
-        <p>Research-grade compounds — all products for in-vitro use only</p>
-      </div>
-      <a href="#" class="view-all">View Full Catalog →</a>
-    </div>
-
-    <div class="products-grid">
-
-      <!-- Semaglutide -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-purity">99%+ Pure</span>
-          <span class="product-badge badge-new">Popular</span>
-        </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">5mg</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-cat">GLP-1 Agonist</div>
-          <h3>Semaglutide</h3>
-          <div class="product-desc">GLP-1 Receptor Agonist</div>
-          <div class="product-meta">
-            <div>
-              <div class="price">$72.00</div>
-              <div class="size-info">5mg / vial</div>
-            </div>
-            <button class="add-btn">+</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tirzepatide -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-purity">99%+ Pure</span>
-          <span class="product-badge badge-new">New</span>
-        </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">10mg</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Dual Agonist</div>
-          <h3>Tirzepatide</h3>
-          <div class="product-desc">Dual GIP/GLP-1 Receptor Agonist</div>
-          <div class="product-meta">
-            <div>
-              <div class="price">$105.00</div>
-              <div class="size-info">10mg / vial</div>
-            </div>
-            <button class="add-btn">+</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Retatrutide -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-purity">99%+ Pure</span>
-          <span class="product-badge badge-new">Premium</span>
-        </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">20mg</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Triple Agonist</div>
-          <h3>Retatrutide</h3>
-          <div class="product-desc">GLP-1/GIP/Glucagon Triple Agonist</div>
-          <div class="product-meta">
-            <div>
-              <div class="price">$170.00</div>
-              <div class="size-info">20mg / vial</div>
-            </div>
-            <button class="add-btn">+</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- CJC-1295 + Ipamorelin -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-purity">99%+ Pure</span>
-        </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">BLEND</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-cat">GH Secretagogue</div>
-          <h3>CJC-1295 + Ipamorelin</h3>
-          <div class="product-desc">Growth Hormone Releasing Blend</div>
-          <div class="product-meta">
-            <div>
-              <div class="price">$60.00</div>
-              <div class="size-info">blend / vial</div>
-            </div>
-            <button class="add-btn">+</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- GHK-Cu -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-purity">99%+ Pure</span>
-        </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">50mg</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Copper Peptide</div>
-          <h3>GHK-Cu</h3>
-          <div class="product-desc">Copper Peptide Complex</div>
-          <div class="product-meta">
-            <div>
-              <div class="price">$40.00</div>
-              <div class="size-info">50mg / vial</div>
-            </div>
-            <button class="add-btn">+</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Glow Blend -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-new">Exclusive</span>
-        </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">~70mg</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Skin & Beauty</div>
-          <h3>Glow Blend</h3>
-          <div class="product-desc">Multi-Peptide Skin Complex</div>
-          <div class="product-meta">
-            <div>
-              <div class="price">$100.00</div>
-              <div class="size-info">~70mg / vial</div>
-            </div>
-            <button class="add-btn">+</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- NAD+ -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-purity">High Purity</span>
-        </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">1000mg</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Coenzyme</div>
-          <h3>NAD+</h3>
-          <div class="product-desc">Nicotinamide Adenine Dinucleotide</div>
-          <div class="product-meta">
-            <div>
-              <div class="price">$150.00</div>
-              <div class="size-info">1000mg / vial</div>
-            </div>
-            <button class="add-btn">+</button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- WHY US -->
-<div class="section reveal">
-  <div class="section-header">
-    <div>
-      <h2>Why Therion Peptides</h2>
-      <p>Quality, transparency, and value for researchers</p>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+    <div style="font-size: 0.88rem; color: var(--text-muted);">Showing <strong style="color: var(--text);">4</strong> bundles</div>
+    <div style="display: flex; gap: 0.75rem; align-items: center;">
+      <span style="font-size: 0.85rem; color: var(--text-secondary);">Sort by:</span>
+      <select style="padding: 0.5rem 0.8rem; border: 2px solid var(--border); border-radius: 8px; font-family: var(--font); font-size: 0.85rem; color: var(--text); background: var(--white); outline: none; cursor: pointer;">
+        <option>Most Popular</option>
+        <option>Price: Low to High</option>
+        <option>Price: High to Low</option>
+        <option>Biggest Savings</option>
+      </select>
     </div>
   </div>
 
-  <div class="info-grid">
-    <div class="info-card">
-      <div class="info-icon">🔬</div>
-      <h3>HPLC & MS Verified</h3>
-      <p>Every batch undergoes High-Performance Liquid Chromatography and Mass Spectrometry analysis to confirm identity and purity exceeding 99%.</p>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">📋</div>
-      <h3>Certificate of Analysis</h3>
-      <p>Each product ships with a detailed COA — full transparency into purity, molecular weight, and third-party testing results.</p>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">💰</div>
-      <h3>Competitive Pricing</h3>
-      <p>Premium quality at fair prices. We partner directly with GMP manufacturers to deliver real value to researchers.</p>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">🏭</div>
-      <h3>WHO/GMP & ISO Sourced</h3>
-      <p>All products synthesized in WHO/GMP and ISO 9001:2015 certified facilities for consistent, reproducible quality.</p>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">❄️</div>
-      <h3>Cold-Chain Shipping</h3>
-      <p>Temperature-sensitive compounds stored and shipped under controlled conditions to preserve stability and bioactivity.</p>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">⚡</div>
-      <h3>24-48hr Dispatch</h3>
-      <p>Most orders ship within 24-48 hours. Fast, reliable delivery because your research timelines matter.</p>
-    </div>
-  </div>
-</div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem;">
 
-<!-- RESEARCH CTA -->
-<div class="section reveal">
-  <div class="research-banner">
-    <div>
-      <h2>Peptide Research & Resources</h2>
-      <p>Explore our library of scientific publications, reconstitution guides, storage protocols, and peptide information to support your research.</p>
+    <!-- BUNDLE 1: GLP-1 Stack -->
+    <div style="background: var(--white); border: 2px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.25s; position: relative;" onmouseover="this.style.boxShadow='0 10px 40px rgba(0,0,0,0.09)'; this.style.transform='translateY(-4px)'; this.style.borderColor='var(--gold)'" onmouseout="this.style.boxShadow='none'; this.style.transform='none'; this.style.borderColor='var(--border)'">
+      <!-- Save badge -->
+      <div style="position: absolute; top: 1rem; right: 1rem; background: var(--gold); color: var(--primary-deeper); padding: 0.3rem 0.75rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; z-index: 2;">SAVE 12%</div>
+      <!-- Bundle header -->
+      <div style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 1.5rem; color: white;">
+        <div style="font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 0.4rem;">Best Seller</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; margin-bottom: 0.3rem;">GLP-1 Research Stack</h3>
+        <p style="font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.5;">Complete GLP-1 agonist research bundle for metabolic pathway studies.</p>
+      </div>
+      <!-- Bundle contents -->
+      <div style="padding: 1.5rem;">
+        <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.75rem;">Includes:</div>
+
+        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 0; border-bottom: 1px solid var(--border-light);">
+          <div style="width: 36px; height: 36px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0;">🧪</div>
+          <div style="flex: 1;"><div style="font-weight: 600; font-size: 0.88rem;">Semaglutide</div><div style="font-size: 0.75rem; color: var(--text-muted);">5mg / vial</div></div>
+          <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through;">$72.00</div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 0;">
+          <div style="width: 36px; height: 36px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0;">🧬</div>
+          <div style="flex: 1;"><div style="font-weight: 600; font-size: 0.88rem;">Tirzepatide</div><div style="font-size: 0.75rem; color: var(--text-muted);">10mg / vial</div></div>
+          <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through;">$105.00</div>
+        </div>
+
+        <!-- Pricing -->
+        <div style="margin-top: 1.25rem; padding-top: 1.25rem; border-top: 2px solid var(--border-light); display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 0.75rem; color: var(--text-muted);">Bundle Price</div>
+            <div style="display: flex; align-items: baseline; gap: 0.5rem;">
+              <span style="font-family: var(--font-mono); font-size: 1.5rem; font-weight: 700; color: var(--text);">$155.00</span>
+              <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through;">$177.00</span>
+            </div>
+          </div>
+          <button style="background: var(--gold); color: var(--primary-deeper); border: none; padding: 0.7rem 1.4rem; border-radius: 8px; font-family: var(--font); font-weight: 700; font-size: 0.88rem; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='#d4b35a'; this.style.boxShadow='0 4px 16px rgba(201,168,76,0.3)'" onmouseout="this.style.background='var(--gold)'; this.style.boxShadow='none'">Add Bundle</button>
+        </div>
+      </div>
     </div>
-    <a href="#" class="btn btn-gold">Browse Articles →</a>
+
+    <!-- BUNDLE 2: Triple Agonist Stack -->
+    <div style="background: var(--white); border: 2px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.25s; position: relative;" onmouseover="this.style.boxShadow='0 10px 40px rgba(0,0,0,0.09)'; this.style.transform='translateY(-4px)'; this.style.borderColor='var(--gold)'" onmouseout="this.style.boxShadow='none'; this.style.transform='none'; this.style.borderColor='var(--border)'">
+      <div style="position: absolute; top: 1rem; right: 1rem; background: var(--gold); color: var(--primary-deeper); padding: 0.3rem 0.75rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; z-index: 2;">SAVE 15%</div>
+      <div style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 1.5rem; color: white;">
+        <div style="font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 0.4rem;">Premium</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; margin-bottom: 0.3rem;">Triple Agonist Research Stack</h3>
+        <p style="font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.5;">The complete metabolic research bundle — GLP-1, dual, and triple agonist peptides.</p>
+      </div>
+      <div style="padding: 1.5rem;">
+        <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.75rem;">Includes:</div>
+
+        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 0; border-bottom: 1px solid var(--border-light);">
+          <div style="width: 36px; height: 36px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0;">🧪</div>
+          <div style="flex: 1;"><div style="font-weight: 600; font-size: 0.88rem;">Semaglutide</div><div style="font-size: 0.75rem; color: var(--text-muted);">5mg / vial</div></div>
+          <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through;">$72.00</div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 0; border-bottom: 1px solid var(--border-light);">
+          <div style="width: 36px; height: 36px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0;">🧬</div>
+          <div style="flex: 1;"><div style="font-weight: 600; font-size: 0.88rem;">Tirzepatide</div><div style="font-size: 0.75rem; color: var(--text-muted);">10mg / vial</div></div>
+          <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through;">$105.00</div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 0;">
+          <div style="width: 36px; height: 36px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0;">⚗️</div>
+          <div style="flex: 1;"><div style="font-weight: 600; font-size: 0.88rem;">Retatrutide</div><div style="font-size: 0.75rem; color: var(--text-muted);">20mg / vial</div></div>
+          <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through;">$170.00</div>
+        </div>
+
+        <div style="margin-top: 1.25rem; padding-top: 1.25rem; border-top: 2px solid var(--border-light); display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 0.75rem; color: var(--text-muted);">Bundle Price</div>
+            <div style="display: flex; align-items: baseline; gap: 0.5rem;">
+              <span style="font-family: var(--font-mono); font-size: 1.5rem; font-weight: 700; color: var(--text);">$295.00</span>
+              <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through;">$347.00</span>
+            </div>
+          </div>
+          <button style="background: var(--gold); color: var(--primary-deeper); border: none; padding: 0.7rem 1.4rem; border-radius: 8px; font-family: var(--font); font-weight: 700; font-size: 0.88rem; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='#d4b35a'; this.style.boxShadow='0 4px 16px rgba(201,168,76,0.3)'" onmouseout="this.style.background='var(--gold)'; this.style.boxShadow='none'">Add Bundle</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BUNDLE 3: Recovery & Glow -->
+    <div style="background: var(--white); border: 2px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.25s; position: relative;" onmouseover="this.style.boxShadow='0 10px 40px rgba(0,0,0,0.09)'; this.style.transform='translateY(-4px)'; this.style.borderColor='var(--gold)'" onmouseout="this.style.boxShadow='none'; this.style.transform='none'; this.style.borderColor='var(--border)'">
+      <div style="position: absolute; top: 1rem; right: 1rem; background: var(--gold); color: var(--primary-deeper); padding: 0.3rem 0.75rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; z-index: 2;">SAVE 10%</div>
+      <div style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 1.5rem; color: white;">
+        <div style="font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 0.4rem;">Popular</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; margin-bottom: 0.3rem;">Recovery & Glow Stack</h3>
+        <p style="font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.5;">Copper peptide and skin complex for tissue repair and skin rejuvenation research.</p>
+      </div>
+      <div style="padding: 1.5rem;">
+        <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.75rem;">Includes:</div>
+
+        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 0; border-bottom: 1px solid var(--border-light);">
+          <div style="width: 36px; height: 36px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0;">🔬</div>
+          <div style="flex: 1;"><div style="font-weight: 600; font-size: 0.88rem;">GHK-Cu</div><div style="font-size: 0.75rem; color: var(--text-muted);">50mg / vial</div></div>
+          <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through;">$40.00</div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 0;">
+          <div style="width: 36px; height: 36px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0;">✨</div>
+          <div style="flex: 1;"><div style="font-weight: 600; font-size: 0.88rem;">Glow Blend</div><div style="font-size: 0.75rem; color: var(--text-muted);">~70mg / vial</div></div>
+          <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through;">$100.00</div>
+        </div>
+
+        <div style="margin-top: 1.25rem; padding-top: 1.25rem; border-top: 2px solid var(--border-light); display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 0.75rem; color: var(--text-muted);">Bundle Price</div>
+            <div style="display: flex; align-items: baseline; gap: 0.5rem;">
+              <span style="font-family: var(--font-mono); font-size: 1.5rem; font-weight: 700; color: var(--text);">$126.00</span>
+              <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through;">$140.00</span>
+            </div>
+          </div>
+          <button style="background: var(--gold); color: var(--primary-deeper); border: none; padding: 0.7rem 1.4rem; border-radius: 8px; font-family: var(--font); font-weight: 700; font-size: 0.88rem; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='#d4b35a'; this.style.boxShadow='0 4px 16px rgba(201,168,76,0.3)'" onmouseout="this.style.background='var(--gold)'; this.style.boxShadow='none'">Add Bundle</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BUNDLE 4: Complete Research Stack -->
+    <div style="background: var(--white); border: 2px solid var(--gold); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.25s; position: relative;" onmouseover="this.style.boxShadow='0 10px 40px rgba(201,168,76,0.15)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='none'">
+      <div style="position: absolute; top: 1rem; right: 1rem; background: var(--primary); color: white; padding: 0.3rem 0.75rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; z-index: 2;">BEST VALUE</div>
+      <div style="background: linear-gradient(135deg, #1a1a2e, var(--primary-deeper)); padding: 1.5rem; color: white;">
+        <div style="font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 0.4rem;">⭐ Ultimate Bundle</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; margin-bottom: 0.3rem;">Complete Research Collection</h3>
+        <p style="font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.5;">Every Therion peptide in one bundle. Maximum savings for comprehensive research programs.</p>
+      </div>
+      <div style="padding: 1.5rem;">
+        <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.75rem;">Includes all 7 products:</div>
+
+        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; border-bottom: 1px solid var(--border-light);">
+          <div style="width: 30px; height: 30px; background: var(--primary-light); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0;">🧪</div>
+          <div style="flex: 1; font-weight: 500; font-size: 0.85rem;">Semaglutide <span style="color: var(--text-muted); font-weight: 400;">5mg</span></div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; border-bottom: 1px solid var(--border-light);">
+          <div style="width: 30px; height: 30px; background: var(--primary-light); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0;">🧬</div>
+          <div style="flex: 1; font-weight: 500; font-size: 0.85rem;">Tirzepatide <span style="color: var(--text-muted); font-weight: 400;">10mg</span></div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; border-bottom: 1px solid var(--border-light);">
+          <div style="width: 30px; height: 30px; background: var(--primary-light); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0;">⚗️</div>
+          <div style="flex: 1; font-weight: 500; font-size: 0.85rem;">Retatrutide <span style="color: var(--text-muted); font-weight: 400;">20mg</span></div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; border-bottom: 1px solid var(--border-light);">
+          <div style="width: 30px; height: 30px; background: var(--primary-light); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0;">🔬</div>
+          <div style="flex: 1; font-weight: 500; font-size: 0.85rem;">CJC-1295 + Ipamorelin <span style="color: var(--text-muted); font-weight: 400;">blend</span></div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; border-bottom: 1px solid var(--border-light);">
+          <div style="width: 30px; height: 30px; background: var(--primary-light); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0;">🧫</div>
+          <div style="flex: 1; font-weight: 500; font-size: 0.85rem;">GHK-Cu <span style="color: var(--text-muted); font-weight: 400;">50mg</span></div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; border-bottom: 1px solid var(--border-light);">
+          <div style="width: 30px; height: 30px; background: var(--primary-light); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0;">✨</div>
+          <div style="flex: 1; font-weight: 500; font-size: 0.85rem;">Glow Blend <span style="color: var(--text-muted); font-weight: 400;">~70mg</span></div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0;">
+          <div style="width: 30px; height: 30px; background: var(--primary-light); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0;">⚡</div>
+          <div style="flex: 1; font-weight: 500; font-size: 0.85rem;">NAD+ <span style="color: var(--text-muted); font-weight: 400;">1000mg</span></div>
+        </div>
+
+        <div style="margin-top: 1.25rem; padding-top: 1.25rem; border-top: 2px solid var(--border-light); display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 0.75rem; color: var(--text-muted);">Bundle Price</div>
+            <div style="display: flex; align-items: baseline; gap: 0.5rem;">
+              <span style="font-family: var(--font-mono); font-size: 1.5rem; font-weight: 700; color: var(--text);">$509.00</span>
+              <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through;">$597.00</span>
+            </div>
+            <div style="font-size: 0.78rem; color: var(--accent); font-weight: 600; margin-top: 0.2rem;">You save $88.00</div>
+          </div>
+          <button style="background: var(--primary); color: white; border: none; padding: 0.7rem 1.4rem; border-radius: 8px; font-family: var(--font); font-weight: 700; font-size: 0.88rem; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='var(--gold)'; this.style.color='var(--primary-deeper)'" onmouseout="this.style.background='var(--primary)'; this.style.color='white'">Add Bundle</button>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
