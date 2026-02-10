@@ -272,10 +272,8 @@ img { max-width: 100%; height: auto; }
   max-width: 1280px; margin: 0 auto; padding: 4.5rem 2rem;
   display: grid; grid-template-columns: 1.1fr 0.9fr;
   gap: 3rem; align-items: center; position: relative; z-index: 1;
-  /* background: lightblue url("./assets/image.jpg") no-repeat fixed center; */
-
+  
 }
-
 
 .hero-text { color: white; }
 
