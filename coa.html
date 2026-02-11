@@ -1261,225 +1261,238 @@
 
 
 <!-- PAGE HEADER -->
-<div style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 50%, var(--primary-deeper) 100%); padding: 2.5rem 0; position: relative; overflow: hidden;">
-  <div style="position: absolute; inset: 0; opacity: 0.035; background-image: radial-gradient(circle, white 1px, transparent 1px); background-size: 30px 30px;"></div>
-  <div class="section" style="padding: 1rem 2rem; position: relative; z-index: 1;">
-    <div style="font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-bottom: 0.5rem;">
-      <a href="therion-peptides-reference.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Home</a>
+<div style="background: var(--white); border-bottom: 1px solid var(--border-light); padding: 2rem 0;">
+  <div class="section" style="padding: 1rem 2rem;">
+    <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+      <a href="therion-peptides-reference.html" style="color: var(--primary); text-decoration: none;">Home</a>
       <span style="margin: 0 0.4rem;">›</span>
-      <span>Bundle & Save</span>
+      <span>Certificate of Analysis</span>
     </div>
-    <h1 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 700; color: white;">Bundle & Save</h1>
-    <p style="color: rgba(255,255,255,0.65); font-size: 0.95rem; margin-top: 0.5rem; max-width: 550px;">Stack your research compounds and save. Our curated bundles give you the best value on complementary peptides.</p>
+    <h1 style="font-family: var(--font-serif); font-size: 2rem; font-weight: 700; color: var(--primary);">Certificate of Analysis</h1>
+    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.4rem; max-width: 600px;">Verify the purity and identity of every Therion Peptides product. Search by product name or lot number.</p>
   </div>
 </div>
 
-<!-- SAVINGS BANNER -->
-<div style="background: var(--gold-light); border-bottom: 1px solid #e8dfc0; padding: 1rem 0;">
-  <div class="section" style="padding: 0.5rem 2rem; display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap; text-align: center;">
-    <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--text);">
-      <span style="font-size: 1.1rem;">💰</span>
-      <strong>Save up to 15%</strong> when you buy bundles
+<!-- SEARCH BAR -->
+<div style="background: var(--white); border-bottom: 1px solid var(--border-light); padding: 1.25rem 0;">
+  <div class="section" style="padding: 0 2rem; display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 280px; position: relative;">
+      <span style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.9rem; pointer-events: none;">🔍</span>
+      <input type="text" placeholder="Search by product name" style="width: 100%; padding: 0.75rem 1rem 0.75rem 2.6rem; border: 2px solid var(--border); border-radius: 8px; font-family: var(--font); font-size: 0.9rem; color: var(--text); outline: none; transition: border-color 0.2s; background: var(--bg);" onfocus="this.style.borderColor='var(--primary)'; this.style.background='white'" onblur="this.style.borderColor='var(--border)'; this.style.background='var(--bg)'">
     </div>
-    <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--text);">
-      <span style="font-size: 1.1rem;">📦</span>
-      <strong>Free shipping</strong> on all bundles
-    </div>
-    <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--text);">
-      <span style="font-size: 1.1rem;">📋</span>
-      <strong>COA included</strong> for every vial
-    </div>
+    <button style="background: var(--primary); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; font-family: var(--font); font-weight: 700; font-size: 0.88rem; cursor: pointer; transition: background 0.2s; white-space: nowrap;" onmouseover="this.style.background='var(--primary-dark)'" onmouseout="this.style.background='var(--primary)'">Search By Lot Number</button>
   </div>
 </div>
 
-<!-- BUNDLES GRID -->
+<!-- COA TABLE -->
 <div class="section reveal">
+  <div style="display: flex; flex-direction: column; gap: 0.75rem;">
 
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
-    <div style="font-size: 0.88rem; color: var(--text-muted);">Showing <strong style="color: var(--text);">4</strong> bundles</div>
-    <div style="display: flex; gap: 0.75rem; align-items: center;">
-      <span style="font-size: 0.85rem; color: var(--text-secondary);">Sort by:</span>
-      <select style="padding: 0.5rem 0.8rem; border: 2px solid var(--border); border-radius: 8px; font-family: var(--font); font-size: 0.85rem; color: var(--text); background: var(--white); outline: none; cursor: pointer;">
-        <option>Most Popular</option>
-        <option>Price: Low to High</option>
-        <option>Price: High to Low</option>
-        <option>Biggest Savings</option>
-      </select>
-    </div>
-  </div>
-
-  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem;">
-
-    <!-- BUNDLE 1: GLP-1 Stack -->
-    <div style="background: var(--white); border: 2px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.25s; position: relative;" onmouseover="this.style.boxShadow='0 10px 40px rgba(0,0,0,0.09)'; this.style.transform='translateY(-4px)'; this.style.borderColor='var(--gold)'" onmouseout="this.style.boxShadow='none'; this.style.transform='none'; this.style.borderColor='var(--border)'">
-      <!-- Save badge -->
-      <div style="position: absolute; top: 1rem; right: 1rem; background: var(--gold); color: var(--primary-deeper); padding: 0.3rem 0.75rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; z-index: 2;">SAVE 12%</div>
-      <!-- Bundle header -->
-      <div style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 1.5rem; color: white;">
-        <div style="font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 0.4rem;">Best Seller</div>
-        <h3 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; margin-bottom: 0.3rem;">GLP-1 Research Stack</h3>
-        <p style="font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.5;">Complete GLP-1 agonist research bundle for metabolic pathway studies.</p>
-      </div>
-      <!-- Bundle contents -->
-      <div style="padding: 1.5rem;">
-        <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.75rem;">Includes:</div>
-
-        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 0; border-bottom: 1px solid var(--border-light);">
-          <div style="width: 36px; height: 36px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0;">🧪</div>
-          <div style="flex: 1;"><div style="font-weight: 600; font-size: 0.88rem;">Semaglutide</div><div style="font-size: 0.75rem; color: var(--text-muted);">5mg / vial</div></div>
-          <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through;">$72.00</div>
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 0;">
-          <div style="width: 36px; height: 36px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0;">🧬</div>
-          <div style="flex: 1;"><div style="font-weight: 600; font-size: 0.88rem;">Tirzepatide</div><div style="font-size: 0.75rem; color: var(--text-muted);">10mg / vial</div></div>
-          <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through;">$105.00</div>
-        </div>
-
-        <!-- Pricing -->
-        <div style="margin-top: 1.25rem; padding-top: 1.25rem; border-top: 2px solid var(--border-light); display: flex; justify-content: space-between; align-items: center;">
-          <div>
-            <div style="font-size: 0.75rem; color: var(--text-muted);">Bundle Price</div>
-            <div style="display: flex; align-items: baseline; gap: 0.5rem;">
-              <span style="font-family: var(--font-mono); font-size: 1.5rem; font-weight: 700; color: var(--text);">$155.00</span>
-              <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through;">$177.00</span>
-            </div>
-          </div>
-          <button style="background: var(--gold); color: var(--primary-deeper); border: none; padding: 0.7rem 1.4rem; border-radius: 8px; font-family: var(--font); font-weight: 700; font-size: 0.88rem; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='#d4b35a'; this.style.boxShadow='0 4px 16px rgba(201,168,76,0.3)'" onmouseout="this.style.background='var(--gold)'; this.style.boxShadow='none'">Add Bundle</button>
+    <!-- Semaglutide -->
+    <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; display: grid; grid-template-columns: 60px 1.2fr 1fr 1.5fr auto; gap: 1.5rem; align-items: center;">
+      <div style="width: 60px; height: 60px; background: var(--bg); border: 1px solid var(--border-light); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div style="width: 20px; height: 5px; background: var(--primary); border-radius: 2px 2px 0 0;"></div>
+          <div style="width: 12px; height: 4px; background: rgba(27,77,122,0.15);"></div>
+          <div style="width: 22px; height: 30px; background: rgba(58,143,212,0.08); border: 1px solid rgba(27,77,122,0.12); border-radius: 0 0 3px 3px;"></div>
         </div>
       </div>
+      <div>
+        <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.15rem;">Product Name</div>
+        <div style="font-size: 1rem; font-weight: 700; color: var(--text);">Semaglutide</div>
+      </div>
+      <div>
+        <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.3rem;">Dose</div>
+        <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+          <span style="padding: 0.3rem 0.7rem; border: 2px solid var(--primary); border-radius: 6px; font-size: 0.8rem; font-weight: 600; color: var(--primary); background: var(--primary-light);">5mg</span>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.3rem;">Lot Batch</div>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <span style="padding: 0.4rem 0.9rem; background: var(--primary); color: white; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='var(--primary-dark)'" onmouseout="this.style.background='var(--primary)'">THP-4810293</span>
+          <span style="padding: 0.4rem 0.9rem; background: var(--primary); color: white; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='var(--primary-dark)'" onmouseout="this.style.background='var(--primary)'">THP-3927461</span>
+        </div>
+      </div>
+      <a href="#" style="font-size: 0.82rem; color: var(--text-muted); white-space: nowrap; transition: color 0.2s; text-decoration: none;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">View all Lots</a>
     </div>
 
-    <!-- BUNDLE 2: Triple Agonist Stack -->
-    <div style="background: var(--white); border: 2px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.25s; position: relative;" onmouseover="this.style.boxShadow='0 10px 40px rgba(0,0,0,0.09)'; this.style.transform='translateY(-4px)'; this.style.borderColor='var(--gold)'" onmouseout="this.style.boxShadow='none'; this.style.transform='none'; this.style.borderColor='var(--border)'">
-      <div style="position: absolute; top: 1rem; right: 1rem; background: var(--gold); color: var(--primary-deeper); padding: 0.3rem 0.75rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; z-index: 2;">SAVE 15%</div>
-      <div style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 1.5rem; color: white;">
-        <div style="font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 0.4rem;">Premium</div>
-        <h3 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; margin-bottom: 0.3rem;">Triple Agonist Research Stack</h3>
-        <p style="font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.5;">The complete metabolic research bundle — GLP-1, dual, and triple agonist peptides.</p>
-      </div>
-      <div style="padding: 1.5rem;">
-        <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.75rem;">Includes:</div>
-
-        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 0; border-bottom: 1px solid var(--border-light);">
-          <div style="width: 36px; height: 36px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0;">🧪</div>
-          <div style="flex: 1;"><div style="font-weight: 600; font-size: 0.88rem;">Semaglutide</div><div style="font-size: 0.75rem; color: var(--text-muted);">5mg / vial</div></div>
-          <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through;">$72.00</div>
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 0; border-bottom: 1px solid var(--border-light);">
-          <div style="width: 36px; height: 36px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0;">🧬</div>
-          <div style="flex: 1;"><div style="font-weight: 600; font-size: 0.88rem;">Tirzepatide</div><div style="font-size: 0.75rem; color: var(--text-muted);">10mg / vial</div></div>
-          <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through;">$105.00</div>
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 0;">
-          <div style="width: 36px; height: 36px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0;">⚗️</div>
-          <div style="flex: 1;"><div style="font-weight: 600; font-size: 0.88rem;">Retatrutide</div><div style="font-size: 0.75rem; color: var(--text-muted);">20mg / vial</div></div>
-          <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through;">$170.00</div>
-        </div>
-
-        <div style="margin-top: 1.25rem; padding-top: 1.25rem; border-top: 2px solid var(--border-light); display: flex; justify-content: space-between; align-items: center;">
-          <div>
-            <div style="font-size: 0.75rem; color: var(--text-muted);">Bundle Price</div>
-            <div style="display: flex; align-items: baseline; gap: 0.5rem;">
-              <span style="font-family: var(--font-mono); font-size: 1.5rem; font-weight: 700; color: var(--text);">$295.00</span>
-              <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through;">$347.00</span>
-            </div>
-          </div>
-          <button style="background: var(--gold); color: var(--primary-deeper); border: none; padding: 0.7rem 1.4rem; border-radius: 8px; font-family: var(--font); font-weight: 700; font-size: 0.88rem; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='#d4b35a'; this.style.boxShadow='0 4px 16px rgba(201,168,76,0.3)'" onmouseout="this.style.background='var(--gold)'; this.style.boxShadow='none'">Add Bundle</button>
+    <!-- Tirzepatide -->
+    <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; display: grid; grid-template-columns: 60px 1.2fr 1fr 1.5fr auto; gap: 1.5rem; align-items: center;">
+      <div style="width: 60px; height: 60px; background: var(--bg); border: 1px solid var(--border-light); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div style="width: 20px; height: 5px; background: var(--primary); border-radius: 2px 2px 0 0;"></div>
+          <div style="width: 12px; height: 4px; background: rgba(27,77,122,0.15);"></div>
+          <div style="width: 22px; height: 30px; background: rgba(58,143,212,0.08); border: 1px solid rgba(27,77,122,0.12); border-radius: 0 0 3px 3px;"></div>
         </div>
       </div>
+      <div>
+        <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.15rem;">Product Name</div>
+        <div style="font-size: 1rem; font-weight: 700; color: var(--text);">Tirzepatide</div>
+      </div>
+      <div>
+        <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.3rem;">Dose</div>
+        <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+          <span style="padding: 0.3rem 0.7rem; border: 2px solid var(--primary); border-radius: 6px; font-size: 0.8rem; font-weight: 600; color: var(--primary); background: var(--primary-light);">10mg</span>
+          <span style="padding: 0.3rem 0.7rem; border: 2px solid var(--border); border-radius: 6px; font-size: 0.8rem; font-weight: 500; color: var(--text-secondary);">15mg</span>
+          <span style="padding: 0.3rem 0.7rem; border: 2px solid var(--border); border-radius: 6px; font-size: 0.8rem; font-weight: 500; color: var(--text-secondary);">30mg</span>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.3rem;">Lot Batch</div>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <span style="padding: 0.4rem 0.9rem; background: var(--primary); color: white; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='var(--primary-dark)'" onmouseout="this.style.background='var(--primary)'">THP-5920184</span>
+          <span style="padding: 0.4rem 0.9rem; background: var(--primary); color: white; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='var(--primary-dark)'" onmouseout="this.style.background='var(--primary)'">THP-2748301</span>
+        </div>
+      </div>
+      <a href="#" style="font-size: 0.82rem; color: var(--text-muted); white-space: nowrap; transition: color 0.2s; text-decoration: none;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">View all Lots</a>
     </div>
 
-    <!-- BUNDLE 3: Recovery & Glow -->
-    <div style="background: var(--white); border: 2px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.25s; position: relative;" onmouseover="this.style.boxShadow='0 10px 40px rgba(0,0,0,0.09)'; this.style.transform='translateY(-4px)'; this.style.borderColor='var(--gold)'" onmouseout="this.style.boxShadow='none'; this.style.transform='none'; this.style.borderColor='var(--border)'">
-      <div style="position: absolute; top: 1rem; right: 1rem; background: var(--gold); color: var(--primary-deeper); padding: 0.3rem 0.75rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; z-index: 2;">SAVE 10%</div>
-      <div style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 1.5rem; color: white;">
-        <div style="font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 0.4rem;">Popular</div>
-        <h3 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; margin-bottom: 0.3rem;">Recovery & Glow Stack</h3>
-        <p style="font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.5;">Copper peptide and skin complex for tissue repair and skin rejuvenation research.</p>
-      </div>
-      <div style="padding: 1.5rem;">
-        <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.75rem;">Includes:</div>
-
-        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 0; border-bottom: 1px solid var(--border-light);">
-          <div style="width: 36px; height: 36px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0;">🔬</div>
-          <div style="flex: 1;"><div style="font-weight: 600; font-size: 0.88rem;">GHK-Cu</div><div style="font-size: 0.75rem; color: var(--text-muted);">50mg / vial</div></div>
-          <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through;">$40.00</div>
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 0;">
-          <div style="width: 36px; height: 36px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0;">✨</div>
-          <div style="flex: 1;"><div style="font-weight: 600; font-size: 0.88rem;">Glow Blend</div><div style="font-size: 0.75rem; color: var(--text-muted);">~70mg / vial</div></div>
-          <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through;">$100.00</div>
-        </div>
-
-        <div style="margin-top: 1.25rem; padding-top: 1.25rem; border-top: 2px solid var(--border-light); display: flex; justify-content: space-between; align-items: center;">
-          <div>
-            <div style="font-size: 0.75rem; color: var(--text-muted);">Bundle Price</div>
-            <div style="display: flex; align-items: baseline; gap: 0.5rem;">
-              <span style="font-family: var(--font-mono); font-size: 1.5rem; font-weight: 700; color: var(--text);">$126.00</span>
-              <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through;">$140.00</span>
-            </div>
-          </div>
-          <button style="background: var(--gold); color: var(--primary-deeper); border: none; padding: 0.7rem 1.4rem; border-radius: 8px; font-family: var(--font); font-weight: 700; font-size: 0.88rem; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='#d4b35a'; this.style.boxShadow='0 4px 16px rgba(201,168,76,0.3)'" onmouseout="this.style.background='var(--gold)'; this.style.boxShadow='none'">Add Bundle</button>
+    <!-- Retatrutide -->
+    <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; display: grid; grid-template-columns: 60px 1.2fr 1fr 1.5fr auto; gap: 1.5rem; align-items: center;">
+      <div style="width: 60px; height: 60px; background: var(--bg); border: 1px solid var(--border-light); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div style="width: 20px; height: 5px; background: var(--primary); border-radius: 2px 2px 0 0;"></div>
+          <div style="width: 12px; height: 4px; background: rgba(27,77,122,0.15);"></div>
+          <div style="width: 22px; height: 30px; background: rgba(58,143,212,0.08); border: 1px solid rgba(27,77,122,0.12); border-radius: 0 0 3px 3px;"></div>
         </div>
       </div>
+      <div>
+        <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.15rem;">Product Name</div>
+        <div style="font-size: 1rem; font-weight: 700; color: var(--text);">Retatrutide</div>
+      </div>
+      <div>
+        <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.3rem;">Dose</div>
+        <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+          <span style="padding: 0.3rem 0.7rem; border: 2px solid var(--primary); border-radius: 6px; font-size: 0.8rem; font-weight: 600; color: var(--primary); background: var(--primary-light);">10mg</span>
+          <span style="padding: 0.3rem 0.7rem; border: 2px solid var(--border); border-radius: 6px; font-size: 0.8rem; font-weight: 500; color: var(--text-secondary);">15mg</span>
+          <span style="padding: 0.3rem 0.7rem; border: 2px solid var(--border); border-radius: 6px; font-size: 0.8rem; font-weight: 500; color: var(--text-secondary);">30mg</span>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.3rem;">Lot Batch</div>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <span style="padding: 0.4rem 0.9rem; background: var(--primary); color: white; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='var(--primary-dark)'" onmouseout="this.style.background='var(--primary)'">THP-6183920</span>
+          <span style="padding: 0.4rem 0.9rem; background: var(--primary); color: white; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='var(--primary-dark)'" onmouseout="this.style.background='var(--primary)'">THP-4029571</span>
+        </div>
+      </div>
+      <a href="#" style="font-size: 0.82rem; color: var(--text-muted); white-space: nowrap; transition: color 0.2s; text-decoration: none;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">View all Lots</a>
     </div>
 
-    <!-- BUNDLE 4: Complete Research Stack -->
-    <div style="background: var(--white); border: 2px solid var(--gold); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.25s; position: relative;" onmouseover="this.style.boxShadow='0 10px 40px rgba(201,168,76,0.15)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='none'">
-      <div style="position: absolute; top: 1rem; right: 1rem; background: var(--primary); color: white; padding: 0.3rem 0.75rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; z-index: 2;">BEST VALUE</div>
-      <div style="background: linear-gradient(135deg, #1a1a2e, var(--primary-deeper)); padding: 1.5rem; color: white;">
-        <div style="font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 0.4rem;">⭐ Ultimate Bundle</div>
-        <h3 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; margin-bottom: 0.3rem;">Complete Research Collection</h3>
-        <p style="font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.5;">Every Therion peptide in one bundle. Maximum savings for comprehensive research programs.</p>
-      </div>
-      <div style="padding: 1.5rem;">
-        <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.75rem;">Includes all 7 products:</div>
-
-        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; border-bottom: 1px solid var(--border-light);">
-          <div style="width: 30px; height: 30px; background: var(--primary-light); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0;">🧪</div>
-          <div style="flex: 1; font-weight: 500; font-size: 0.85rem;">Semaglutide <span style="color: var(--text-muted); font-weight: 400;">5mg</span></div>
-        </div>
-        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; border-bottom: 1px solid var(--border-light);">
-          <div style="width: 30px; height: 30px; background: var(--primary-light); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0;">🧬</div>
-          <div style="flex: 1; font-weight: 500; font-size: 0.85rem;">Tirzepatide <span style="color: var(--text-muted); font-weight: 400;">10mg</span></div>
-        </div>
-        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; border-bottom: 1px solid var(--border-light);">
-          <div style="width: 30px; height: 30px; background: var(--primary-light); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0;">⚗️</div>
-          <div style="flex: 1; font-weight: 500; font-size: 0.85rem;">Retatrutide <span style="color: var(--text-muted); font-weight: 400;">20mg</span></div>
-        </div>
-        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; border-bottom: 1px solid var(--border-light);">
-          <div style="width: 30px; height: 30px; background: var(--primary-light); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0;">🔬</div>
-          <div style="flex: 1; font-weight: 500; font-size: 0.85rem;">CJC-1295 + Ipamorelin <span style="color: var(--text-muted); font-weight: 400;">blend</span></div>
-        </div>
-        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; border-bottom: 1px solid var(--border-light);">
-          <div style="width: 30px; height: 30px; background: var(--primary-light); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0;">🧫</div>
-          <div style="flex: 1; font-weight: 500; font-size: 0.85rem;">GHK-Cu <span style="color: var(--text-muted); font-weight: 400;">50mg</span></div>
-        </div>
-        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; border-bottom: 1px solid var(--border-light);">
-          <div style="width: 30px; height: 30px; background: var(--primary-light); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0;">✨</div>
-          <div style="flex: 1; font-weight: 500; font-size: 0.85rem;">Glow Blend <span style="color: var(--text-muted); font-weight: 400;">~70mg</span></div>
-        </div>
-        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0;">
-          <div style="width: 30px; height: 30px; background: var(--primary-light); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0;">⚡</div>
-          <div style="flex: 1; font-weight: 500; font-size: 0.85rem;">NAD+ <span style="color: var(--text-muted); font-weight: 400;">1000mg</span></div>
-        </div>
-
-        <div style="margin-top: 1.25rem; padding-top: 1.25rem; border-top: 2px solid var(--border-light); display: flex; justify-content: space-between; align-items: center;">
-          <div>
-            <div style="font-size: 0.75rem; color: var(--text-muted);">Bundle Price</div>
-            <div style="display: flex; align-items: baseline; gap: 0.5rem;">
-              <span style="font-family: var(--font-mono); font-size: 1.5rem; font-weight: 700; color: var(--text);">$509.00</span>
-              <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through;">$597.00</span>
-            </div>
-            <div style="font-size: 0.78rem; color: var(--accent); font-weight: 600; margin-top: 0.2rem;">You save $88.00</div>
-          </div>
-          <button style="background: var(--primary); color: white; border: none; padding: 0.7rem 1.4rem; border-radius: 8px; font-family: var(--font); font-weight: 700; font-size: 0.88rem; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='var(--gold)'; this.style.color='var(--primary-deeper)'" onmouseout="this.style.background='var(--primary)'; this.style.color='white'">Add Bundle</button>
+    <!-- CJC-1295 + Ipamorelin -->
+    <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; display: grid; grid-template-columns: 60px 1.2fr 1fr 1.5fr auto; gap: 1.5rem; align-items: center;">
+      <div style="width: 60px; height: 60px; background: var(--bg); border: 1px solid var(--border-light); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div style="width: 20px; height: 5px; background: var(--primary); border-radius: 2px 2px 0 0;"></div>
+          <div style="width: 12px; height: 4px; background: rgba(27,77,122,0.15);"></div>
+          <div style="width: 22px; height: 30px; background: rgba(58,143,212,0.08); border: 1px solid rgba(27,77,122,0.12); border-radius: 0 0 3px 3px;"></div>
         </div>
       </div>
+      <div>
+        <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.15rem;">Product Name</div>
+        <div style="font-size: 1rem; font-weight: 700; color: var(--text);">CJC-1295 + Ipamorelin</div>
+      </div>
+      <div>
+        <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.3rem;">Dose</div>
+        <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+          <span style="padding: 0.3rem 0.7rem; border: 2px solid var(--primary); border-radius: 6px; font-size: 0.8rem; font-weight: 600; color: var(--primary); background: var(--primary-light);">10mg</span>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.3rem;">Lot Batch</div>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <span style="padding: 0.4rem 0.9rem; background: var(--primary); color: white; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='var(--primary-dark)'" onmouseout="this.style.background='var(--primary)'">THP-8301456</span>
+          <span style="padding: 0.4rem 0.9rem; background: var(--primary); color: white; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='var(--primary-dark)'" onmouseout="this.style.background='var(--primary)'">THP-1592037</span>
+        </div>
+      </div>
+      <a href="#" style="font-size: 0.82rem; color: var(--text-muted); white-space: nowrap; transition: color 0.2s; text-decoration: none;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">View all Lots</a>
+    </div>
+
+    <!-- GHK-Cu -->
+    <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; display: grid; grid-template-columns: 60px 1.2fr 1fr 1.5fr auto; gap: 1.5rem; align-items: center;">
+      <div style="width: 60px; height: 60px; background: var(--bg); border: 1px solid var(--border-light); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div style="width: 20px; height: 5px; background: var(--primary); border-radius: 2px 2px 0 0;"></div>
+          <div style="width: 12px; height: 4px; background: rgba(27,77,122,0.15);"></div>
+          <div style="width: 22px; height: 30px; background: rgba(58,143,212,0.08); border: 1px solid rgba(27,77,122,0.12); border-radius: 0 0 3px 3px;"></div>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.15rem;">Product Name</div>
+        <div style="font-size: 1rem; font-weight: 700; color: var(--text);">GHK-Cu</div>
+      </div>
+      <div>
+        <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.3rem;">Dose</div>
+        <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+          <span style="padding: 0.3rem 0.7rem; border: 2px solid var(--primary); border-radius: 6px; font-size: 0.8rem; font-weight: 600; color: var(--primary); background: var(--primary-light);">50mg</span>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.3rem;">Lot Batch</div>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <span style="padding: 0.4rem 0.9rem; background: var(--primary); color: white; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='var(--primary-dark)'" onmouseout="this.style.background='var(--primary)'">THP-7204839</span>
+          <span style="padding: 0.4rem 0.9rem; background: var(--primary); color: white; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='var(--primary-dark)'" onmouseout="this.style.background='var(--primary)'">THP-3018264</span>
+        </div>
+      </div>
+      <a href="#" style="font-size: 0.82rem; color: var(--text-muted); white-space: nowrap; transition: color 0.2s; text-decoration: none;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">View all Lots</a>
+    </div>
+
+    <!-- Glow Blend -->
+    <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; display: grid; grid-template-columns: 60px 1.2fr 1fr 1.5fr auto; gap: 1.5rem; align-items: center;">
+      <div style="width: 60px; height: 60px; background: var(--bg); border: 1px solid var(--border-light); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div style="width: 20px; height: 5px; background: var(--primary); border-radius: 2px 2px 0 0;"></div>
+          <div style="width: 12px; height: 4px; background: rgba(27,77,122,0.15);"></div>
+          <div style="width: 22px; height: 30px; background: rgba(58,143,212,0.08); border: 1px solid rgba(27,77,122,0.12); border-radius: 0 0 3px 3px;"></div>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.15rem;">Product Name</div>
+        <div style="font-size: 1rem; font-weight: 700; color: var(--text);">Glow Blend</div>
+      </div>
+      <div>
+        <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.3rem;">Dose</div>
+        <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+          <span style="padding: 0.3rem 0.7rem; border: 2px solid var(--primary); border-radius: 6px; font-size: 0.8rem; font-weight: 600; color: var(--primary); background: var(--primary-light);">~70mg</span>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.3rem;">Lot Batch</div>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <span style="padding: 0.4rem 0.9rem; background: var(--primary); color: white; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='var(--primary-dark)'" onmouseout="this.style.background='var(--primary)'">THP-9471028</span>
+          <span style="padding: 0.4rem 0.9rem; background: var(--primary); color: white; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='var(--primary-dark)'" onmouseout="this.style.background='var(--primary)'">THP-5839201</span>
+        </div>
+      </div>
+      <a href="#" style="font-size: 0.82rem; color: var(--text-muted); white-space: nowrap; transition: color 0.2s; text-decoration: none;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">View all Lots</a>
+    </div>
+
+    <!-- NAD+ -->
+    <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; display: grid; grid-template-columns: 60px 1.2fr 1fr 1.5fr auto; gap: 1.5rem; align-items: center;">
+      <div style="width: 60px; height: 60px; background: var(--bg); border: 1px solid var(--border-light); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div style="width: 20px; height: 5px; background: var(--primary); border-radius: 2px 2px 0 0;"></div>
+          <div style="width: 12px; height: 4px; background: rgba(27,77,122,0.15);"></div>
+          <div style="width: 22px; height: 30px; background: rgba(58,143,212,0.08); border: 1px solid rgba(27,77,122,0.12); border-radius: 0 0 3px 3px;"></div>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.15rem;">Product Name</div>
+        <div style="font-size: 1rem; font-weight: 700; color: var(--text);">NAD+</div>
+      </div>
+      <div>
+        <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.3rem;">Dose</div>
+        <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+          <span style="padding: 0.3rem 0.7rem; border: 2px solid var(--primary); border-radius: 6px; font-size: 0.8rem; font-weight: 600; color: var(--primary); background: var(--primary-light);">1000mg</span>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.3rem;">Lot Batch</div>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <span style="padding: 0.4rem 0.9rem; background: var(--primary); color: white; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='var(--primary-dark)'" onmouseout="this.style.background='var(--primary)'">THP-2650918</span>
+          <span style="padding: 0.4rem 0.9rem; background: var(--primary); color: white; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='var(--primary-dark)'" onmouseout="this.style.background='var(--primary)'">THP-8174053</span>
+        </div>
+      </div>
+      <a href="#" style="font-size: 0.82rem; color: var(--text-muted); white-space: nowrap; transition: color 0.2s; text-decoration: none;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">View all Lots</a>
     </div>
 
   </div>
@@ -1523,7 +1536,6 @@
       <h4>Information</h4>
       <a href="#">What are Peptides?</a>
       <a href="#">Peptide Purity</a>
-      <a href="#">Reconstitution Guide</a>
       <a href="#">Storage & Handling</a>
       <a href="#">Research Articles</a>
       <a href="#">Certificate of Analysis</a>
