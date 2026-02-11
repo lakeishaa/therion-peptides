@@ -1202,10 +1202,10 @@
 <!-- HEADER -->
 <header>
   <div class="header-main">
-    <a href="#" class="logo">
+    <a href="../index.html" class="logo">
       <!-- Recreated logo matching brand identity -->
       <div class="logo-svg">
-        <div class=""><img src="./assets/logo.png" alt=""></div>
+        <div class=""><img src="../assets/logo.png" alt=""></div>
         <!-- <div class="logo-helix">
           <div class="strand">
             <div class="node"></div><div class="node"></div>
@@ -1248,54 +1248,226 @@
 <!-- NAV -->
 <div class="nav-bar">
   <nav class="nav-inner">
-    <a href="./index.html">All Peptides</a>
-    <a href="./popular-peptides.html" class="active">Popular Peptides</a>
-    <a href="./bundle-save.html">Bundle & Save</a>
-    <a href="./coa.html">COA</a>
-    <!-- <a href="#">Research Videos</a> -->
+    <a href="../index.html">All Peptides</a>
+    <a href="../popular-peptides.html">Popular Peptides</a>
+    <a href="../bundle-save.html">Bundle & Save</a>
+    <a href="../bundle-save.html">Peptide Information</a>
+    <a href="#">Research Videos</a>
+    <a href="../coa.html">COA</a>
     <span class="nav-spacer"></span>
-    <a href="./our-company.html" class="nav-right">Our Company</a>
+    <a href="../our-company.html" class="nav-right">Our Company</a>
     <a href="#contact" class="nav-right">Contact Us</a>
   </nav>
 </div>
 
 
-<!-- PAGE HEADER -->
-<div style="background: var(--white); border-bottom: 1px solid var(--border-light); padding: 2rem 0;">
-  <div class="section" style="padding: 1rem 2rem;">
-    <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+<!-- BREADCRUMB -->
+<div style="background: var(--white); border-bottom: 1px solid var(--border-light); padding: 0.75rem 0;">
+  <div class="section" style="padding: 0.5rem 2rem;">
+    <div style="font-size: 0.82rem; color: var(--text-muted);">
       <a href="therion-peptides-reference.html" style="color: var(--primary); text-decoration: none;">Home</a>
       <span style="margin: 0 0.4rem;">›</span>
-      <span>Popular Peptides</span>
+      <a href="popular-peptides.html" style="color: var(--primary); text-decoration: none;">All Peptides</a>
+      <span style="margin: 0 0.4rem;">›</span>
+      <span>Tirzepatide</span>
     </div>
-    <h1 style="font-family: var(--font-serif); font-size: 2rem; font-weight: 700; color: var(--primary);">Popular Peptides</h1>
-    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.4rem;">Our most in-demand research compounds — trusted by researchers worldwide.</p>
   </div>
 </div>
 
-<!-- POPULAR PRODUCTS GRID -->
-<div class="popular-section" style="border-top: none;">
-  <div class="section reveal">
+<!-- PRODUCT HERO -->
+<div style="background: var(--white); border-bottom: 1px solid var(--border-light);">
+  <div class="section" style="padding: 2.5rem 2rem;">
+    <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; align-items: start;">
 
-    <!-- Filter / Sort Bar -->
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
-      <div style="font-size: 0.88rem; color: var(--text-muted);">Showing <strong style="color: var(--text);">7</strong> products</div>
-      <div style="display: flex; gap: 0.75rem; align-items: center;">
-        <span style="font-size: 0.85rem; color: var(--text-secondary);">Sort by:</span>
-        <select style="padding: 0.5rem 0.8rem; border: 2px solid var(--border); border-radius: 8px; font-family: var(--font); font-size: 0.85rem; color: var(--text); background: var(--white); outline: none; cursor: pointer;">
-          <option>Popularity</option>
-          <option>Price: Low to High</option>
-          <option>Price: High to Low</option>
-          <option>Newest</option>
-          <option>Rating</option>
-        </select>
+      <!-- Product Image -->
+      <div style="background: linear-gradient(135deg, #f8f9fb, var(--bg-alt)); border-radius: var(--radius-lg); padding: 3rem; display: flex; align-items: center; justify-content: center; min-height: 360px; position: relative; border: 1px solid var(--border-light);">
+        <div style="position: absolute; top: 1rem; left: 1rem; display: flex; gap: 0.35rem;">
+          <span style="padding: 0.25rem 0.6rem; background: var(--accent-light); color: var(--accent); border-radius: 5px; font-size: 0.68rem; font-weight: 700; text-transform: uppercase;">99%+ Pure</span>
+          <span style="padding: 0.25rem 0.6rem; background: var(--gold-light); color: #9a7d2e; border-radius: 5px; font-size: 0.68rem; font-weight: 700; text-transform: uppercase;">COA Included</span>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div style="width: 46px; height: 16px; background: linear-gradient(to bottom, #8a8a8a, #666); border-radius: 5px 5px 0 0; border: 1px solid #999;"></div>
+          <div style="width: 26px; height: 14px; background: rgba(200,210,220,0.3); border-left: 2px solid rgba(27,77,122,0.15); border-right: 2px solid rgba(27,77,122,0.15);"></div>
+          <div style="width: 72px; height: 120px; background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(240,244,248,0.85)); border: 2px solid rgba(27,77,122,0.12); border-radius: 0 0 10px 10px; position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 8px;">
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 6px; background: var(--primary);"></div>
+            <span style="font-family: var(--font-serif); font-size: 0.42rem; font-weight: 700; color: var(--primary); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 8px; position: relative; z-index: 1;">Therion</span>
+            <span style="font-family: var(--font); font-size: 0.48rem; font-weight: 700; color: var(--primary); text-align: center; line-height: 1.2; position: relative; z-index: 1;">Tirzepatide</span>
+            <span style="font-family: var(--font-mono); font-size: 0.38rem; font-weight: 600; color: var(--text-secondary); border: 1px solid var(--border); padding: 1px 4px; border-radius: 2px; margin-top: 3px; position: relative; z-index: 1;">10mg</span>
+            <span style="font-size: 0.28rem; color: var(--text-muted); margin-top: 2px; position: relative; z-index: 1;">99% Purity · Research Only</span>
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 45%; background: linear-gradient(to top, rgba(58,143,212,0.08), transparent); border-radius: 0 0 8px 8px; pointer-events: none;"></div>
+          </div>
+          <div style="margin-top: 10px; font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted);">10mg / vial</div>
+        </div>
+      </div>
+
+      <!-- Product Info -->
+      <div>
+        <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.4rem;">Dual GIP/GLP-1 Receptor Agonist</div>
+        <h1 style="font-family: var(--font-serif); font-size: 2rem; font-weight: 700; color: var(--primary); margin-bottom: 0.25rem;">Tirzepatide</h1>
+        <div style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.25rem;">First-in-class dual glucose-dependent insulinotropic polypeptide (GIP) and GLP-1 receptor agonist</div>
+
+        <!-- Stars -->
+        <div style="display: flex; align-items: center; gap: 0.15rem; margin-bottom: 1.25rem;">
+          <span style="color: #f5a623; font-size: 0.9rem;">★★★★★</span>
+          <span style="font-size: 0.82rem; color: var(--text-muted); margin-left: 0.4rem;">Research Grade · In Stock</span>
+        </div>
+
+        <!-- Price -->
+        <div style="font-family: var(--font-mono); font-size: 2rem; font-weight: 700; color: var(--text); margin-bottom: 0.3rem;">$105.00</div>
+        <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">10mg per vial · Free shipping over $200</div>
+
+        <!-- Quantity + Add to Cart -->
+        <div style="display: flex; gap: 0.75rem; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap;">
+          <div style="display: flex; align-items: center; border: 2px solid var(--border); border-radius: 8px; overflow: hidden;">
+            <button style="width: 42px; height: 42px; border: none; background: var(--bg); font-size: 1.1rem; cursor: pointer; color: var(--text);">−</button>
+            <span style="width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.95rem;">1</span>
+            <button style="width: 42px; height: 42px; border: none; background: var(--bg); font-size: 1.1rem; cursor: pointer; color: var(--text);">+</button>
+          </div>
+          <button style="flex: 1; max-width: 300px; padding: 0.85rem 2rem; background: var(--gold); color: var(--primary-deeper); border: none; border-radius: 8px; font-family: var(--font); font-weight: 700; font-size: 1rem; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='#d4b35a'; this.style.boxShadow='0 4px 20px rgba(201,168,76,0.35)'" onmouseout="this.style.background='var(--gold)'; this.style.boxShadow='none'">Add to Cart</button>
+        </div>
+
+        <!-- Trust badges -->
+        <div style="display: flex; gap: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border-light); flex-wrap: wrap;">
+          <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; color: var(--text-secondary);">
+            <span>🔬</span> <strong>99%+ Purity</strong>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; color: var(--text-secondary);">
+            <span>📋</span> <strong>COA Included</strong>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; color: var(--text-secondary);">
+            <span>❄️</span> <strong>Cold-Chain Ship</strong>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <div class="popular-grid">
+<!-- PRODUCT DETAILS TABS -->
+<div style="background: var(--white); border-bottom: 1px solid var(--border-light);">
+  <div class="section" style="padding: 0 2rem;">
+    <div style="display: flex; gap: 0; border-bottom: 2px solid var(--border-light); overflow-x: auto;">
+      <button onclick="showTab('description', this)" class="tab-btn active-tab" style="padding: 1rem 1.5rem; border: none; background: none; font-family: var(--font); font-size: 0.9rem; font-weight: 600; color: var(--primary); cursor: pointer; position: relative; white-space: nowrap; border-bottom: 2.5px solid var(--primary); margin-bottom: -2px;">Description</button>
+      <button onclick="showTab('specs', this)" class="tab-btn" style="padding: 1rem 1.5rem; border: none; background: none; font-family: var(--font); font-size: 0.9rem; font-weight: 500; color: var(--text-muted); cursor: pointer; position: relative; white-space: nowrap; border-bottom: 2.5px solid transparent; margin-bottom: -2px;">Specifications</button>
+      <button onclick="showTab('research', this)" class="tab-btn" style="padding: 1rem 1.5rem; border: none; background: none; font-family: var(--font); font-size: 0.9rem; font-weight: 500; color: var(--text-muted); cursor: pointer; position: relative; white-space: nowrap; border-bottom: 2.5px solid transparent; margin-bottom: -2px;">Research</button>
+      <button onclick="showTab('storage', this)" class="tab-btn" style="padding: 1rem 1.5rem; border: none; background: none; font-family: var(--font); font-size: 0.9rem; font-weight: 500; color: var(--text-muted); cursor: pointer; position: relative; white-space: nowrap; border-bottom: 2.5px solid transparent; margin-bottom: -2px;">Storage</button>
+    </div>
+  </div>
+</div>
 
-      <!-- Semaglutide -->
-      <a href="./product/product-semaglutide.html" class="pop-card">
+<!-- TAB: Description -->
+<div id="tab-description" class="tab-content" style="display: block;">
+  <div style="background: var(--white);">
+    <div class="section" style="max-width: 850px;">
+      <h2 style="font-family: var(--font-serif); font-size: 1.4rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem;">About Tirzepatide</h2>
+      <div style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.85;">
+        <p style="margin-bottom: 1rem;">Tirzepatide is a first-in-class dual glucose-dependent insulinotropic polypeptide (GIP) and glucagon-like peptide-1 (GLP-1) receptor agonist. This 39-amino acid synthetic peptide is based on the native GIP sequence with modifications enabling dual receptor activation. A C-20 fatty diacid moiety is conjugated at lysine-20, facilitating albumin binding and extending the research half-life.</p>
+        <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text); margin: 1.5rem 0 0.75rem;">Mechanism of Action</h3>
+        <p>Tirzepatide activates both the GIP and GLP-1 receptors simultaneously. It shows strong affinity for the GIP receptor (comparable to native GIP) and somewhat lower but clinically meaningful affinity for the GLP-1 receptor. This dual agonism triggers complementary signaling cascades: GIP receptor activation enhances lipid metabolism, adipose tissue function, and insulin sensitivity pathways, while GLP-1 receptor activation promotes insulin secretion, glucagon suppression, and gastric motility regulation in preclinical models.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB: Specifications -->
+<div id="tab-specs" class="tab-content" style="display: none;">
+  <div style="background: var(--white);">
+    <div class="section" style="max-width: 850px;">
+      <h2 style="font-family: var(--font-serif); font-size: 1.4rem; font-weight: 700; color: var(--primary); margin-bottom: 1.25rem;">Product Specifications</h2>
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 0.85rem 1rem; font-weight: 600; color: var(--text); width: 200px; background: var(--bg);">Product Name</td>
+              <td style="padding: 0.85rem 1rem; color: var(--text-secondary);">Tirzepatide</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 0.85rem 1rem; font-weight: 600; color: var(--text); background: var(--bg);">Category</td>
+              <td style="padding: 0.85rem 1rem; color: var(--text-secondary);">Dual GIP/GLP-1 Receptor Agonist</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 0.85rem 1rem; font-weight: 600; color: var(--text); background: var(--bg);">Sequence</td>
+              <td style="padding: 0.85rem 1rem; color: var(--text-secondary); font-family: var(--font-mono); font-size: 0.82rem; word-break: break-all;">Tyr-Aib-Glu-Gly-Thr-Phe-Thr-Ser-Asp-Tyr-Ser-Ile-Aib-Leu-Asp-Lys(γGlu-C20 diacid)-Ile-Ala-Gln-Glu-Glu-Phe-Val-Asn-Trp-Leu-Leu-Ala-Gln-Lys-Gly-Lys-Lys-Asn-Asp-Trp-Lys-His-Asn-Ile-Thr-Gln</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 0.85rem 1rem; font-weight: 600; color: var(--text); background: var(--bg);">Molecular Weight</td>
+              <td style="padding: 0.85rem 1rem; color: var(--text-secondary); font-family: var(--font-mono);">4813.45 g/mol</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 0.85rem 1rem; font-weight: 600; color: var(--text); background: var(--bg);">Molecular Formula</td>
+              <td style="padding: 0.85rem 1rem; color: var(--text-secondary); font-family: var(--font-mono);">C₂₂₅H₃₄₈N₄₈O₆₈</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 0.85rem 1rem; font-weight: 600; color: var(--text); background: var(--bg);">CAS Number</td>
+              <td style="padding: 0.85rem 1rem; color: var(--text-secondary); font-family: var(--font-mono);">2023788-19-2</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 0.85rem 1rem; font-weight: 600; color: var(--text); background: var(--bg);">Synonyms</td>
+              <td style="padding: 0.85rem 1rem; color: var(--text-secondary);">Mounjaro peptide, LY3298176, Twincretin</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 0.85rem 1rem; font-weight: 600; color: var(--text); background: var(--bg);">Purity</td>
+              <td style="padding: 0.85rem 1rem; color: var(--text-secondary);">≥99% (HPLC)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 0.85rem 1rem; font-weight: 600; color: var(--text); background: var(--bg);">Appearance</td>
+              <td style="padding: 0.85rem 1rem; color: var(--text-secondary);">White lyophilized powder</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 0.85rem 1rem; font-weight: 600; color: var(--text); background: var(--bg);">Size</td>
+              <td style="padding: 0.85rem 1rem; color: var(--text-secondary);">10mg per vial</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.85rem 1rem; font-weight: 600; color: var(--text); background: var(--bg);">Intended Use</td>
+              <td style="padding: 0.85rem 1rem; color: var(--text-secondary);">In-vitro laboratory research only</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB: Research -->
+<div id="tab-research" class="tab-content" style="display: none;">
+  <div style="background: var(--white);">
+    <div class="section" style="max-width: 850px;">
+      <h2 style="font-family: var(--font-serif); font-size: 1.4rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem;">Research Applications</h2>
+      <div style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.85;">
+        <p style='margin-bottom: 1rem;'>Tirzepatide has been studied in research contexts including:</p><p style='margin-bottom: 0.75rem;'><strong>Dual incretin signaling</strong> — Investigation of synergistic effects of simultaneous GIP and GLP-1 receptor activation on metabolic pathways.</p><p style='margin-bottom: 0.75rem;'><strong>Adipose tissue biology</strong> — Research on GIP receptor-mediated effects on adipocyte differentiation, lipid storage, and thermogenesis.</p><p style='margin-bottom: 0.75rem;'><strong>Beta cell function</strong> — Studies on dual incretin effects on pancreatic beta cell proliferation, survival, and insulin secretory capacity.</p><p><strong>Comparative incretin research</strong> — Head-to-head studies comparing single vs. dual receptor agonism in various metabolic models.</p>
+      </div>
+      <div style="background: var(--primary-light); border-left: 4px solid var(--primary); border-radius: 0 8px 8px 0; padding: 1.25rem 1.5rem; margin-top: 1.5rem;">
+        <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.3rem;">⚠️ Research Use Only</div>
+        <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7;">This product is intended strictly for in-vitro laboratory research purposes. It is not intended for human consumption, veterinary use, or any clinical application.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB: Storage -->
+<div id="tab-storage" class="tab-content" style="display: none;">
+  <div style="background: var(--white);">
+    <div class="section" style="max-width: 850px;">
+      <h2 style="font-family: var(--font-serif); font-size: 1.4rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem;">Storage & Handling</h2>
+      <div style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.85;">
+        <p style='margin-bottom: 1rem;'><strong>Lyophilized (powder):</strong> Store at -20°C for long-term storage (up to 24 months) or 2–8°C for short-term storage (up to 6 months). Keep sealed, away from light and moisture.</p><p style='margin-bottom: 1rem;'><strong>Reconstituted:</strong> Store at 2–8°C and use within 3–4 weeks. Do not freeze reconstituted solutions.</p><p>Ship with cold packs. Stable at room temperature for short transit periods.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RELATED PRODUCTS -->
+<div style="border-top: 1px solid var(--border-light);">
+  <div class="section reveal">
+    <div class="section-header">
+      <div>
+        <h2>Related Products</h2>
+        <p>Researchers who viewed Tirzepatide also explored</p>
+      </div>
+      <a href="popular-peptides.html" class="view-all">View All →</a>
+    </div>
+    <div class="popular-grid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));">
+      <a href="product-semaglutide.html" class="pop-card">
         <div class="pop-img">
           <div class="pop-vial">
             <div class="pop-vial-cap"></div>
@@ -1304,62 +1476,18 @@
               <div class="pop-vial-stripe"></div>
               <span class="pop-vial-brand">Therion</span>
               <span class="pop-vial-name">Semaglutide</span>
-              <span class="pop-vial-mg">5 MG</span>
-              <span class="pop-vial-purity">99% Purity</span>
             </div>
           </div>
         </div>
         <div class="pop-body">
           <h3>Semaglutide</h3>
-          <div class="pop-sub">GLP-1 Receptor Agonist</div>
-          <div class="pop-stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-            <span class="review-count">(48)</span>
-          </div>
           <div class="pop-bottom">
-            <div>
-              <div class="pop-price">$72.00</div>
-              <div class="pop-size">5mg / vial</div>
-            </div>
+            <div class="pop-price">$72.00</div>
             <button class="pop-add">+</button>
           </div>
         </div>
       </a>
-
-      <!-- Tirzepatide -->
-      <a href="./product/product-tirzepatide.html" class="pop-card">
-        <div class="pop-img">
-          <div class="pop-vial">
-            <div class="pop-vial-cap"></div>
-            <div class="pop-vial-neck"></div>
-            <div class="pop-vial-body">
-              <div class="pop-vial-stripe"></div>
-              <span class="pop-vial-brand">Therion</span>
-              <span class="pop-vial-name">Tirzepatide</span>
-              <span class="pop-vial-mg">10 MG</span>
-              <span class="pop-vial-purity">99% Purity</span>
-            </div>
-          </div>
-        </div>
-        <div class="pop-body">
-          <h3>Tirzepatide</h3>
-          <div class="pop-sub">Dual GIP/GLP-1 Agonist</div>
-          <div class="pop-stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-            <span class="review-count">(36)</span>
-          </div>
-          <div class="pop-bottom">
-            <div>
-              <div class="pop-price">$105.00</div>
-              <div class="pop-size">10mg / vial</div>
-            </div>
-            <button class="pop-add">+</button>
-          </div>
-        </div>
-      </a>
-
-      <!-- Retatrutide -->
-      <a href="./product/product-retatrutide.html" class="pop-card">
+      <a href="product-retatrutide.html" class="pop-card">
         <div class="pop-img">
           <div class="pop-vial">
             <div class="pop-vial-cap"></div>
@@ -1368,126 +1496,18 @@
               <div class="pop-vial-stripe"></div>
               <span class="pop-vial-brand">Therion</span>
               <span class="pop-vial-name">Retatrutide</span>
-              <span class="pop-vial-mg">20 MG</span>
-              <span class="pop-vial-purity">99% Purity</span>
             </div>
           </div>
         </div>
         <div class="pop-body">
           <h3>Retatrutide</h3>
-          <div class="pop-sub">GLP-1/GIP/Glucagon Triple Agonist</div>
-          <div class="pop-stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">★</span>
-            <span class="review-count">(29)</span>
-          </div>
           <div class="pop-bottom">
-            <div>
-              <div class="pop-price">$170.00</div>
-              <div class="pop-size">20mg / vial</div>
-            </div>
+            <div class="pop-price">$170.00</div>
             <button class="pop-add">+</button>
           </div>
         </div>
       </a>
-
-      <!-- CJC-1295 + Ipamorelin -->
-      <a href="./product/product-cjc1295.html" class="pop-card">
-        <div class="pop-img">
-          <div class="pop-vial">
-            <div class="pop-vial-cap"></div>
-            <div class="pop-vial-neck"></div>
-            <div class="pop-vial-body">
-              <div class="pop-vial-stripe"></div>
-              <span class="pop-vial-brand">Therion</span>
-              <span class="pop-vial-name">CJC+Ipa</span>
-              <span class="pop-vial-mg">BLEND</span>
-              <span class="pop-vial-purity">99% Purity</span>
-            </div>
-          </div>
-        </div>
-        <div class="pop-body">
-          <h3>CJC-1295 + Ipamorelin</h3>
-          <div class="pop-sub">GH Secretagogue Blend</div>
-          <div class="pop-stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-            <span class="review-count">(52)</span>
-          </div>
-          <div class="pop-bottom">
-            <div>
-              <div class="pop-price">$60.00</div>
-              <div class="pop-size">blend / vial</div>
-            </div>
-            <button class="pop-add">+</button>
-          </div>
-        </div>
-      </a>
-
-      <!-- GHK-Cu -->
-      <a href="./product/product-ghkcu.html" class="pop-card">
-        <div class="pop-img">
-          <div class="pop-vial">
-            <div class="pop-vial-cap"></div>
-            <div class="pop-vial-neck"></div>
-            <div class="pop-vial-body">
-              <div class="pop-vial-stripe"></div>
-              <span class="pop-vial-brand">Therion</span>
-              <span class="pop-vial-name">GHK-Cu</span>
-              <span class="pop-vial-mg">50 MG</span>
-              <span class="pop-vial-purity">99% Purity</span>
-            </div>
-          </div>
-        </div>
-        <div class="pop-body">
-          <h3>GHK-Cu</h3>
-          <div class="pop-sub">Copper Peptide Complex</div>
-          <div class="pop-stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-            <span class="review-count">(41)</span>
-          </div>
-          <div class="pop-bottom">
-            <div>
-              <div class="pop-price">$40.00</div>
-              <div class="pop-size">50mg / vial</div>
-            </div>
-            <button class="pop-add">+</button>
-          </div>
-        </div>
-      </a>
-
-      <!-- Glow Blend -->
-      <a href="./product/product-glow-blend.html" class="pop-card">
-        <div class="pop-img">
-          <div class="pop-vial">
-            <div class="pop-vial-cap"></div>
-            <div class="pop-vial-neck"></div>
-            <div class="pop-vial-body">
-              <div class="pop-vial-stripe"></div>
-              <span class="pop-vial-brand">Therion</span>
-              <span class="pop-vial-name">Glow Blend</span>
-              <span class="pop-vial-mg">~70 MG</span>
-              <span class="pop-vial-purity">99% Purity</span>
-            </div>
-          </div>
-        </div>
-        <div class="pop-body">
-          <h3>Glow Blend</h3>
-          <div class="pop-sub">Multi-Peptide Skin Complex</div>
-          <div class="pop-stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-            <span class="review-count">(33)</span>
-          </div>
-          <div class="pop-bottom">
-            <div>
-              <div class="pop-price">$100.00</div>
-              <div class="pop-size">~70mg / vial</div>
-            </div>
-            <button class="pop-add">+</button>
-          </div>
-        </div>
-      </a>
-
-      <!-- NAD+ -->
-      <a href="./product/product-nad.html" class="pop-card">
+      <a href="product-nad.html" class="pop-card">
         <div class="pop-img">
           <div class="pop-vial">
             <div class="pop-vial-cap"></div>
@@ -1496,31 +1516,36 @@
               <div class="pop-vial-stripe"></div>
               <span class="pop-vial-brand">Therion</span>
               <span class="pop-vial-name">NAD+</span>
-              <span class="pop-vial-mg">1000 MG</span>
-              <span class="pop-vial-purity">High Purity</span>
             </div>
           </div>
         </div>
         <div class="pop-body">
           <h3>NAD+</h3>
-          <div class="pop-sub">Nicotinamide Adenine Dinucleotide</div>
-          <div class="pop-stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">★</span>
-            <span class="review-count">(27)</span>
-          </div>
           <div class="pop-bottom">
-            <div>
-              <div class="pop-price">$150.00</div>
-              <div class="pop-size">1000mg / vial</div>
-            </div>
+            <div class="pop-price">$150.00</div>
             <button class="pop-add">+</button>
           </div>
         </div>
       </a>
-
     </div>
   </div>
 </div>
+
+<!-- TAB SCRIPT -->
+<script>
+function showTab(tabId, btn) {
+  document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
+  document.querySelectorAll('.tab-btn').forEach(el => {
+    el.style.color = 'var(--text-muted)';
+    el.style.fontWeight = '500';
+    el.style.borderBottomColor = 'transparent';
+  });
+  document.getElementById('tab-' + tabId).style.display = 'block';
+  btn.style.color = 'var(--primary)';
+  btn.style.fontWeight = '600';
+  btn.style.borderBottomColor = 'var(--primary)';
+}
+</script>
 
 <!-- NEWSLETTER -->
 <div class="newsletter-section">
@@ -1560,7 +1585,6 @@
       <h4>Information</h4>
       <a href="#">What are Peptides?</a>
       <a href="#">Peptide Purity</a>
-      <a href="#">Reconstitution Guide</a>
       <a href="#">Storage & Handling</a>
       <a href="#">Research Articles</a>
       <a href="#">Certificate of Analysis</a>
