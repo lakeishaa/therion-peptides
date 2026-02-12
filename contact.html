@@ -346,8 +346,7 @@
   }
 
   .hero-content {
-    max-width: 100vw;
-    height: auto;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 4.5rem 2rem;
     display: grid;
@@ -356,7 +355,7 @@
     align-items: center;
     position: relative;
     z-index: 1;
-    background: url("./assets/Hero.png") center center / cover no-repeat;
+    background: url("./assets/image.jpg") center center / cover no-repeat;
   }
 
   .hero-text { color: white; }
@@ -941,6 +940,217 @@
     max-width: 680px; line-height: 1.6;
   }
 
+  /* ===== POPULAR PEPTIDES ===== */
+  .popular-section {
+    background: var(--white);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .popular-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .pop-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all 0.25s;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--text);
+    display: block;
+  }
+
+  .pop-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+    border-color: transparent;
+  }
+
+  .pop-img {
+    height: 200px;
+    background: linear-gradient(135deg, #f8f9fb, var(--bg-alt));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    position: relative;
+  }
+
+  .pop-vial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s;
+  }
+
+  .pop-card:hover .pop-vial { transform: scale(1.05); }
+
+  .pop-vial-cap {
+    width: 36px; height: 14px;
+    background: linear-gradient(to bottom, #8a8a8a, #666);
+    border-radius: 4px 4px 0 0;
+    border: 1px solid #999;
+  }
+
+  .pop-vial-neck {
+    width: 20px; height: 12px;
+    background: rgba(200,210,220,0.3);
+    border-left: 2px solid rgba(27,77,122,0.15);
+    border-right: 2px solid rgba(27,77,122,0.15);
+  }
+
+  .pop-vial-body {
+    width: 56px; height: 90px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(240,244,248,0.8));
+    border: 2px solid rgba(27,77,122,0.12);
+    border-radius: 0 0 8px 8px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 4px;
+  }
+
+  .pop-vial-body::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 45%;
+    background: linear-gradient(to top, rgba(58,143,212,0.1), transparent);
+    border-radius: 0 0 6px 6px;
+    pointer-events: none;
+  }
+
+  .pop-vial-stripe {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: var(--primary);
+  }
+
+  .pop-vial-brand {
+    font-family: var(--font-serif);
+    font-size: 0.32rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 6px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pop-vial-name {
+    font-family: var(--font);
+    font-size: 0.35rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-align: center;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pop-vial-mg {
+    font-family: var(--font-mono);
+    font-size: 0.32rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    padding: 0px 3px;
+    border-radius: 2px;
+    margin-top: 2px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pop-vial-purity {
+    font-size: 0.22rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pop-body {
+    padding: 1rem 1.15rem 1.15rem;
+  }
+
+  .pop-body h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.15rem;
+  }
+
+  .pop-body .pop-sub {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .pop-stars {
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+    margin-bottom: 0.55rem;
+  }
+
+  .pop-stars .star { color: #f5a623; font-size: 0.8rem; }
+  .pop-stars .star.empty { color: var(--border); }
+
+  .pop-stars .review-count {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-left: 0.3rem;
+  }
+
+  .pop-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .pop-bottom .pop-price {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .pop-bottom .pop-size {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+  }
+
+  .pop-bottom .pop-add {
+    width: 34px; height: 34px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.15rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+
+  .pop-bottom .pop-add:hover {
+    background: var(--gold);
+    color: var(--primary-deeper);
+    transform: scale(1.05);
+  }
+
   /* ===== RESPONSIVE ===== */
   @media (max-width: 900px) {
     .hero-content { grid-template-columns: 1fr; }
@@ -962,6 +1172,7 @@
     .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
     .footer-bottom { flex-direction: column; text-align: center; }
     .products-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+    .popular-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
   }
 
   /* ===== ANIMATIONS ===== */
@@ -1048,389 +1259,150 @@
   </nav>
 </div>
 
+
+<!-- BREADCRUMB -->
+<div style="background: var(--white); border-bottom: 1px solid var(--border-light); padding: 0.75rem 0;">
+  <div class="section" style="padding: 0.5rem 2rem;">
+    <div style="font-size: 0.82rem; color: var(--text-muted);">
+      <a href="therion-peptides-reference.html" style="color: var(--primary); text-decoration: none;">Home</a>
+      <span style="margin: 0 0.4rem;">›</span>
+      <span>Contact Us</span>
+    </div>
+  </div>
+</div>
+
 <!-- HERO -->
-<div class="hero-banner">
-  <div class="hero-content">
-    <div class="hero-text">
-      <div class="overline">Therion Peptides™</div>
-      <h1>Premium Research Peptides.<br>Unmatched Purity. Competitive Pricing.</h1>
-      <p>We specialize in highly purified peptides for scientific research and development. Every product exceeds 99% purity, verified through HPLC and Mass Spectrometry analysis.</p>
-      <div class="hero-buttons">
-        <a href="#products" class="btn btn-gold">Shop All Peptides →</a>
-        <a href="#" class="btn btn-outline-white">View COA Reports</a>
-      </div>
-      <div class="hero-badges">
-        <div class="hero-badge-item">
-          <div class="icon">🔬</div>
-          <div><strong>99%+ Purity</strong><br>HPLC Verified</div>
-        </div>
-        <div class="hero-badge-item">
-          <div class="icon">📋</div>
-          <div><strong>COA Included</strong><br>Every Order</div>
-        </div>
-        <div class="hero-badge-item">
-          <div class="icon">📦</div>
-          <div><strong>Fast Shipping</strong><br>24-48hr Dispatch</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-featured">
-      <div class="hero-pcard">
-        <span class="mol">🧪</span>
-        <h3>Semaglutide</h3>
-        <div class="desc">GLP-1 Receptor Agonist</div>
-        <div class="price">$72.00 <span class="size">/ 5mg</span></div>
-      </div>
-      <div class="hero-pcard">
-        <span class="mol">🧬</span>
-        <h3>Tirzepatide</h3>
-        <div class="desc">Dual GIP/GLP-1 Agonist</div>
-        <div class="price">$105.00 <span class="size">/ 10mg</span></div>
-      </div>
-      <div class="hero-pcard">
-        <span class="mol">⚗️</span>
-        <h3>Retatrutide</h3>
-        <div class="desc">Triple Agonist Peptide</div>
-        <div class="price">$170.00 <span class="size">/ 20mg</span></div>
-      </div>
-      <div class="hero-pcard">
-        <span class="mol">🔬</span>
-        <h3>CJC-1295 + Ipa</h3>
-        <div class="desc">GH Secretagogue Blend</div>
-        <div class="price">$60.00 <span class="size">/ blend</span></div>
-      </div>
-    </div>
+<div style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 50%, var(--primary-deeper) 100%); padding: 3rem 0; position: relative; overflow: hidden;">
+  <div style="position: absolute; inset: 0; opacity: 0.035; background-image: radial-gradient(circle, white 1px, transparent 1px); background-size: 30px 30px;"></div>
+  <div class="section" style="padding: 1rem 2rem; position: relative; z-index: 1; text-align: center; max-width: 650px; margin: 0 auto;">
+    <h1 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 700; color: white; margin-bottom: 0.5rem;">Contact Us</h1>
+    <p style="color: rgba(255,255,255,0.6); font-size: 1rem; line-height: 1.7;">Have a question about our products, your order, or peptide research? We're here to help.</p>
   </div>
 </div>
 
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="trust-inner">
-    <div class="trust-item">
-      <div class="ti-icon">🔬</div>
-      <div><strong>99%+ Purity</strong><span>HPLC & MS Verified</span></div>
+<!-- CONTACT CARDS -->
+<div class="section reveal" style="padding-top: 3rem;">
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 3rem;">
+
+    <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; text-align: center; transition: all 0.25s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.07)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='none'">
+      <div style="width: 52px; height: 52px; background: var(--primary-light); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin: 0 auto 1rem;">✉️</div>
+      <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem;">Email Support</h3>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem; line-height: 1.6;">For product questions, order issues, bulk inquiries, or COA requests.</p>
+      <a href="mailto:support@therionpeptides.com" style="font-size: 0.92rem; color: var(--primary); font-weight: 600; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--primary)'">support@therionpeptides.com</a>
     </div>
-    <div class="trust-item">
-      <div class="ti-icon">🏭</div>
-      <div><strong>GMP Compliant</strong><span>ISO 9001:2015</span></div>
+
+    <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; text-align: center; transition: all 0.25s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.07)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='none'">
+      <div style="width: 52px; height: 52px; background: var(--accent-light); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin: 0 auto 1rem;">⏱️</div>
+      <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem;">Response Time</h3>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem; line-height: 1.6;">We aim to respond to all inquiries within 24 hours during business days.</p>
+      <span style="font-size: 0.92rem; color: var(--primary); font-weight: 600;">Mon – Fri, 9AM – 6PM EST</span>
     </div>
-    <div class="trust-item">
-      <div class="ti-icon">📦</div>
-      <div><strong>Fast Shipping</strong><span>24-48hr Dispatch</span></div>
+
+    <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; text-align: center; transition: all 0.25s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.07)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='none'">
+      <div style="width: 52px; height: 52px; background: var(--gold-light); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin: 0 auto 1rem;">📦</div>
+      <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem;">Order Support</h3>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem; line-height: 1.6;">For tracking, shipping updates, returns, or any issues with your order.</p>
+      <span style="font-size: 0.92rem; color: var(--primary); font-weight: 600;">Include your order # in email</span>
     </div>
-    <div class="trust-item">
-      <div class="ti-icon">💰</div>
-      <div><strong>Secure Checkout</strong><span>SSL Encrypted</span></div>
-    </div>
+
   </div>
 </div>
 
-<!-- CATEGORIES -->
-<div class="section reveal">
-  <div class="section-header">
-    <div>
-      <h2>Shop by Category</h2>
-      <p>Browse our research compound catalog</p>
-    </div>
-    <a href="#" class="view-all">View All →</a>
-  </div>
-
-  <div class="categories-grid">
-    <a href="#" class="cat-card">
-      <div class="cat-icon">🧬</div>
-      <h3>GLP-1 Agonists</h3>
-      <div class="count">Semaglutide, Tirzepatide</div>
-    </a>
-    <a href="#" class="cat-card">
-      <div class="cat-icon">⚗️</div>
-      <h3>Multi-Agonists</h3>
-      <div class="count">Retatrutide & more</div>
-    </a>
-    <a href="#" class="cat-card">
-      <div class="cat-icon">🔬</div>
-      <h3>Growth Hormone</h3>
-      <div class="count">CJC-1295, Ipamorelin</div>
-    </a>
-    <a href="#" class="cat-card">
-      <div class="cat-icon">🧪</div>
-      <h3>Recovery</h3>
-      <div class="count">GHK-Cu, BPC-157</div>
-    </a>
-    <a href="#" class="cat-card">
-      <div class="cat-icon">✨</div>
-      <h3>Skin & Glow</h3>
-      <div class="count">Glow Blend & more</div>
-    </a>
-    <a href="#" class="cat-card">
-      <div class="cat-icon">⚡</div>
-      <h3>NAD+</h3>
-      <div class="count">NAD+ 1000mg</div>
-    </a>
-  </div>
-</div>
-
-<!-- PRODUCTS -->
-<div id="products" class="products-section">
+<!-- CONTACT FORM + INFO -->
+<div style="background: var(--white); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
   <div class="section reveal">
-    <div class="section-header">
+    <div style="display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 3rem; align-items: start;">
+
+      <!-- FORM -->
       <div>
-        <h2>Our Peptides</h2>
-        <p>Research-grade compounds — all products for in-vitro use only</p>
-      </div>
-      <a href="#" class="view-all">View Full Catalog →</a>
-    </div>
+        <h2 style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--primary); margin-bottom: 0.4rem;">Send Us a Message</h2>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">Fill out the form below and we'll get back to you as soon as possible.</p>
 
-    <div class="products-grid">
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
 
-      <!-- Semaglutide -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-purity">99%+</span>
-          <span class="product-badge badge-new">Popular</span>
-        </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">5mg</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-cat">GLP-1 Agonist</div>
-          <h3>Semaglutide</h3>
-          <div class="product-desc">GLP-1 Receptor Agonist</div>
-          <div class="product-meta">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
             <div>
-              <div class="price">$72.00</div>
-              <div class="size-info">5mg / vial</div>
+              <label style="font-size: 0.82rem; font-weight: 600; color: var(--text); display: block; margin-bottom: 0.35rem;">First Name <span style="color: #d4513a;">*</span></label>
+              <input type="text" placeholder="John" style="width: 100%; padding: 0.7rem 1rem; border: 2px solid var(--border); border-radius: 8px; font-family: var(--font); font-size: 0.88rem; color: var(--text); outline: none; transition: border-color 0.2s; background: var(--bg);" onfocus="this.style.borderColor='var(--primary)'; this.style.background='white'" onblur="this.style.borderColor='var(--border)'; this.style.background='var(--bg)'">
             </div>
-            <button class="add-btn">+</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tirzepatide -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-purity">99%+</span>
-          <span class="product-badge badge-new">New</span>
-        </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">10mg</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Dual Agonist</div>
-          <h3>Tirzepatide</h3>
-          <div class="product-desc">Dual GIP/GLP-1 Receptor Agonist</div>
-          <div class="product-meta">
             <div>
-              <div class="price">$105.00</div>
-              <div class="size-info">10mg / vial</div>
+              <label style="font-size: 0.82rem; font-weight: 600; color: var(--text); display: block; margin-bottom: 0.35rem;">Last Name <span style="color: #d4513a;">*</span></label>
+              <input type="text" placeholder="Doe" style="width: 100%; padding: 0.7rem 1rem; border: 2px solid var(--border); border-radius: 8px; font-family: var(--font); font-size: 0.88rem; color: var(--text); outline: none; transition: border-color 0.2s; background: var(--bg);" onfocus="this.style.borderColor='var(--primary)'; this.style.background='white'" onblur="this.style.borderColor='var(--border)'; this.style.background='var(--bg)'">
             </div>
-            <button class="add-btn">+</button>
           </div>
+
+          <div>
+            <label style="font-size: 0.82rem; font-weight: 600; color: var(--text); display: block; margin-bottom: 0.35rem;">Email Address <span style="color: #d4513a;">*</span></label>
+            <input type="email" placeholder="john@example.com" style="width: 100%; padding: 0.7rem 1rem; border: 2px solid var(--border); border-radius: 8px; font-family: var(--font); font-size: 0.88rem; color: var(--text); outline: none; transition: border-color 0.2s; background: var(--bg);" onfocus="this.style.borderColor='var(--primary)'; this.style.background='white'" onblur="this.style.borderColor='var(--border)'; this.style.background='var(--bg)'">
+          </div>
+
+          <div>
+            <label style="font-size: 0.82rem; font-weight: 600; color: var(--text); display: block; margin-bottom: 0.35rem;">Subject <span style="color: #d4513a;">*</span></label>
+            <select style="width: 100%; padding: 0.7rem 1rem; border: 2px solid var(--border); border-radius: 8px; font-family: var(--font); font-size: 0.88rem; color: var(--text); outline: none; background: var(--bg); cursor: pointer; transition: border-color 0.2s;" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--border)'">
+              <option value="">Select a topic...</option>
+              <option>Product Question</option>
+              <option>Order Status / Tracking</option>
+              <option>Shipping & Delivery</option>
+              <option>Returns & Refunds</option>
+              <option>COA / Purity Request</option>
+              <option>Bulk / Wholesale Inquiry</option>
+              <option>Website Feedback</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label style="font-size: 0.82rem; font-weight: 600; color: var(--text); display: block; margin-bottom: 0.35rem;">Order Number <span style="font-weight: 400; color: var(--text-muted);">(if applicable)</span></label>
+            <input type="text" placeholder="e.g. THP-00001234" style="width: 100%; padding: 0.7rem 1rem; border: 2px solid var(--border); border-radius: 8px; font-family: var(--font); font-size: 0.88rem; color: var(--text); outline: none; transition: border-color 0.2s; background: var(--bg);" onfocus="this.style.borderColor='var(--primary)'; this.style.background='white'" onblur="this.style.borderColor='var(--border)'; this.style.background='var(--bg)'">
+          </div>
+
+          <div>
+            <label style="font-size: 0.82rem; font-weight: 600; color: var(--text); display: block; margin-bottom: 0.35rem;">Message <span style="color: #d4513a;">*</span></label>
+            <textarea placeholder="How can we help you?" rows="5" style="width: 100%; padding: 0.7rem 1rem; border: 2px solid var(--border); border-radius: 8px; font-family: var(--font); font-size: 0.88rem; color: var(--text); outline: none; transition: border-color 0.2s; background: var(--bg); resize: vertical;" onfocus="this.style.borderColor='var(--primary)'; this.style.background='white'" onblur="this.style.borderColor='var(--border)'; this.style.background='var(--bg)'"></textarea>
+          </div>
+
+          <button style="padding: 0.85rem 2rem; background: var(--primary); color: white; border: none; border-radius: 8px; font-family: var(--font); font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: all 0.2s; align-self: flex-start;" onmouseover="this.style.background='var(--gold)'; this.style.color='var(--primary-deeper)'" onmouseout="this.style.background='var(--primary)'; this.style.color='white'">Send Message →</button>
+
         </div>
       </div>
 
-      <!-- Retatrutide -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-purity">99%+</span>
-          <span class="product-badge badge-new">Premium</span>
-        </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">20mg</div>
+      <!-- SIDEBAR INFO -->
+      <div>
+        <div style="background: var(--bg); border-radius: var(--radius-lg); padding: 1.75rem; margin-bottom: 1.25rem;">
+          <h3 style="font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 1rem;">Quick Answers</h3>
+          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <a href="our-company.html#faq" style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--primary); text-decoration: none; transition: gap 0.2s;" onmouseover="this.style.gap='0.8rem'" onmouseout="this.style.gap='0.6rem'">
+              <span>→</span> Frequently Asked Questions
+            </a>
+            <a href="peptide-information.html" style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--primary); text-decoration: none; transition: gap 0.2s;" onmouseover="this.style.gap='0.8rem'" onmouseout="this.style.gap='0.6rem'">
+              <span>→</span> Peptide Information
+            </a>
+            <a href="coa.html" style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--primary); text-decoration: none; transition: gap 0.2s;" onmouseover="this.style.gap='0.8rem'" onmouseout="this.style.gap='0.6rem'">
+              <span>→</span> View Certificates of Analysis
+            </a>
+            <a href="peptide-information.html#storage" style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--primary); text-decoration: none; transition: gap 0.2s;" onmouseover="this.style.gap='0.8rem'" onmouseout="this.style.gap='0.6rem'">
+              <span>→</span> Storage & Handling Guide
+            </a>
           </div>
         </div>
-        <div class="product-body">
-          <div class="product-cat">Triple Agonist</div>
-          <h3>Retatrutide</h3>
-          <div class="product-desc">GLP-1/GIP/Glucagon Triple Agonist</div>
-          <div class="product-meta">
-            <div>
-              <div class="price">$170.00</div>
-              <div class="size-info">20mg / vial</div>
-            </div>
-            <button class="add-btn">+</button>
-          </div>
-        </div>
-      </div>
 
-      <!-- CJC-1295 + Ipamorelin -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-purity">99%+</span>
-        </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">BLEND</div>
+        <div style="background: var(--bg); border-radius: var(--radius-lg); padding: 1.75rem; margin-bottom: 1.25rem;">
+          <h3 style="font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 1rem;">Direct Email</h3>
+          <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem;">
+            <span style="font-size: 1.1rem;">✉️</span>
+            <a href="mailto:support@therionpeptides.com" style="font-size: 0.9rem; color: var(--primary); font-weight: 600; text-decoration: none;">support@therionpeptides.com</a>
           </div>
+          <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.6;">For the fastest response, include your order number (if applicable) and as much detail as possible about your inquiry.</p>
         </div>
-        <div class="product-body">
-          <div class="product-cat">GH Secretagogue</div>
-          <h3>CJC-1295 + Ipamorelin</h3>
-          <div class="product-desc">Growth Hormone Releasing Blend</div>
-          <div class="product-meta">
-            <div>
-              <div class="price">$60.00</div>
-              <div class="size-info">blend / vial</div>
-            </div>
-            <button class="add-btn">+</button>
-          </div>
-        </div>
-      </div>
 
-      <!-- GHK-Cu -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-purity">99%+</span>
-        </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">50mg</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Copper Peptide</div>
-          <h3>GHK-Cu</h3>
-          <div class="product-desc">Copper Peptide Complex</div>
-          <div class="product-meta">
-            <div>
-              <div class="price">$40.00</div>
-              <div class="size-info">50mg / vial</div>
-            </div>
-            <button class="add-btn">+</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Glow Blend -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-purity">99%+</span>
-          <span class="product-badge badge-new">Exclusive</span>
-        </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">~70mg</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Skin & Beauty</div>
-          <h3>Glow Blend</h3>
-          <div class="product-desc">Multi-Peptide Skin Complex</div>
-          <div class="product-meta">
-            <div>
-              <div class="price">$100.00</div>
-              <div class="size-info">~70mg / vial</div>
-            </div>
-            <button class="add-btn">+</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- NAD+ -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-purity">99%+</span>
-        </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">1000mg</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Coenzyme</div>
-          <h3>NAD+</h3>
-          <div class="product-desc">Nicotinamide Adenine Dinucleotide</div>
-          <div class="product-meta">
-            <div>
-              <div class="price">$150.00</div>
-              <div class="size-info">1000mg / vial</div>
-            </div>
-            <button class="add-btn">+</button>
-          </div>
+        <div style="background: var(--primary-light); border-radius: var(--radius-lg); padding: 1.75rem;">
+          <h3 style="font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">Bulk & Wholesale</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 0.75rem;">Interested in bulk pricing for research institutions, labs, or wholesale partnerships? Reach out and we'll put together a custom quote.</p>
+          <a href="mailto:support@therionpeptides.com?subject=Bulk%20/%20Wholesale%20Inquiry" style="font-size: 0.88rem; color: var(--primary); font-weight: 600; text-decoration: none; display: flex; align-items: center; gap: 0.4rem; transition: gap 0.2s;" onmouseover="this.style.gap='0.6rem'" onmouseout="this.style.gap='0.4rem'">Request a Quote →</a>
         </div>
       </div>
 
     </div>
-  </div>
-</div>
-
-<!-- WHY US -->
-<div class="section reveal">
-  <div class="section-header">
-    <div>
-      <h2>Why Therion Peptides</h2>
-      <p>Quality, transparency, and value for researchers</p>
-    </div>
-  </div>
-
-  <div class="info-grid">
-    <div class="info-card">
-      <div class="info-icon">🔬</div>
-      <h3>HPLC & MS Verified</h3>
-      <p>Every batch undergoes High-Performance Liquid Chromatography and Mass Spectrometry analysis to confirm identity and purity exceeding 99%.</p>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">📋</div>
-      <h3>Certificate of Analysis</h3>
-      <p>Each product ships with a detailed COA — full transparency into purity, molecular weight, and third-party testing results.</p>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">💰</div>
-      <h3>Competitive Pricing</h3>
-      <p>Premium quality at fair prices. We partner directly with GMP manufacturers to deliver real value to researchers.</p>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">🏭</div>
-      <h3>WHO/GMP & ISO Sourced</h3>
-      <p>All products synthesized in WHO/GMP and ISO 9001:2015 certified facilities for consistent, reproducible quality.</p>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">❄️</div>
-      <h3>Cold-Chain Shipping</h3>
-      <p>Temperature-sensitive compounds stored and shipped under controlled conditions to preserve stability and bioactivity.</p>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">⚡</div>
-      <h3>24-48hr Dispatch</h3>
-      <p>Most orders ship within 24-48 hours. Fast, reliable delivery because your research timelines matter.</p>
-    </div>
-  </div>
-</div>
-
-<!-- RESEARCH CTA -->
-<div class="section reveal">
-  <div class="research-banner">
-    <div>
-      <h2>Peptide Research & Resources</h2>
-      <p>Explore our library of scientific publications, reconstitution guides, storage protocols, and peptide information to support your research.</p>
-    </div>
-    <a href="#" class="btn btn-gold">Browse Articles →</a>
   </div>
 </div>
 
@@ -1472,7 +1444,6 @@
       <h4>Information</h4>
       <a href="#">What are Peptides?</a>
       <a href="#">Peptide Purity</a>
-      <a href="#">Reconstitution Guide</a>
       <a href="#">Storage & Handling</a>
       <a href="#">Research Articles</a>
       <a href="#">Certificate of Analysis</a>
