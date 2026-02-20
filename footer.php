@@ -18,9 +18,9 @@
     <div class="footer-brand">
       <div class="ft-logo">
         <span class="ft-brand">THERION</span>
-        <span class="ft-sub">Peptides</span>
+        <span class="ft-sub">Sciences</span>
       </div>
-      <p>Therion Peptides™ specializes in the synthesis of highly purified peptides, proteins, and amino acid derivatives for scientific research and development. USA made. GMP compliant.</p>
+      <p>Therion Sciences™ specializes in the synthesis of highly purified peptides, proteins, and amino acid derivatives for scientific research and development. USA made. GMP compliant.</p>
     </div>
 
     <div class="footer-col">
@@ -68,7 +68,7 @@
   </div>
 
   <div class="footer-bottom">
-    <p>&copy; <?php echo date( 'Y' ); ?> Therion Peptides™. All rights reserved.</p>
+    <p>&copy; <?php echo date( 'Y' ); ?> Therion Sciences™. All rights reserved.</p>
     <div class="disclaimer">
       <?php echo esc_html( get_theme_mod( 'therion_disclaimer', 'Products are intended for IN-VITRO LABORATORY RESEARCH USE ONLY — not for human consumption. You must be 21+ to use this website. All products handled by qualified research professionals only.' ) ); ?>
     </div>

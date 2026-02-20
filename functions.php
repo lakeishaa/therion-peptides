@@ -1,6 +1,6 @@
 <?php
 /**
- * Therion Peptides Theme Functions
+ * Therion Sciences Theme Functions
  *
  * @package Therion_Peptides
  * @version 1.0.0

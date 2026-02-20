@@ -1,5 +1,5 @@
 /**
- * Therion Peptides — Frontend Scripts
+ * Therion Sciences — Frontend Scripts
  */
 
 document.addEventListener('DOMContentLoaded', function () {

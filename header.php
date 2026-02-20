@@ -58,7 +58,7 @@
           </div>
           <div class="logo-wordmark">
             <span class="brand">THERION</span>
-            <span class="sub">Peptides</span>
+            <span class="sub">Sciences</span>
           </div>
         </div>
       <?php endif; ?>

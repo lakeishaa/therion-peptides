@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Front Page
- * Homepage template for Therion Peptides
+ * Homepage template for Therion Sciences
  *
  * @package Therion_Peptides
  */
@@ -13,7 +13,7 @@ get_header();
 <div class="hero-banner">
   <div class="hero-content">
     <div class="hero-text">
-      <div class="overline">Therion Peptides™</div>
+      <div class="overline">Therion Sciences™</div>
       <h1><?php echo esc_html( get_theme_mod( 'therion_hero_heading', 'Premium Research Peptides. Unmatched Purity. Competitive Pricing.' ) ); ?></h1>
       <p><?php echo esc_html( get_theme_mod( 'therion_hero_text', 'We specialize in highly purified peptides for scientific research and development. Every product exceeds 99% purity, verified through HPLC and Mass Spectrometry analysis.' ) ); ?></p>
       <div class="hero-buttons">
@@ -197,7 +197,7 @@ get_header();
 <div class="section reveal">
   <div class="section-header">
     <div>
-      <h2>Why Therion Peptides</h2>
+      <h2>Why Therion Sciences</h2>
       <p>Quality, transparency, and value for researchers</p>
     </div>
   </div>
