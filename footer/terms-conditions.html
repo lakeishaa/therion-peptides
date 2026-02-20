@@ -346,8 +346,7 @@
   }
 
   .hero-content {
-    max-width: 100vw;
-    height: auto;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 4.5rem 2rem;
     display: grid;
@@ -356,7 +355,7 @@
     align-items: center;
     position: relative;
     z-index: 1;
-    background: url("./assets/Hero.png") center center / cover no-repeat;
+    background: url("./assets/image.jpg") center center / cover no-repeat;
   }
 
   .hero-text { color: white; }
@@ -941,6 +940,217 @@
     max-width: 680px; line-height: 1.6;
   }
 
+  /* ===== POPULAR PEPTIDES ===== */
+  .popular-section {
+    background: var(--white);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .popular-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .pop-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all 0.25s;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--text);
+    display: block;
+  }
+
+  .pop-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+    border-color: transparent;
+  }
+
+  .pop-img {
+    height: 200px;
+    background: linear-gradient(135deg, #f8f9fb, var(--bg-alt));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    position: relative;
+  }
+
+  .pop-vial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s;
+  }
+
+  .pop-card:hover .pop-vial { transform: scale(1.05); }
+
+  .pop-vial-cap {
+    width: 36px; height: 14px;
+    background: linear-gradient(to bottom, #8a8a8a, #666);
+    border-radius: 4px 4px 0 0;
+    border: 1px solid #999;
+  }
+
+  .pop-vial-neck {
+    width: 20px; height: 12px;
+    background: rgba(200,210,220,0.3);
+    border-left: 2px solid rgba(27,77,122,0.15);
+    border-right: 2px solid rgba(27,77,122,0.15);
+  }
+
+  .pop-vial-body {
+    width: 56px; height: 90px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(240,244,248,0.8));
+    border: 2px solid rgba(27,77,122,0.12);
+    border-radius: 0 0 8px 8px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 4px;
+  }
+
+  .pop-vial-body::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 45%;
+    background: linear-gradient(to top, rgba(58,143,212,0.1), transparent);
+    border-radius: 0 0 6px 6px;
+    pointer-events: none;
+  }
+
+  .pop-vial-stripe {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: var(--primary);
+  }
+
+  .pop-vial-brand {
+    font-family: var(--font-serif);
+    font-size: 0.32rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 6px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pop-vial-name {
+    font-family: var(--font);
+    font-size: 0.35rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-align: center;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pop-vial-mg {
+    font-family: var(--font-mono);
+    font-size: 0.32rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    padding: 0px 3px;
+    border-radius: 2px;
+    margin-top: 2px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pop-vial-purity {
+    font-size: 0.22rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pop-body {
+    padding: 1rem 1.15rem 1.15rem;
+  }
+
+  .pop-body h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.15rem;
+  }
+
+  .pop-body .pop-sub {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .pop-stars {
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+    margin-bottom: 0.55rem;
+  }
+
+  .pop-stars .star { color: #f5a623; font-size: 0.8rem; }
+  .pop-stars .star.empty { color: var(--border); }
+
+  .pop-stars .review-count {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-left: 0.3rem;
+  }
+
+  .pop-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .pop-bottom .pop-price {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .pop-bottom .pop-size {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+  }
+
+  .pop-bottom .pop-add {
+    width: 34px; height: 34px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.15rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+
+  .pop-bottom .pop-add:hover {
+    background: var(--gold);
+    color: var(--primary-deeper);
+    transform: scale(1.05);
+  }
+
   /* ===== RESPONSIVE ===== */
   @media (max-width: 900px) {
     .hero-content { grid-template-columns: 1fr; }
@@ -962,6 +1172,7 @@
     .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
     .footer-bottom { flex-direction: column; text-align: center; }
     .products-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+    .popular-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
   }
 
   /* ===== ANIMATIONS ===== */
@@ -984,453 +1195,199 @@
   <div class="top-bar-links">
     <a href="#">Support</a>
     <a href="#">Track Order</a>
-    <a href="#">FAQ</a>
+    <a href="./faq.html">FAQ</a>
   </div>
 </div>
-
-<!-- HEADER -->
 <header>
   <div class="header-main">
-    <a href="#" class="logo">
-      <!-- Recreated logo matching brand identity -->
+    <a href="./index.html" class="logo">
       <div class="logo-svg">
-        <div class=""><img src="./assets/logo.png" alt=""></div>
-        <!-- <div class="logo-helix">
-          <div class="strand">
-            <div class="node"></div><div class="node"></div>
-            <div class="node"></div><div class="node"></div>
-          </div>
-        </div>
-        <div class="logo-center">T</div>
-        <div class="logo-helix">
-          <div class="strand">
-            <div class="node"></div><div class="node"></div>
-            <div class="node"></div><div class="node"></div>
-          </div>
-        </div> -->
+        <div class=""><img src="../assets/logo.png" alt="Therion Peptides"></div>
         <div class="logo-wordmark">
           <span class="brand">THERION</span>
           <span class="sub">Peptides</span>
         </div>
       </div>
     </a>
-
     <div class="search-bar">
-      <span class="search-icon">🔍</span>
-      <input type="text" placeholder="Search peptides, proteins, amino acids...">
+      <input type="text" placeholder="Search peptides...">
+      <button>🔍</button>
     </div>
-
     <div class="header-actions">
-      <a href="#" class="action-btn">
-        <span class="icon">👤</span>Account
-      </a>
-      <a href="#" class="action-btn">
-        <span class="icon">♡</span>Wishlist
-      </a>
-      <a href="#" class="action-btn cart-btn">
-        🛒 Cart <span class="cart-count">0</span>
-      </a>
+      <a href="#">👤</a>
+      <a href="#">♡</a>
+      <a href="#" class="cart-btn">🛒 <span class="cart-count">0</span></a>
     </div>
   </div>
 </header>
-
-<!-- NAV -->
 <div class="nav-bar">
   <nav class="nav-inner">
-    <a href="./index.html" class="active">All Peptides</a>
-    <a href="./popular-peptides.html">Popular Peptides</a>
-    <a href="./bundle-save.html">Bundle & Save</a>
-    <a href="./coa.html">COA</a>
-    <!-- <a href="#">Research Videos</a> -->
+    <a href="../index.html">All Peptides</a>
+    <a href="../popular-peptides.html">Popular Peptides</a>
+    <a href="../bundle-save.html">Bundle & Save</a>
+    <a href="../coa.html">COA</a>
     <span class="nav-spacer"></span>
-    <a href="./our-company.html" class="nav-right">Our Company</a>
-    <a href="./contact.html" class="nav-right">Contact Us</a>
+    <a href="../our-company.html" class="nav-right">Our Company</a>
+    <a href="../contact.html" class="nav-right">Contact Us</a>
   </nav>
 </div>
 
-<!-- HERO -->
-<div class="hero-banner">
-  <div class="hero-content">
-    <div class="hero-text">
-      <div class="overline">Therion Peptides™</div>
-      <h1>Premium Research Peptides.<br>Unmatched Purity. Competitive Pricing.</h1>
-      <p>We specialize in highly purified peptides for scientific research and development. Every product exceeds 99% purity, verified through HPLC and Mass Spectrometry analysis.</p>
-      <div class="hero-buttons">
-        <a href="#products" class="btn btn-gold">Shop All Peptides →</a>
-        <a href="#" class="btn btn-outline-white">View COA Reports</a>
-      </div>
-      <div class="hero-badges">
-        <div class="hero-badge-item">
-          <div class="icon">🔬</div>
-          <div><strong>99%+ Purity</strong><br>HPLC Verified</div>
-        </div>
-        <div class="hero-badge-item">
-          <div class="icon">📋</div>
-          <div><strong>COA Included</strong><br>Every Order</div>
-        </div>
-        <div class="hero-badge-item">
-          <div class="icon">📦</div>
-          <div><strong>Fast Shipping</strong><br>24-48hr Dispatch</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-featured">
-      <div class="hero-pcard">
-        <span class="mol">🧪</span>
-        <h3>Semaglutide</h3>
-        <div class="desc">GLP-1 Receptor Agonist</div>
-        <div class="price">$72.00 <span class="size">/ 5mg</span></div>
-      </div>
-      <div class="hero-pcard">
-        <span class="mol">🧬</span>
-        <h3>Tirzepatide</h3>
-        <div class="desc">Dual GIP/GLP-1 Agonist</div>
-        <div class="price">$105.00 <span class="size">/ 10mg</span></div>
-      </div>
-      <div class="hero-pcard">
-        <span class="mol">⚗️</span>
-        <h3>Retatrutide</h3>
-        <div class="desc">Triple Agonist Peptide</div>
-        <div class="price">$170.00 <span class="size">/ 20mg</span></div>
-      </div>
-      <div class="hero-pcard">
-        <span class="mol">🔬</span>
-        <h3>CJC-1295 + Ipa</h3>
-        <div class="desc">GH Secretagogue Blend</div>
-        <div class="price">$60.00 <span class="size">/ blend</span></div>
-      </div>
+<!-- BREADCRUMB -->
+<div style="background: var(--white); border-bottom: 1px solid var(--border-light); padding: 0.75rem 0;">
+  <div class="section" style="padding: 0.5rem 2rem;">
+    <div style="font-size: 0.82rem; color: var(--text-muted);">
+      <a href="./index.html" style="color: var(--primary); text-decoration: none;">Home</a>
+      <span style="margin: 0 0.4rem;">›</span>
+      <span>Terms & Conditions</span>
     </div>
   </div>
 </div>
 
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="trust-inner">
-    <div class="trust-item">
-      <div class="ti-icon">🔬</div>
-      <div><strong>99%+ Purity</strong><span>HPLC & MS Verified</span></div>
-    </div>
-    <div class="trust-item">
-      <div class="ti-icon">🏭</div>
-      <div><strong>GMP Compliant</strong><span>ISO 9001:2015</span></div>
-    </div>
-    <div class="trust-item">
-      <div class="ti-icon">📦</div>
-      <div><strong>Fast Shipping</strong><span>24-48hr Dispatch</span></div>
-    </div>
-    <div class="trust-item">
-      <div class="ti-icon">💰</div>
-      <div><strong>Secure Checkout</strong><span>SSL Encrypted</span></div>
-    </div>
+<!-- PAGE HEADER -->
+<div style="background: var(--white); border-bottom: 1px solid var(--border-light); padding: 2.5rem 0;">
+  <div class="section" style="padding: 1rem 2rem; max-width: 800px;">
+    <h1 style="font-family: var(--font-serif); font-size: 2rem; font-weight: 700; color: var(--primary); margin-bottom: 0.4rem;">Terms & Conditions</h1>
+    <p style="color: var(--text-muted); font-size: 0.88rem;">Last updated: February 12, 2026</p>
   </div>
 </div>
 
-<!-- CATEGORIES -->
-<div class="section reveal">
-  <div class="section-header">
-    <div>
-      <h2>Shop by Category</h2>
-      <p>Browse our research compound catalog</p>
-    </div>
-    <a href="#" class="view-all">View All →</a>
-  </div>
+<!-- CONTENT -->
+<div style="background: var(--white);">
+  <div class="section" style="max-width: 800px; padding-top: 2rem; padding-bottom: 3.5rem;">
+    <div style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.85;">
 
-  <div class="categories-grid">
-    <a href="#" class="cat-card">
-      <div class="cat-icon">🧬</div>
-      <h3>GLP-1 Agonists</h3>
-      <div class="count">Semaglutide, Tirzepatide</div>
-    </a>
-    <a href="#" class="cat-card">
-      <div class="cat-icon">⚗️</div>
-      <h3>Multi-Agonists</h3>
-      <div class="count">Retatrutide & more</div>
-    </a>
-    <a href="#" class="cat-card">
-      <div class="cat-icon">🔬</div>
-      <h3>Growth Hormone</h3>
-      <div class="count">CJC-1295, Ipamorelin</div>
-    </a>
-    <a href="#" class="cat-card">
-      <div class="cat-icon">🧪</div>
-      <h3>Recovery</h3>
-      <div class="count">GHK-Cu, BPC-157</div>
-    </a>
-    <a href="#" class="cat-card">
-      <div class="cat-icon">✨</div>
-      <h3>Skin & Glow</h3>
-      <div class="count">Glow Blend & more</div>
-    </a>
-    <a href="#" class="cat-card">
-      <div class="cat-icon">⚡</div>
-      <h3>NAD+</h3>
-      <div class="count">NAD+ 1000mg</div>
-    </a>
-  </div>
-</div>
+      <p style="margin-bottom: 1.5rem;">Please read these Terms & Conditions ("Terms") carefully before using the website therionpeptides.com (the "Site") or purchasing any products from Therion Peptides ("we," "our," or "us"). By accessing the Site or placing an order, you agree to be bound by these Terms. If you do not agree, do not use the Site or purchase products.</p>
 
-<!-- PRODUCTS -->
-<div id="products" class="products-section">
-  <div class="section reveal">
-    <div class="section-header">
-      <div>
-        <h2>Our Peptides</h2>
-        <p>Research-grade compounds — all products for in-vitro use only</p>
-      </div>
-      <a href="#" class="view-all">View Full Catalog →</a>
-    </div>
-
-    <div class="products-grid">
-
-      <!-- Semaglutide -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-purity">99%+</span>
-          <span class="product-badge badge-new">Popular</span>
+      <!-- IMPORTANT NOTICE -->
+      <div style="background: #fdf2f2; border: 2px solid #e74c3c; border-radius: var(--radius-lg); padding: 1.75rem; margin-bottom: 2rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+          <span style="font-size: 1.2rem;">⚠️</span>
+          <h2 style="font-family: var(--font-serif); font-size: 1.2rem; font-weight: 700; color: #c0392b; margin: 0;">IMPORTANT: Research Use Only — Not for Human Consumption</h2>
         </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">5mg</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-cat">GLP-1 Agonist</div>
-          <h3>Semaglutide</h3>
-          <div class="product-desc">GLP-1 Receptor Agonist</div>
-          <div class="product-meta">
-            <div>
-              <div class="price">$72.00</div>
-              <div class="size-info">5mg / vial</div>
-            </div>
-            <button class="add-btn">+</button>
-          </div>
+        <div style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.8;">
+          <p style="margin-bottom: 0.75rem;"><strong>All products sold by Therion Peptides are intended strictly for in-vitro laboratory research purposes only.</strong> They are <strong>NOT</strong> intended for human consumption, ingestion, injection into humans, veterinary use, diagnostic use, or any clinical application.</p>
+          <p style="margin-bottom: 0.75rem;">By purchasing from Therion Peptides, you expressly represent and warrant that you will use the products solely for legitimate scientific research conducted in a laboratory setting. You agree that you will not administer, recommend, or facilitate the administration of any product to humans or animals.</p>
+          <p><strong>Any misuse of our products is solely the responsibility of the buyer.</strong> Therion Peptides assumes no liability for any harm, injury, or legal consequences arising from the misuse of our products outside of their intended research purpose.</p>
         </div>
       </div>
 
-      <!-- Tirzepatide -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-purity">99%+</span>
-          <span class="product-badge badge-new">New</span>
-        </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">10mg</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Dual Agonist</div>
-          <h3>Tirzepatide</h3>
-          <div class="product-desc">Dual GIP/GLP-1 Receptor Agonist</div>
-          <div class="product-meta">
-            <div>
-              <div class="price">$105.00</div>
-              <div class="size-info">10mg / vial</div>
-            </div>
-            <button class="add-btn">+</button>
-          </div>
+      <!-- 1 -->
+      <h2 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">1. Eligibility</h2>
+      <p style="margin-bottom: 0.75rem;">By using this Site and purchasing products, you represent and warrant that:</p>
+      <div style="background: var(--bg); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.8;">
+        <strong>a.</strong> You are at least <strong>21 years of age</strong>.<br>
+        <strong>b.</strong> You have the legal authority to enter into a binding agreement.<br>
+        <strong>c.</strong> You will use all products exclusively for lawful in-vitro laboratory research purposes.<br>
+        <strong>d.</strong> You are not purchasing products for the purpose of human consumption, veterinary use, or any clinical application.<br>
+        <strong>e.</strong> You will comply with all applicable local, state, and federal laws governing the purchase, possession, and use of research compounds.
+      </div>
+      <p>We reserve the right to refuse service, cancel orders, or terminate accounts at our sole discretion if we believe any of these conditions have been violated.</p>
+
+      <!-- 2 -->
+      <h2 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">2. Products & Intended Use</h2>
+      <div style="background: var(--primary-light); border-left: 4px solid var(--primary); border-radius: 0 8px 8px 0; padding: 1.25rem 1.5rem; margin-bottom: 1rem;">
+        <div style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.8;">
+          All Therion Peptides products are <strong>research chemicals</strong> sold exclusively for in-vitro laboratory research. They have not been evaluated or approved by the U.S. Food and Drug Administration (FDA) or any other regulatory body for safety, efficacy, or suitability for human or animal use. No claims are made regarding any therapeutic, diagnostic, or medicinal properties of any product.
         </div>
       </div>
+      <p style="margin-bottom: 0.75rem;">Product descriptions, specifications, and research information provided on this Site are for educational and informational purposes only. They do not constitute medical advice, recommendations for treatment, or endorsements of any product for human use.</p>
+      <p>You acknowledge and agree that any research conducted with our products is done at your own risk and that you are solely responsible for compliance with all applicable regulations, institutional review board requirements, and safety protocols.</p>
 
-      <!-- Retatrutide -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-purity">99%+</span>
-          <span class="product-badge badge-new">Premium</span>
-        </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">20mg</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Triple Agonist</div>
-          <h3>Retatrutide</h3>
-          <div class="product-desc">GLP-1/GIP/Glucagon Triple Agonist</div>
-          <div class="product-meta">
-            <div>
-              <div class="price">$170.00</div>
-              <div class="size-info">20mg / vial</div>
-            </div>
-            <button class="add-btn">+</button>
-          </div>
-        </div>
+      <!-- 3 -->
+      <h2 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">3. Orders & Payment</h2>
+      <p style="margin-bottom: 0.75rem;">By placing an order, you are making an offer to purchase products subject to these Terms. We reserve the right to accept or decline any order at our discretion.</p>
+      <div style="background: var(--bg); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.8;">
+        <strong>Pricing:</strong> All prices are listed in U.S. dollars (USD) and are subject to change without notice. Prices displayed at the time of your order are the prices that apply to your transaction.<br><br>
+        <strong>Payment:</strong> We accept major credit/debit cards (Visa, Mastercard, American Express, Discover) and PayPal. All payments are processed through secure, PCI-compliant payment processors. We do not store your full credit card information.<br><br>
+        <strong>Order Confirmation:</strong> You will receive an email confirmation upon placing your order. This confirmation does not constitute acceptance — your order is accepted only when we dispatch the product.<br><br>
+        <strong>Errors:</strong> We reserve the right to correct any errors in pricing, product descriptions, or availability, and to cancel any orders affected by such errors, even after order confirmation.
       </div>
 
-      <!-- CJC-1295 + Ipamorelin -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-purity">99%+</span>
-        </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">BLEND</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-cat">GH Secretagogue</div>
-          <h3>CJC-1295 + Ipamorelin</h3>
-          <div class="product-desc">Growth Hormone Releasing Blend</div>
-          <div class="product-meta">
-            <div>
-              <div class="price">$60.00</div>
-              <div class="size-info">blend / vial</div>
-            </div>
-            <button class="add-btn">+</button>
-          </div>
-        </div>
+      <!-- 4 -->
+      <h2 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">4. Shipping & Delivery</h2>
+      <div style="background: var(--bg); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.8;">
+        <strong>Dispatch:</strong> Orders are typically dispatched within 24–48 hours of placement (business days).<br><br>
+        <strong>Shipping:</strong> We currently ship within the United States only. All orders are shipped in temperature-controlled packaging with cold packs to maintain product integrity.<br><br>
+        <strong>Free Shipping:</strong> Orders totaling $200 or more qualify for free standard shipping.<br><br>
+        <strong>Risk of Loss:</strong> Title and risk of loss for products pass to you upon delivery to the carrier. We are not responsible for delays, loss, or damage caused by the shipping carrier after dispatch.<br><br>
+        <strong>Delivery Estimates:</strong> Estimated delivery times are provided as a guide only and are not guaranteed. We are not liable for any losses arising from delivery delays.
       </div>
 
-      <!-- GHK-Cu -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-purity">99%+</span>
-        </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">50mg</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Copper Peptide</div>
-          <h3>GHK-Cu</h3>
-          <div class="product-desc">Copper Peptide Complex</div>
-          <div class="product-meta">
-            <div>
-              <div class="price">$40.00</div>
-              <div class="size-info">50mg / vial</div>
-            </div>
-            <button class="add-btn">+</button>
-          </div>
-        </div>
+      <!-- 5 -->
+      <h2 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">5. Returns & Refunds</h2>
+      <p style="margin-bottom: 0.75rem;">Due to the sensitive nature of research compounds:</p>
+      <div style="background: var(--bg); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.8;">
+        <strong>Damaged or Incorrect Orders:</strong> If your order arrives damaged, defective, or incorrect, contact us at <a href="mailto:support@therionpeptides.com" style="color: var(--primary);">support@therionpeptides.com</a> within 7 days of receipt with your order number and photos. We will issue a replacement or full refund at our discretion.<br><br>
+        <strong>Opened or Used Products:</strong> We cannot accept returns of products that have been opened, reconstituted, or used, as we cannot verify their integrity or storage conditions after delivery.<br><br>
+        <strong>Unopened Products:</strong> Unopened, sealed products may be returned within 14 days of delivery for a refund, minus shipping costs. Products must be in original condition with intact seals.<br><br>
+        <strong>Refund Processing:</strong> Approved refunds will be processed to the original payment method within 5–10 business days.
       </div>
 
-      <!-- Glow Blend -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-purity">99%+</span>
-          <span class="product-badge badge-new">Exclusive</span>
-        </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">~70mg</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Skin & Beauty</div>
-          <h3>Glow Blend</h3>
-          <div class="product-desc">Multi-Peptide Skin Complex</div>
-          <div class="product-meta">
-            <div>
-              <div class="price">$100.00</div>
-              <div class="size-info">~70mg / vial</div>
-            </div>
-            <button class="add-btn">+</button>
-          </div>
-        </div>
-      </div>
+      <!-- 6 -->
+      <h2 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">6. Product Quality & Certificates of Analysis</h2>
+      <p style="margin-bottom: 0.75rem;">All Therion Peptides products are manufactured in WHO/GMP and ISO 9001:2015 certified facilities using Solid-Phase Peptide Synthesis (SPPS). Each batch is tested for purity (HPLC) and identity (Mass Spectrometry), and a Certificate of Analysis (COA) is provided with every order.</p>
+      <p>While we guarantee a minimum purity of 99% as verified by our testing protocols, we do not warrant that our products are suitable for any particular research application. It is the buyer's responsibility to determine suitability for their specific research needs.</p>
 
-      <!-- NAD+ -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-purity">99%+</span>
-        </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">1000mg</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Coenzyme</div>
-          <h3>NAD+</h3>
-          <div class="product-desc">Nicotinamide Adenine Dinucleotide</div>
-          <div class="product-meta">
-            <div>
-              <div class="price">$150.00</div>
-              <div class="size-info">1000mg / vial</div>
-            </div>
-            <button class="add-btn">+</button>
-          </div>
-        </div>
+      <!-- 7 -->
+      <h2 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">7. Intellectual Property</h2>
+      <p>All content on this Site — including text, graphics, logos, images, product names, and page layout — is the property of Therion Peptides or its licensors and is protected by U.S. and international copyright, trademark, and intellectual property laws. You may not reproduce, distribute, modify, or create derivative works from any content on this Site without our prior written consent.</p>
+
+      <!-- 8 -->
+      <h2 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">8. Disclaimer of Warranties</h2>
+      <div style="background: var(--bg); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.8;">
+        THE SITE AND ALL PRODUCTS ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE SITE WILL BE UNINTERRUPTED, ERROR-FREE, OR VIRUS-FREE, OR THAT ANY PRODUCT WILL MEET YOUR SPECIFIC RESEARCH REQUIREMENTS.
+      </div>
+      <p>Some jurisdictions do not allow the exclusion of implied warranties, so the above exclusion may not apply to you.</p>
+
+      <!-- 9 -->
+      <h2 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">9. Limitation of Liability</h2>
+      <div style="background: var(--bg); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.8;">
+        TO THE MAXIMUM EXTENT PERMITTED BY LAW, THERION PEPTIDES AND ITS OFFICERS, DIRECTORS, EMPLOYEES, AND AGENTS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, DATA, USE, OR OTHER INTANGIBLE LOSSES, ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF THE SITE, PURCHASE OF PRODUCTS, OR THESE TERMS.<br><br>
+        IN NO EVENT SHALL OUR TOTAL LIABILITY TO YOU FOR ALL CLAIMS EXCEED THE AMOUNT YOU PAID FOR THE SPECIFIC PRODUCT(S) GIVING RISE TO THE CLAIM.
+      </div>
+      <p>You expressly acknowledge that Therion Peptides shall not be liable for any damages, injuries, or legal consequences arising from the misuse of products outside of their intended in-vitro laboratory research purpose, including but not limited to human consumption, injection, or administration to any living organism.</p>
+
+      <!-- 10 -->
+      <h2 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">10. Indemnification</h2>
+      <p>You agree to indemnify, defend, and hold harmless Therion Peptides, its officers, directors, employees, agents, and suppliers from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or related to: (a) your use of the Site or products; (b) your violation of these Terms; (c) your misuse of any product, including use for human consumption or any purpose other than in-vitro laboratory research; or (d) your violation of any applicable law or regulation.</p>
+
+      <!-- 11 -->
+      <h2 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">11. Prohibited Uses</h2>
+      <p style="margin-bottom: 0.75rem;">You agree not to:</p>
+      <div style="background: #fdf2f2; border-left: 4px solid #c0392b; border-radius: 0 8px 8px 0; padding: 1.25rem 1.5rem; margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.8; color: var(--text-secondary);">
+        <strong style="color: #c0392b;">a.</strong> Use any product for human consumption, injection, ingestion, or administration to humans or animals<br>
+        <strong style="color: #c0392b;">b.</strong> Resell products as fit for human consumption, as drugs, supplements, or food additives<br>
+        <strong style="color: #c0392b;">c.</strong> Make any therapeutic, medicinal, or health-related claims about any product<br>
+        <strong style="color: #c0392b;">d.</strong> Purchase products if you are under 21 years of age<br>
+        <strong style="color: #c0392b;">e.</strong> Use the Site or products for any unlawful purpose or in violation of any applicable regulation<br>
+        <strong style="color: #c0392b;">f.</strong> Attempt to reverse-engineer, decompile, or derive formulations from any product<br>
+        <strong style="color: #c0392b;">g.</strong> Use automated systems (bots, scrapers) to access the Site or collect data without authorization
+      </div>
+      <p>Violation of any prohibited use may result in immediate termination of your account, cancellation of orders, and potential legal action.</p>
+
+      <!-- 12 -->
+      <h2 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">12. Governing Law & Disputes</h2>
+      <p style="margin-bottom: 0.75rem;">These Terms shall be governed by and construed in accordance with the laws of the State of Florida, United States, without regard to its conflict of law provisions.</p>
+      <p>Any dispute arising from these Terms or your use of the Site shall first be attempted to be resolved through good-faith negotiation. If the dispute cannot be resolved within 30 days, it shall be submitted to binding arbitration in accordance with the rules of the American Arbitration Association, conducted in the State of Florida. You agree to waive any right to a jury trial or to participate in a class action lawsuit.</p>
+
+      <!-- 13 -->
+      <h2 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">13. Severability</h2>
+      <p>If any provision of these Terms is found to be unenforceable or invalid by a court of competent jurisdiction, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect.</p>
+
+      <!-- 14 -->
+      <h2 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">14. Changes to These Terms</h2>
+      <p>We reserve the right to modify these Terms at any time. Changes will be posted on this page with an updated "Last updated" date. Your continued use of the Site after any changes constitutes acceptance of the revised Terms. It is your responsibility to review these Terms periodically.</p>
+
+      <!-- 15 -->
+      <h2 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">15. Contact</h2>
+      <p style="margin-bottom: 1rem;">If you have any questions about these Terms & Conditions, please contact us:</p>
+      <div style="background: var(--bg); border-radius: var(--radius); padding: 1.25rem; font-size: 0.92rem; line-height: 1.8;">
+        <strong>Therion Peptides</strong><br>
+        Email: <a href="mailto:support@therionpeptides.com" style="color: var(--primary);">support@therionpeptides.com</a><br>
+        Website: <a href="./index.html" style="color: var(--primary);">therionpeptides.com</a>
       </div>
 
     </div>
-  </div>
-</div>
-
-<!-- WHY US -->
-<div class="section reveal">
-  <div class="section-header">
-    <div>
-      <h2>Why Therion Peptides</h2>
-      <p>Quality, transparency, and value for researchers</p>
-    </div>
-  </div>
-
-  <div class="info-grid">
-    <div class="info-card">
-      <div class="info-icon">🔬</div>
-      <h3>HPLC & MS Verified</h3>
-      <p>Every batch undergoes High-Performance Liquid Chromatography and Mass Spectrometry analysis to confirm identity and purity exceeding 99%.</p>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">📋</div>
-      <h3>Certificate of Analysis</h3>
-      <p>Each product ships with a detailed COA — full transparency into purity, molecular weight, and third-party testing results.</p>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">💰</div>
-      <h3>Competitive Pricing</h3>
-      <p>Premium quality at fair prices. We partner directly with GMP manufacturers to deliver real value to researchers.</p>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">🏭</div>
-      <h3>WHO/GMP & ISO Sourced</h3>
-      <p>All products synthesized in WHO/GMP and ISO 9001:2015 certified facilities for consistent, reproducible quality.</p>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">❄️</div>
-      <h3>Cold-Chain Shipping</h3>
-      <p>Temperature-sensitive compounds stored and shipped under controlled conditions to preserve stability and bioactivity.</p>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">⚡</div>
-      <h3>24-48hr Dispatch</h3>
-      <p>Most orders ship within 24-48 hours. Fast, reliable delivery because your research timelines matter.</p>
-    </div>
-  </div>
-</div>
-
-<!-- RESEARCH CTA -->
-<div class="section reveal">
-  <div class="research-banner">
-    <div>
-      <h2>Peptide Research & Resources</h2>
-      <p>Explore our library of scientific publications, reconstitution guides, storage protocols, and peptide information to support your research.</p>
-    </div>
-    <a href="#" class="btn btn-gold">Browse Articles →</a>
   </div>
 </div>
 
@@ -1479,12 +1436,12 @@
     </div>
     <div class="footer-col">
       <h4>Company</h4>
-      <a href="./our-company.html">About Us</a>
-      <a href="./contact.html">Contact</a>
-      <a href="./footer/faq.html">FAQ</a>
-      <a href="./footer/shipping-returns.html">Shipping & Returns</a>
-      <a href="./footer/privacy-policy.html">Privacy Policy</a>
-      <a href="./footer/terms-conditions.html">Terms & Conditions</a>
+      <a href="../our-company.html">About Us</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="../footer/shipping-returns.html">Shipping & Returns</a>
+      <a href="../footer/privacy-policy.html">Privacy Policy</a>
+      <a href="../footer/terms-conditions.html">Terms & Conditions</a>
     </div>
   </div>
   <div class="footer-bottom">

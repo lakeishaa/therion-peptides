@@ -346,8 +346,7 @@
   }
 
   .hero-content {
-    max-width: 100vw;
-    height: auto;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 4.5rem 2rem;
     display: grid;
@@ -356,7 +355,7 @@
     align-items: center;
     position: relative;
     z-index: 1;
-    background: url("./assets/Hero.png") center center / cover no-repeat;
+    background: url("./assets/image.jpg") center center / cover no-repeat;
   }
 
   .hero-text { color: white; }
@@ -941,6 +940,217 @@
     max-width: 680px; line-height: 1.6;
   }
 
+  /* ===== POPULAR PEPTIDES ===== */
+  .popular-section {
+    background: var(--white);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .popular-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .pop-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all 0.25s;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--text);
+    display: block;
+  }
+
+  .pop-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+    border-color: transparent;
+  }
+
+  .pop-img {
+    height: 200px;
+    background: linear-gradient(135deg, #f8f9fb, var(--bg-alt));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    position: relative;
+  }
+
+  .pop-vial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s;
+  }
+
+  .pop-card:hover .pop-vial { transform: scale(1.05); }
+
+  .pop-vial-cap {
+    width: 36px; height: 14px;
+    background: linear-gradient(to bottom, #8a8a8a, #666);
+    border-radius: 4px 4px 0 0;
+    border: 1px solid #999;
+  }
+
+  .pop-vial-neck {
+    width: 20px; height: 12px;
+    background: rgba(200,210,220,0.3);
+    border-left: 2px solid rgba(27,77,122,0.15);
+    border-right: 2px solid rgba(27,77,122,0.15);
+  }
+
+  .pop-vial-body {
+    width: 56px; height: 90px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(240,244,248,0.8));
+    border: 2px solid rgba(27,77,122,0.12);
+    border-radius: 0 0 8px 8px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 4px;
+  }
+
+  .pop-vial-body::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 45%;
+    background: linear-gradient(to top, rgba(58,143,212,0.1), transparent);
+    border-radius: 0 0 6px 6px;
+    pointer-events: none;
+  }
+
+  .pop-vial-stripe {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: var(--primary);
+  }
+
+  .pop-vial-brand {
+    font-family: var(--font-serif);
+    font-size: 0.32rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 6px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pop-vial-name {
+    font-family: var(--font);
+    font-size: 0.35rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-align: center;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pop-vial-mg {
+    font-family: var(--font-mono);
+    font-size: 0.32rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    padding: 0px 3px;
+    border-radius: 2px;
+    margin-top: 2px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pop-vial-purity {
+    font-size: 0.22rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pop-body {
+    padding: 1rem 1.15rem 1.15rem;
+  }
+
+  .pop-body h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.15rem;
+  }
+
+  .pop-body .pop-sub {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .pop-stars {
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+    margin-bottom: 0.55rem;
+  }
+
+  .pop-stars .star { color: #f5a623; font-size: 0.8rem; }
+  .pop-stars .star.empty { color: var(--border); }
+
+  .pop-stars .review-count {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-left: 0.3rem;
+  }
+
+  .pop-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .pop-bottom .pop-price {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .pop-bottom .pop-size {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+  }
+
+  .pop-bottom .pop-add {
+    width: 34px; height: 34px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.15rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+
+  .pop-bottom .pop-add:hover {
+    background: var(--gold);
+    color: var(--primary-deeper);
+    transform: scale(1.05);
+  }
+
   /* ===== RESPONSIVE ===== */
   @media (max-width: 900px) {
     .hero-content { grid-template-columns: 1fr; }
@@ -962,6 +1172,7 @@
     .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
     .footer-bottom { flex-direction: column; text-align: center; }
     .products-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+    .popular-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
   }
 
   /* ===== ANIMATIONS ===== */
@@ -994,7 +1205,7 @@
     <a href="#" class="logo">
       <!-- Recreated logo matching brand identity -->
       <div class="logo-svg">
-        <div class=""><img src="./assets/logo.png" alt=""></div>
+        <div class=""><img src="../assets/logo.png" alt=""></div>
         <!-- <div class="logo-helix">
           <div class="strand">
             <div class="node"></div><div class="node"></div>
@@ -1037,400 +1248,219 @@
 <!-- NAV -->
 <div class="nav-bar">
   <nav class="nav-inner">
-    <a href="./index.html" class="active">All Peptides</a>
-    <a href="./popular-peptides.html">Popular Peptides</a>
-    <a href="./bundle-save.html">Bundle & Save</a>
-    <a href="./coa.html">COA</a>
-    <!-- <a href="#">Research Videos</a> -->
+    <a href="../index.html">All Peptides</a>
+    <a href="../popular-peptides.html">Popular Peptides</a>
+    <a href="../bundle-save.html">Bundle & Save</a>
+    <a href="../coa.html">COA</a>
     <span class="nav-spacer"></span>
-    <a href="./our-company.html" class="nav-right">Our Company</a>
-    <a href="./contact.html" class="nav-right">Contact Us</a>
+    <a href="../our-company.html" class="nav-right">Our Company</a>
+    <a href="../contact.html" class="nav-right">Contact Us</a>
   </nav>
 </div>
 
-<!-- HERO -->
-<div class="hero-banner">
-  <div class="hero-content">
-    <div class="hero-text">
-      <div class="overline">Therion Peptides™</div>
-      <h1>Premium Research Peptides.<br>Unmatched Purity. Competitive Pricing.</h1>
-      <p>We specialize in highly purified peptides for scientific research and development. Every product exceeds 99% purity, verified through HPLC and Mass Spectrometry analysis.</p>
-      <div class="hero-buttons">
-        <a href="#products" class="btn btn-gold">Shop All Peptides →</a>
-        <a href="#" class="btn btn-outline-white">View COA Reports</a>
-      </div>
-      <div class="hero-badges">
-        <div class="hero-badge-item">
-          <div class="icon">🔬</div>
-          <div><strong>99%+ Purity</strong><br>HPLC Verified</div>
-        </div>
-        <div class="hero-badge-item">
-          <div class="icon">📋</div>
-          <div><strong>COA Included</strong><br>Every Order</div>
-        </div>
-        <div class="hero-badge-item">
-          <div class="icon">📦</div>
-          <div><strong>Fast Shipping</strong><br>24-48hr Dispatch</div>
-        </div>
-      </div>
-    </div>
 
-    <div class="hero-featured">
-      <div class="hero-pcard">
-        <span class="mol">🧪</span>
-        <h3>Semaglutide</h3>
-        <div class="desc">GLP-1 Receptor Agonist</div>
-        <div class="price">$72.00 <span class="size">/ 5mg</span></div>
-      </div>
-      <div class="hero-pcard">
-        <span class="mol">🧬</span>
-        <h3>Tirzepatide</h3>
-        <div class="desc">Dual GIP/GLP-1 Agonist</div>
-        <div class="price">$105.00 <span class="size">/ 10mg</span></div>
-      </div>
-      <div class="hero-pcard">
-        <span class="mol">⚗️</span>
-        <h3>Retatrutide</h3>
-        <div class="desc">Triple Agonist Peptide</div>
-        <div class="price">$170.00 <span class="size">/ 20mg</span></div>
-      </div>
-      <div class="hero-pcard">
-        <span class="mol">🔬</span>
-        <h3>CJC-1295 + Ipa</h3>
-        <div class="desc">GH Secretagogue Blend</div>
-        <div class="price">$60.00 <span class="size">/ blend</span></div>
-      </div>
+<!-- BREADCRUMB -->
+<div style="background: var(--white); border-bottom: 1px solid var(--border-light); padding: 0.75rem 0;">
+  <div class="section" style="padding: 0.5rem 2rem;">
+    <div style="font-size: 0.82rem; color: var(--text-muted);">
+      <a href="therion-peptides-reference.html" style="color: var(--primary); text-decoration: none;">Home</a>
+      <span style="margin: 0 0.4rem;">›</span>
+      <span>Privacy Policy</span>
     </div>
   </div>
 </div>
 
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="trust-inner">
-    <div class="trust-item">
-      <div class="ti-icon">🔬</div>
-      <div><strong>99%+ Purity</strong><span>HPLC & MS Verified</span></div>
-    </div>
-    <div class="trust-item">
-      <div class="ti-icon">🏭</div>
-      <div><strong>GMP Compliant</strong><span>ISO 9001:2015</span></div>
-    </div>
-    <div class="trust-item">
-      <div class="ti-icon">📦</div>
-      <div><strong>Fast Shipping</strong><span>24-48hr Dispatch</span></div>
-    </div>
-    <div class="trust-item">
-      <div class="ti-icon">💰</div>
-      <div><strong>Secure Checkout</strong><span>SSL Encrypted</span></div>
-    </div>
+<!-- PAGE HEADER -->
+<div style="background: var(--white); border-bottom: 1px solid var(--border-light); padding: 2.5rem 0;">
+  <div class="section" style="padding: 1rem 2rem; max-width: 800px;">
+    <h1 style="font-family: var(--font-serif); font-size: 2rem; font-weight: 700; color: var(--primary); margin-bottom: 0.4rem;">Privacy Policy</h1>
+    <p style="color: var(--text-muted); font-size: 0.88rem;">Last updated: February 12, 2026</p>
   </div>
 </div>
 
-<!-- CATEGORIES -->
-<div class="section reveal">
-  <div class="section-header">
-    <div>
-      <h2>Shop by Category</h2>
-      <p>Browse our research compound catalog</p>
-    </div>
-    <a href="#" class="view-all">View All →</a>
-  </div>
+<!-- CONTENT -->
+<div style="background: var(--white);">
+  <div class="section" style="max-width: 800px; padding-top: 2rem; padding-bottom: 3.5rem;">
+    <div style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.85;">
 
-  <div class="categories-grid">
-    <a href="#" class="cat-card">
-      <div class="cat-icon">🧬</div>
-      <h3>GLP-1 Agonists</h3>
-      <div class="count">Semaglutide, Tirzepatide</div>
-    </a>
-    <a href="#" class="cat-card">
-      <div class="cat-icon">⚗️</div>
-      <h3>Multi-Agonists</h3>
-      <div class="count">Retatrutide & more</div>
-    </a>
-    <a href="#" class="cat-card">
-      <div class="cat-icon">🔬</div>
-      <h3>Growth Hormone</h3>
-      <div class="count">CJC-1295, Ipamorelin</div>
-    </a>
-    <a href="#" class="cat-card">
-      <div class="cat-icon">🧪</div>
-      <h3>Recovery</h3>
-      <div class="count">GHK-Cu, BPC-157</div>
-    </a>
-    <a href="#" class="cat-card">
-      <div class="cat-icon">✨</div>
-      <h3>Skin & Glow</h3>
-      <div class="count">Glow Blend & more</div>
-    </a>
-    <a href="#" class="cat-card">
-      <div class="cat-icon">⚡</div>
-      <h3>NAD+</h3>
-      <div class="count">NAD+ 1000mg</div>
-    </a>
-  </div>
-</div>
+      <p style="margin-bottom: 1.5rem;">Therion Peptides ("we," "our," or "us") operates the website therionpeptides.com (the "Site"). This Privacy Policy explains how we collect, use, disclose, and protect your personal information when you visit our Site or place an order. By using our Site, you agree to the practices described in this policy.</p>
 
-<!-- PRODUCTS -->
-<div id="products" class="products-section">
-  <div class="section reveal">
-    <div class="section-header">
-      <div>
-        <h2>Our Peptides</h2>
-        <p>Research-grade compounds — all products for in-vitro use only</p>
-      </div>
-      <a href="#" class="view-all">View Full Catalog →</a>
-    </div>
+      <!-- 1 -->
+      <h2 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">1. Information We Collect</h2>
 
-    <div class="products-grid">
-
-      <!-- Semaglutide -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-purity">99%+</span>
-          <span class="product-badge badge-new">Popular</span>
-        </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">5mg</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-cat">GLP-1 Agonist</div>
-          <h3>Semaglutide</h3>
-          <div class="product-desc">GLP-1 Receptor Agonist</div>
-          <div class="product-meta">
-            <div>
-              <div class="price">$72.00</div>
-              <div class="size-info">5mg / vial</div>
-            </div>
-            <button class="add-btn">+</button>
-          </div>
-        </div>
+      <h3 style="font-size: 1rem; font-weight: 700; color: var(--text); margin: 1.25rem 0 0.5rem;">Personal Information You Provide</h3>
+      <p style="margin-bottom: 0.75rem;">When you place an order, create an account, sign up for our newsletter, or contact us, we may collect:</p>
+      <div style="background: var(--bg); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.8;">
+        <strong>Identity & Contact:</strong> Full name, email address, phone number, shipping address, billing address<br>
+        <strong>Payment:</strong> Credit/debit card details (processed securely by Stripe or PayPal — we never store full card numbers)<br>
+        <strong>Order:</strong> Products purchased, order history, transaction amounts<br>
+        <strong>Communications:</strong> Emails, contact form submissions, support tickets
       </div>
 
-      <!-- Tirzepatide -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-purity">99%+</span>
-          <span class="product-badge badge-new">New</span>
-        </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">10mg</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Dual Agonist</div>
-          <h3>Tirzepatide</h3>
-          <div class="product-desc">Dual GIP/GLP-1 Receptor Agonist</div>
-          <div class="product-meta">
-            <div>
-              <div class="price">$105.00</div>
-              <div class="size-info">10mg / vial</div>
-            </div>
-            <button class="add-btn">+</button>
-          </div>
-        </div>
+      <h3 style="font-size: 1rem; font-weight: 700; color: var(--text); margin: 1.25rem 0 0.5rem;">Information Collected Automatically</h3>
+      <p style="margin-bottom: 0.75rem;">When you browse our Site, we may automatically collect:</p>
+      <div style="background: var(--bg); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.8;">
+        <strong>Device Data:</strong> IP address, browser type and version, operating system, device type<br>
+        <strong>Usage Data:</strong> Pages visited, time spent on pages, referring URL, click behavior<br>
+        <strong>Cookies:</strong> Session cookies, preference cookies, and analytics cookies (see Section 6)
       </div>
 
-      <!-- Retatrutide -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-purity">99%+</span>
-          <span class="product-badge badge-new">Premium</span>
-        </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">20mg</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Triple Agonist</div>
-          <h3>Retatrutide</h3>
-          <div class="product-desc">GLP-1/GIP/Glucagon Triple Agonist</div>
-          <div class="product-meta">
-            <div>
-              <div class="price">$170.00</div>
-              <div class="size-info">20mg / vial</div>
-            </div>
-            <button class="add-btn">+</button>
-          </div>
-        </div>
+      <!-- 2 -->
+      <h2 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">2. How We Use Your Information</h2>
+      <p style="margin-bottom: 0.75rem;">We use the information we collect for the following purposes:</p>
+      <div style="background: var(--bg); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.8;">
+        <strong>Order Fulfillment:</strong> Processing and shipping your orders, sending order confirmations and tracking information, managing returns or exchanges<br><br>
+        <strong>Customer Support:</strong> Responding to inquiries, resolving order issues, providing product information<br><br>
+        <strong>Communication:</strong> Sending newsletters and product updates (only with your consent), order-related transactional emails<br><br>
+        <strong>Site Improvement:</strong> Analyzing usage patterns to improve site performance, content, and user experience<br><br>
+        <strong>Security & Fraud Prevention:</strong> Detecting and preventing fraudulent transactions, protecting our Site and users
       </div>
 
-      <!-- CJC-1295 + Ipamorelin -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-purity">99%+</span>
-        </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">BLEND</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-cat">GH Secretagogue</div>
-          <h3>CJC-1295 + Ipamorelin</h3>
-          <div class="product-desc">Growth Hormone Releasing Blend</div>
-          <div class="product-meta">
-            <div>
-              <div class="price">$60.00</div>
-              <div class="size-info">blend / vial</div>
-            </div>
-            <button class="add-btn">+</button>
-          </div>
-        </div>
+      <!-- 3 -->
+      <h2 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">3. How We Share Your Information</h2>
+      <p style="margin-bottom: 1rem;">We do <strong>not</strong> sell, rent, or trade your personal information to third parties. We may share limited information with the following service providers who assist in operating our business:</p>
+
+      <div style="overflow-x: auto; margin-bottom: 1rem;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem;">
+          <thead>
+            <tr style="background: var(--primary); color: white;">
+              <th style="padding: 0.75rem 1rem; text-align: left; font-weight: 600; border-radius: 8px 0 0 0;">Service Provider</th>
+              <th style="padding: 0.75rem 1rem; text-align: left; font-weight: 600;">Purpose</th>
+              <th style="padding: 0.75rem 1rem; text-align: left; font-weight: 600; border-radius: 0 8px 0 0;">Data Shared</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 0.75rem 1rem; font-weight: 600; background: var(--bg);">Stripe / PayPal</td>
+              <td style="padding: 0.75rem 1rem;">Payment processing</td>
+              <td style="padding: 0.75rem 1rem;">Billing info, transaction amount</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 0.75rem 1rem; font-weight: 600; background: var(--bg);">Shipping carriers</td>
+              <td style="padding: 0.75rem 1rem;">Order delivery</td>
+              <td style="padding: 0.75rem 1rem;">Name, shipping address</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 0.75rem 1rem; font-weight: 600; background: var(--bg);">Email platform</td>
+              <td style="padding: 0.75rem 1rem;">Transactional & marketing emails</td>
+              <td style="padding: 0.75rem 1rem;">Name, email address</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.75rem 1rem; font-weight: 600; background: var(--bg);">Analytics (Google Analytics)</td>
+              <td style="padding: 0.75rem 1rem;">Site usage analysis</td>
+              <td style="padding: 0.75rem 1rem;">Anonymized usage data</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
-      <!-- GHK-Cu -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-purity">99%+</span>
+      <p>All service providers are contractually obligated to protect your data and use it only for the purposes specified. We may also disclose information if required by law, court order, or to protect our rights and safety.</p>
+
+      <!-- 4 -->
+      <h2 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">4. Data Security</h2>
+      <p style="margin-bottom: 1rem;">We take the security of your personal information seriously and implement industry-standard safeguards:</p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+        <div style="background: var(--bg); border-radius: var(--radius); padding: 1.15rem; border-left: 4px solid var(--primary);">
+          <div style="font-weight: 700; font-size: 0.9rem; margin-bottom: 0.25rem;">SSL/TLS Encryption</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">All data transmitted between your browser and our servers is encrypted using 256-bit SSL/TLS.</div>
         </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">50mg</div>
-          </div>
+        <div style="background: var(--bg); border-radius: var(--radius); padding: 1.15rem; border-left: 4px solid var(--accent);">
+          <div style="font-weight: 700; font-size: 0.9rem; margin-bottom: 0.25rem;">PCI Compliance</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">Payment processing is handled by PCI DSS-compliant providers. We never store full credit card numbers.</div>
         </div>
-        <div class="product-body">
-          <div class="product-cat">Copper Peptide</div>
-          <h3>GHK-Cu</h3>
-          <div class="product-desc">Copper Peptide Complex</div>
-          <div class="product-meta">
-            <div>
-              <div class="price">$40.00</div>
-              <div class="size-info">50mg / vial</div>
-            </div>
-            <button class="add-btn">+</button>
-          </div>
+        <div style="background: var(--bg); border-radius: var(--radius); padding: 1.15rem; border-left: 4px solid var(--gold);">
+          <div style="font-weight: 700; font-size: 0.9rem; margin-bottom: 0.25rem;">Access Controls</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">Personal data access is restricted to authorized personnel on a need-to-know basis.</div>
+        </div>
+        <div style="background: var(--bg); border-radius: var(--radius); padding: 1.15rem; border-left: 4px solid #8b5cf6;">
+          <div style="font-weight: 700; font-size: 0.9rem; margin-bottom: 0.25rem;">Regular Monitoring</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">We monitor our systems for vulnerabilities and unauthorized access attempts.</div>
         </div>
       </div>
+      <p>While no method of electronic transmission or storage is 100% secure, we strive to use commercially acceptable means to protect your information.</p>
 
-      <!-- Glow Blend -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-purity">99%+</span>
-          <span class="product-badge badge-new">Exclusive</span>
-        </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">~70mg</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Skin & Beauty</div>
-          <h3>Glow Blend</h3>
-          <div class="product-desc">Multi-Peptide Skin Complex</div>
-          <div class="product-meta">
-            <div>
-              <div class="price">$100.00</div>
-              <div class="size-info">~70mg / vial</div>
-            </div>
-            <button class="add-btn">+</button>
-          </div>
-        </div>
+      <!-- 5 -->
+      <h2 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">5. Data Retention</h2>
+      <p style="margin-bottom: 1rem;">We retain your personal information only as long as necessary to fulfill the purposes outlined in this policy:</p>
+      <div style="background: var(--bg); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.8;">
+        <strong>Order data:</strong> Retained for 5 years for accounting, tax compliance, and warranty purposes<br>
+        <strong>Account data:</strong> Retained as long as your account is active; deleted within 30 days of account closure request<br>
+        <strong>Marketing data:</strong> Retained until you unsubscribe; removed within 10 business days of unsubscribe request<br>
+        <strong>Analytics data:</strong> Anonymized and aggregated; retained indefinitely in non-identifiable form
       </div>
 
-      <!-- NAD+ -->
-      <div class="product-card">
-        <div class="badge-row">
-          <span class="product-badge badge-purity">99%+</span>
-        </div>
-        <div class="product-img">
-          <div class="vial-graphic">
-            <div class="vial-cap"></div>
-            <div class="vial-neck"></div>
-            <div class="vial-body"></div>
-            <div class="vial-label">1000mg</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Coenzyme</div>
-          <h3>NAD+</h3>
-          <div class="product-desc">Nicotinamide Adenine Dinucleotide</div>
-          <div class="product-meta">
-            <div>
-              <div class="price">$150.00</div>
-              <div class="size-info">1000mg / vial</div>
-            </div>
-            <button class="add-btn">+</button>
-          </div>
-        </div>
+      <!-- 6 -->
+      <h2 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">6. Cookies</h2>
+      <p style="margin-bottom: 1rem;">Our Site uses cookies — small text files stored on your device — to improve your browsing experience:</p>
+      <div style="overflow-x: auto; margin-bottom: 1rem;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem;">
+          <thead>
+            <tr style="background: var(--primary); color: white;">
+              <th style="padding: 0.75rem 1rem; text-align: left; font-weight: 600; border-radius: 8px 0 0 0;">Cookie Type</th>
+              <th style="padding: 0.75rem 1rem; text-align: left; font-weight: 600;">Purpose</th>
+              <th style="padding: 0.75rem 1rem; text-align: left; font-weight: 600; border-radius: 0 8px 0 0;">Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 0.75rem 1rem; font-weight: 600; background: var(--bg);">Essential</td>
+              <td style="padding: 0.75rem 1rem;">Shopping cart, login sessions, CSRF protection</td>
+              <td style="padding: 0.75rem 1rem;">Session / up to 30 days</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 0.75rem 1rem; font-weight: 600; background: var(--bg);">Preference</td>
+              <td style="padding: 0.75rem 1rem;">Remember your settings, recently viewed products</td>
+              <td style="padding: 0.75rem 1rem;">Up to 1 year</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.75rem 1rem; font-weight: 600; background: var(--bg);">Analytics</td>
+              <td style="padding: 0.75rem 1rem;">Understand site usage patterns (Google Analytics)</td>
+              <td style="padding: 0.75rem 1rem;">Up to 2 years</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>You can control cookies through your browser settings. Disabling essential cookies may affect site functionality (e.g., your shopping cart may not work properly).</p>
+
+      <!-- 7 -->
+      <h2 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">7. Your Rights</h2>
+      <p style="margin-bottom: 1rem;">Depending on your jurisdiction, you may have the following rights regarding your personal information:</p>
+      <div style="background: var(--bg); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.8;">
+        <strong>Access:</strong> Request a copy of the personal data we hold about you<br>
+        <strong>Correction:</strong> Request correction of any inaccurate or incomplete data<br>
+        <strong>Deletion:</strong> Request deletion of your personal data ("right to be forgotten")<br>
+        <strong>Opt-Out:</strong> Unsubscribe from marketing emails at any time via the link in each email<br>
+        <strong>Portability:</strong> Request your data in a structured, machine-readable format<br>
+        <strong>Objection:</strong> Object to processing of your data for certain purposes
+      </div>
+      <p>To exercise any of these rights, contact us at <a href="mailto:support@therionpeptides.com" style="color: var(--primary);">support@therionpeptides.com</a>. We will respond to all requests within 30 days.</p>
+
+      <!-- 8 -->
+      <h2 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">8. California Residents (CCPA)</h2>
+      <p>If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA), including the right to know what personal information we collect, the right to request deletion, and the right to opt out of the sale of personal information. <strong>We do not sell your personal information.</strong> To submit a CCPA request, email <a href="mailto:support@therionpeptides.com" style="color: var(--primary);">support@therionpeptides.com</a> with the subject line "CCPA Request."</p>
+
+      <!-- 9 -->
+      <h2 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">9. Children's Privacy</h2>
+      <p>Our Site is not directed to individuals under the age of 21. We do not knowingly collect personal information from anyone under 21 years of age. If we learn that we have inadvertently collected data from a minor, we will delete it promptly. If you believe a minor has provided us with personal information, please contact us immediately.</p>
+
+      <!-- 10 -->
+      <h2 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">10. Third-Party Links</h2>
+      <p>Our Site may contain links to third-party websites or services that are not operated by us. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites. We encourage you to review the privacy policy of every site you visit.</p>
+
+      <!-- 11 -->
+      <h2 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">11. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for legal, operational, or regulatory reasons. The "Last updated" date at the top of this page indicates when the policy was most recently revised. We encourage you to review this page periodically. Continued use of our Site after changes constitutes acceptance of the updated policy.</p>
+
+      <!-- 12 -->
+      <h2 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--primary); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">12. Contact Us</h2>
+      <p style="margin-bottom: 1rem;">If you have questions or concerns about this Privacy Policy or our data practices, please contact us:</p>
+      <div style="background: var(--bg); border-radius: var(--radius); padding: 1.25rem; font-size: 0.92rem; line-height: 1.8;">
+        <strong>Therion Peptides</strong><br>
+        Email: <a href="mailto:support@therionpeptides.com" style="color: var(--primary);">support@therionpeptides.com</a><br>
+        Website: <a href="therion-peptides-reference.html" style="color: var(--primary);">therionpeptides.com</a>
       </div>
 
     </div>
-  </div>
-</div>
-
-<!-- WHY US -->
-<div class="section reveal">
-  <div class="section-header">
-    <div>
-      <h2>Why Therion Peptides</h2>
-      <p>Quality, transparency, and value for researchers</p>
-    </div>
-  </div>
-
-  <div class="info-grid">
-    <div class="info-card">
-      <div class="info-icon">🔬</div>
-      <h3>HPLC & MS Verified</h3>
-      <p>Every batch undergoes High-Performance Liquid Chromatography and Mass Spectrometry analysis to confirm identity and purity exceeding 99%.</p>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">📋</div>
-      <h3>Certificate of Analysis</h3>
-      <p>Each product ships with a detailed COA — full transparency into purity, molecular weight, and third-party testing results.</p>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">💰</div>
-      <h3>Competitive Pricing</h3>
-      <p>Premium quality at fair prices. We partner directly with GMP manufacturers to deliver real value to researchers.</p>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">🏭</div>
-      <h3>WHO/GMP & ISO Sourced</h3>
-      <p>All products synthesized in WHO/GMP and ISO 9001:2015 certified facilities for consistent, reproducible quality.</p>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">❄️</div>
-      <h3>Cold-Chain Shipping</h3>
-      <p>Temperature-sensitive compounds stored and shipped under controlled conditions to preserve stability and bioactivity.</p>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">⚡</div>
-      <h3>24-48hr Dispatch</h3>
-      <p>Most orders ship within 24-48 hours. Fast, reliable delivery because your research timelines matter.</p>
-    </div>
-  </div>
-</div>
-
-<!-- RESEARCH CTA -->
-<div class="section reveal">
-  <div class="research-banner">
-    <div>
-      <h2>Peptide Research & Resources</h2>
-      <p>Explore our library of scientific publications, reconstitution guides, storage protocols, and peptide information to support your research.</p>
-    </div>
-    <a href="#" class="btn btn-gold">Browse Articles →</a>
   </div>
 </div>
 
@@ -1472,19 +1502,18 @@
       <h4>Information</h4>
       <a href="#">What are Peptides?</a>
       <a href="#">Peptide Purity</a>
-      <a href="#">Reconstitution Guide</a>
       <a href="#">Storage & Handling</a>
       <a href="#">Research Articles</a>
       <a href="#">Certificate of Analysis</a>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
-      <a href="./our-company.html">About Us</a>
-      <a href="./contact.html">Contact</a>
-      <a href="./footer/faq.html">FAQ</a>
-      <a href="./footer/shipping-returns.html">Shipping & Returns</a>
-      <a href="./footer/privacy-policy.html">Privacy Policy</a>
-      <a href="./footer/terms-conditions.html">Terms & Conditions</a>
+      <a href="../our-company.html">About Us</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="../footer/shipping-returns.html">Shipping & Returns</a>
+      <a href="../footer/privacy-policy.html">Privacy Policy</a>
+      <a href="../footer/terms-conditions.html">Terms & Conditions</a>
     </div>
   </div>
   <div class="footer-bottom">
